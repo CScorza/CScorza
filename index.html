@@ -3,7 +3,7 @@
 
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 	<meta name="description" content="description" />
 	<meta name="keywords" content="keywords" />
 	<meta name="author" content="author" />
@@ -67,14 +67,15 @@
 			<br>
 			<br>
 			<br>
+			<form>
 			<!-- 	###Verifica Facebook-->
-			<script type="text/javascript">
-				function doSearch01(Search01) { window.open('https://www.facebook.com/search/top?q' + Search01, 'Search01window'); }
+			<p><script type="text/javascript">
+				function doSearch01(Search01) { window.open('https://www.facebook.com/search/top/?q' + Search01, 'Search01window'); }
 			</script>
 			<form onsubmit="doSearch01(this.Search01.value); return false;">
 				<input type="text" id="Search01" name="Search01" size="20" placeholder="Inserisci Username" value="">
-				<input type="submit" style="width:130px" value="Ricerca Profili Fb"><br>
-			</form>
+				<input type="submit" style="width:130px" value="Ricerca Profili FB"><br>
+			</form></p>
 			<!-- 	###Verifica Instagram-->
 			<script type="text/javascript">
 				function doSearch01(Search01) { window.open('http://instagram.com/' + Search01, 'Search01window'); }
@@ -105,7 +106,7 @@
 					height: 50px;
 				}
 			</style>
-
+		</form>
 			<head>
 
 
