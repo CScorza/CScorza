@@ -67,42 +67,30 @@
 			<br>
 			<br>
 			<br>
-			<form>
-				<!-- 	### Verifica Facebook-->
-				<p>
-					<script type="text/javascript">
-						function doSearch01(Search01) { window.open('https://www.facebook.com/search/top/?q=' + Search01, 'Search01window'); }
-					</script>
-				<form onsubmit="doSearch01(this.Search01.value); return false;">
-					<input type="text" id="Search01" name="Search01" size="20" placeholder="Inserisci Username"
-						value="">
-					<input type="submit" style="width:130px" value="Ricerca Profili FB">
-				</form>
-				</p>
-				<!-- 	### Verifica Instagram-->
-				<script type="text/javascript">
-					function doSearch01(Search01) { window.open('http://instagram.com/' + Search01, 'Search01window'); }
-				</script>
-				<form onsubmit="doSearch01(this.Search01.value); return false;">
-					<input type="text" id="Search01" name="Search01" size="20" placeholder="Username">
-					<input type="submit" style="width:130px" value="Istagram Profile">
-				</form>
-				<!--	### Verifica Email -->
-				<script type="text/javascript">
-					function doSearch16(Search16) { window.open('https://hunter.io/email-verifier/' + Search16, 'Search16window'); }
-				</script>
-				<form onsubmit="doSearch16(this.Search16.value); return false;">
-					<input type="text" id="Search16" name="Search16" size="20" placeholder="Verifica Email" value="">
-					<input type="submit" style="width:130px" value="Hunter Verify">
-				</form>
-				<!--	### Verifica Attendibilità Sito Internet -->
-				<script type="text/javascript">
-					function doSearch48(Search48) { window.open('https://www.virustotal.com/#/domain/' + Search48, 'Search48window'); }
-				</script>
-				<form onsubmit="doSearch48(this.Search48.value); return false;">
-					<input type="text" id="Search48" name="Search48" size="20" placeholder="Verifica Sito" value="">
-					<input type="submit" style="width:130px" value="VirusTotal">
-				</form>
+
+			<!--### Verifica Instagram-->
+			<script type="text/javascript">
+				function doSearch01(Search01) { window.open('http://instagram.com/' + Search01, 'Search01window'); }
+			</script>
+			<form onsubmit="doSearch01(this.Search01.value); return false;">
+				<input type="text" id="Search01" name="Search01" size="20" placeholder="Username" value="">
+				<input type="submit" style="width:130px" value="Istagram Profile">
+			</form>
+			<!--### Verifica Email -->
+			<script type="text/javascript">
+				function doSearch16(Search16) { window.open('https://hunter.io/email-verifier/' + Search16, 'Search16window'); }
+			</script>
+			<form onsubmit="doSearch16(this.Search16.value); return false;">
+				<input type="text" id="Search16" name="Search16" size="20" placeholder="Verifica Email" value="">
+				<input type="submit" style="width:130px" value="Hunter Verify">
+			</form>
+			<!--### Verifica Attendibilità Sito Internet -->
+			<script type="text/javascript">
+				function doSearch48(Search48) { window.open('https://www.virustotal.com/#/domain/' + Search48, 'Search48window'); }
+			</script>
+			<form onsubmit="doSearch48(this.Search48.value); return false;">
+				<input type="text" id="Search48" name="Search48" size="20" placeholder="Verifica Sito" value="">
+				<input type="submit" style="width:130px" value="VirusTotal">
 				<style>
 					a {
 						width: 100px;
