@@ -111,7 +111,7 @@
     <ul>
       <li>
         <a href="https://www.linkedin.com/">
-          <img src="./LinkedIn.png" alt="LinkedIn Profile" title="LinkedIn Profile" style="width:45px;">
+          <img src="./Linkedin.png" alt="LinkedIn Profile" title="LinkedIn Profile" style="width:45px;">
         </a>
       </li>
       <li>
@@ -145,16 +145,89 @@
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-  <div id="quote">
-    "L'intelligenza è la capacità di adattarsi al cambiamento" <br> Stephen Hawking
+<div id="quote">
+	"L'intelligenza è la capacità di adattarsi al cambiamento" <br> Stephen Hawking
   </div>
+  <head>
+	<style>
+	  #ip-address-container {
+		position: absolute;
+		top: 200px;
+		right: 40px;
+		text-align: right;
+	  }
+	  #ip-address {
+		color: #3366cc;
+		font-family: Arial, sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+	  }
+	  #visitor-counts {
+		color: #ffffff;
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		margin-top: 10px;
+	  }
+	</style>
+	<script>
+	  // Funzione per ottenere l'indirizzo IP del client
+	  function getIPAddress() {
+		fetch('https://api.ipify.org?format=json')
+		  .then(response => response.json())
+		  .then(data => {
+			document.getElementById('ip-address').textContent = data.ip;
+			updateVisitorCounts(data.ip);
+		  })
+		  .catch(error => {
+			console.log('Si è verificato un errore:', error);
+		  });
+	  }
+	  
+	  // Funzione per aggiornare i conteggi dei visitatori
+	  function updateVisitorCounts(ip) {
+		// Verifica se esiste il conteggio giornaliero nel localStorage
+		const today = new Date().toISOString().split('T')[0];
+		let dailyCount = localStorage.getItem(today);
+		if (dailyCount) {
+		  // Se esiste, incrementa il conteggio giornaliero
+		  dailyCount = parseInt(dailyCount) + 1;
+		} else {
+		  // Se non esiste, inizializza il conteggio giornaliero a 1
+		  dailyCount = 1;
+		}
+	  
+		// Aggiorna il conteggio giornaliero nel localStorage
+		localStorage.setItem(today, dailyCount);
+	  
+		// Ottieni il conteggio totale
+		const totalCount = Object.keys(localStorage).length;
+	  
+		// Aggiorna i conteggi visualizzati sulla pagina
+		document.getElementById('daily-count').textContent = dailyCount;
+		document.getElementById('total-count').textContent = totalCount;
+	  }
+	</script>
+  </head>
+  <body onload="getIPAddress()">
+	<div id="ip-address-container">
+		<h1 style="color: #ffffff; font-family: Arial, sans-serif;">Il tuo indirizzo IP:</h1>
+		<p id="ip-address"></p>
+		<div id="visitor-counts">
+			<p>Visitatori giornalieri: <span id="daily-count"></span></p>
+			<p>Visitatori totali: <span id="total-count"></span></p>
+		</div>
+	</div>
+  </body>
 
+
+  
+  
+</html>
+<br>
+<br>
+<br>
 </body>
 
-<html>
 	<div style="background-color: #0c1a1f; padding: 20px;">
 		<div style="font-size: 40px; font-family: Helvetica; color: white; text-align: left; margin-bottom: 40px;">Strumenti di Analisi e di Verifica</div>
 		<div style="display: flex; justify-content: left;">
@@ -188,18 +261,19 @@
 			font-size: 18px; /* Ridotto la dimensione del testo */
 			color: white;
 			text-align: center;
-			margin-top: 5px;
+			margin-top: 4px;
 		}
 	</style>
 	<div class="container">
+			<figure class="gray-frame">
+			<iframe src="https://canarytokens.org/generate" width="100%" height="500"></iframe>
+			<div class="iframe-text">Canary Tokens</div>
+		</figure>
 		<figure class="gray-frame">
 			<iframe src="https://viewdns.info/" width="100%" height="500"></iframe>
 			<div class="iframe-text">Analisi IP</div>
 		</figure>
-		<figure class="gray-frame">
-			<iframe src="https://www.ipfingerprints.com/" width="100%" height="500"></iframe>
-			<div class="iframe-text">Geolocalizzazione IP</div>
-		</figure>
+	
 		<figure class="gray-frame">
 			<iframe src="https://mxtoolbox.com/EmailHeaders.aspx" width="100%" height="500"></iframe>
 			<div class="iframe-text">ANALISI E-MAIL</div>
@@ -214,27 +288,51 @@
 	<br>
 	<br>
 	<br>
-	<div class="container">
-		<!--### Verifica Instagram-->
-		<form onsubmit="doSearch01(this.Search01.value); return false;">
-			<input type="text" id="Search01" name="Search01" size="60" placeholder="Username" value="">
-			<input type="submit" style="width:130px" value="Istagram Profile">
-		</form>
-	
-		<!--### Verifica Email -->
-		<form onsubmit="doSearch16(this.Search16.value); return false;">
-			<input type="text" id="Search16" name="Search16" size="60" placeholder="Verifica Email" value="">
-			<input type="submit" style="width:130px" value="Hunter Verify">
-		</form>
-	
-		<!--### Verifica Attendibilità Sito Internet -->
-		<form onsubmit="doSearch48(this.Search48.value); return false;">
-			<input type="text" id="Search48" name="Search48" size="60" placeholder="Verifica Sito" value="">
-			<input type="submit" style="width:130px" value="VirusTotal">
-		</form>
-	</div>
-<br>
+	<head>
+	  </head>
+	  <head>
+		<style>
+		  /* Stile per centrare il contenitore */
+		  .center-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 1vh; /* Imposta l'altezza del contenitore come altezza della viewport */
+		  }
+	  
+		  .container {
+			padding: 10px;
+			margin-left: 10px; /* Aggiunto margine sinistro di 4px */
 
+		  }
+		</style>
+	  </head>
+	  <body>
+		<div class="center-container">
+		  <div class="container">
+			<!--### Verifica Instagram-->
+			<form onsubmit="doSearch01(this.Search01.value); return false;">
+			  <input type="text" id="Search01" name="Search01" size="60" placeholder="Username" value="">
+			  <input type="submit" style="width:160px" value="Istagram Profile">
+			</form>
+	  		<!--### Verifica Email -->
+			<form onsubmit="doSearch16(this.Search16.value); return false;">
+			  <input type="text" id="Search16" name="Search16" size="60" placeholder="Verifica Email" value="">
+			  <input type="submit" style="width:160px" value="Hunter Verify">
+			</form>
+			<!--### Verifica Attendibilità Sito Internet -->
+			<form onsubmit="doSearch48(this.Search48.value); return false;">
+			  <input type="text" id="Search48" name="Search48" size="60" placeholder="Verifica Sito" value="">
+			  <input type="submit" style="width:160px" value="VirusTotal">
+			</form>
+		  </div>
+		</div>
+	  </body>
+	  
+<br>  
+<br>
+<br>
+<br>
 </tr>
 </table>
 
