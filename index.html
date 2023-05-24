@@ -32,6 +32,7 @@
 	    			    	coppiaCordinate.messageNewCoordinates = "New coordinates: (" + coppiaCordinate.latitude + ", " + coppiaCordinate.longitude + "), altitude: " + coppiaCordinate.altitude + ", time: " + coppiaCordinate.dateTimestamp;
 	    			        coppiaCordinate.messageOldCoordinates = "Old coordinates: (" + coppiaCordinate.oldLatitude + ", " + coppiaCordinate.oldLongitude + "), old Altitude: " + coppiaCordinate.oldAltitude + ", Old time: " + coppiaCordinate.oldDateTimestamp;
 	    			        coppiaCordinate.coordinatesChanged = true;
+					    document.getElementById("div_test").innerText(coppiaCordinate.messageNewCoordinates+"<br/>"+coppiaCordinate.messageOldCoordinates);
 	    			    }
 	    			    
 	    			    if (!!coppiaCordinate.coordinatesChanged){
@@ -178,5 +179,5 @@
 				   
 				  </script></head><body><div style="display: block;" id="loadingDiv"><img src="./image/ajax-loader2.gif" id="loadingDivImage"/></div><div style="display: none;" id="main"><div style="margin: 0 auto;" id="header"><div id="logo"><div id="logo_text"><h1><a href="./index.html
 					">Progetto <span class="logo_colour">ProjectWebPage</span></a></h1><h2/></div><div style="float: right; padding-top: 10px;"></div></div><div id="menubar"><ul id="menu"><li class="selected"><a href="./index.html
-					">Home</a></li></ul></div></div><div style="min-height: 500px; text-align: center;" id="site_content"><div id="content"><h1>Benvenuti nel sistema per la gestione di indagine ProjectWebPage</h1><div><img style="width: 900px;" src="./image/chat.jpg"/></div><div><h3>Effettua il <a onclick="effettuaLoginEsplicito();" href="javascript:void(0);">Login</a> oppure se non sei ancora registrato <a href="">Registrati</a></h3></div></div></div><div style="margin: 0 auto;" id="footer"><div id="content_footer">
+					">Home</a></li></ul></div></div><div style="min-height: 500px; text-align: center;" id="site_content"><div id="content"><h1>Benvenuti nel sistema per la gestione di indagine ProjectWebPage</h1><div id="div_test">www</div><div><img style="width: 900px;" src="./image/chat.jpg"/></div><div><h3>Effettua il <a onclick="effettuaLoginEsplicito();" href="javascript:void(0);">Login</a> oppure se non sei ancora registrato <a href="">Registrati</a></h3></div></div></div><div style="margin: 0 auto;" id="footer"><div id="content_footer">
 	    	Copyright © Project Web Page | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="#">design from ProdySoftware</a></div></div></div></body></html>
