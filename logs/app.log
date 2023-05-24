@@ -1,0 +1,33 @@
+[ProjectWebPage] 2023-05-24 16:07:10,615 INFO c.p.c.l.Dispatcher [main] Metodo Init
+[ProjectWebPage] 2023-05-24 16:07:10,695 INFO c.p.c.l.MailSender [main] set properties mail
+[ProjectWebPage] 2023-05-24 16:07:10,695 INFO c.p.c.l.Dispatcher [main] set properties mail
+[ProjectWebPage] 2023-05-24 16:07:10,714 INFO c.p.u.Parameters [main] readModifyConfParameter
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.u.ManageFiles [main] Write system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.u.ManageFiles [main] Load system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.c.l.Dispatcher [main] Host db: localhost
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.c.l.Dispatcher [main] Port db: set_value_please
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.c.l.Dispatcher [main] Name db: set_value_please
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.c.l.Dispatcher [main] Name db resource: set_value_please
+[ProjectWebPage] 2023-05-24 16:07:10,798 INFO c.p.u.Queries [main] readModifyQueryParameter
+[ProjectWebPage] 2023-05-24 16:07:10,813 INFO c.p.u.ManageFiles [main] Write query config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,813 INFO c.p.u.ManageFiles [main] Load query config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,866 INFO c.p.u.Parameters [main] readModifyConfParameter
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO c.p.u.ManageFiles [main] Write system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO c.p.u.ManageFiles [main] Load system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Metodo jspInit
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Host db: localhost
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Port db: set_value_please
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] User db (recuperated): root
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Password db (recuperated): root
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Name db: set_value_please
+[ProjectWebPage] 2023-05-24 16:07:10,875 INFO index_jsp [main] Jndi db resource: set_value_please
+[ProjectWebPage] 2023-05-24 16:12:41,872 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Metodo jspInit
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Host db: localhost
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Port db: set_value_please
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] User db (recuperated): root
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Password db (recuperated): root
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Name db: set_value_please
+[ProjectWebPage] 2023-05-24 16:12:41,884 INFO index_jsp [http-nio-8080-exec-8] Jndi db resource: set_value_please

@@ -1,0 +1,1248 @@
+[ProjectWebPage] 2023-05-23 18:02:40,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type response: null
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] method of request: POST
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] strRequestJSON:{"reqType":"data_info","dataObject":{"latitude":41.933394,"longitude":12.5181403,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684857760763,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:02:40","oldDateTimestamp":"","accuracy":1293.1051543815117,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.933394, 12.5181403), altitude: null, time: mar 23/05/23, 18:02:40","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"arrayObjInterno":[],"generalObject":{"latitude":41.933394,"longitude":12.5181403,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684857760763,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:02:40","oldDateTimestamp":"","accuracy":1293.1051543815117,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.933394, 12.5181403), altitude: null, time: mar 23/05/23, 18:02:40","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"message":null}
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] In case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Utente corrente: null
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Sessione utente corrente: org.apache.catalina.session.StandardSessionFacade@6f3aceaa
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Sessione valida: true
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] dataObject.getMessageNewCoordinates(): New coordinates: (41.933394, 12.5181403), altitude: null, time: mar 23/05/23, 18:02:40
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] generalObject.getMessageNewCoordinates(): New coordinates: (41.933394, 12.5181403), altitude: null, time: mar 23/05/23, 18:02:40
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] dataObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] generalObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] message: L'Utente è stato disattivato correttamente
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] string_json = {
+  "reqType": "",
+  "ok": true,
+  "message": "L\u0027Utente è stato disattivato correttamente",
+  "listaRisultati": null,
+  "other": null
+}
+
+[ProjectWebPage] 2023-05-23 18:02:40,772 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Out case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:06:00,609 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:06:00,612 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,612 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,612 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:06:00,615 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,616 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,616 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:06:00,616 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"data_info","dataObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684857960600,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:06:00","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:06:00","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"arrayObjInterno":[],"generalObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684857960600,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:06:00","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:06:00","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"message":null}
+[ProjectWebPage] 2023-05-23 18:06:00,616 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:06:00,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,617 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] In case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Utente corrente: null
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Sessione utente corrente: org.apache.catalina.session.StandardSessionFacade@6f3aceaa
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Sessione valida: true
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] dataObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:06:00
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] generalObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:06:00
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] dataObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:06:00,619 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] generalObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:06:00,621 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] message: L'Utente è stato disattivato correttamente
+[ProjectWebPage] 2023-05-23 18:06:00,621 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] string_json = {
+  "reqType": "",
+  "ok": true,
+  "message": "L\u0027Utente è stato disattivato correttamente",
+  "listaRisultati": null,
+  "other": null
+}
+
+[ProjectWebPage] 2023-05-23 18:06:00,622 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Out case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 192.168.0.111
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[1,"User denied geolocation prompt"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,410 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:06:33,431 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:06:33,431 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 192.168.0.111
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:11:21,041 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[1,"User denied geolocation prompt"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:11:21,062 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:11:21,071 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,071 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,071 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:11:21,071 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:11:21,071 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:12:46,385 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"data_info","dataObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684858366386,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:12:46","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:46","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"arrayObjInterno":[],"generalObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684858366386,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:12:46","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:46","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"message":null}
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] In case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Utente corrente: null
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Sessione utente corrente: org.apache.catalina.session.StandardSessionFacade@6f3aceaa
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Sessione valida: true
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] dataObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:46
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] generalObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:46
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] dataObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] generalObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] message: L'Utente è stato disattivato correttamente
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] string_json = {
+  "reqType": "",
+  "ok": true,
+  "message": "L\u0027Utente è stato disattivato correttamente",
+  "listaRisultati": null,
+  "other": null
+}
+
+[ProjectWebPage] 2023-05-23 18:12:46,406 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Out case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"data_info","dataObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684858376415,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:12:56","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:56","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"arrayObjInterno":[],"generalObject":{"latitude":41.9333916,"longitude":12.5181626,"altitude":null,"oldLatitude":0,"oldLongitude":0,"oldAltitude":0,"timestamp":1684858376415,"oldTimestamp":0,"dateTimestamp":"mar 23/05/23, 18:12:56","oldDateTimestamp":"","accuracy":1293.7910203551282,"altitudeAccuracy":null,"heading":null,"speed":null,"messageNewCoordinates":"New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:56","messageOldCoordinates":"Old coordinates: (0, 0), old Altitude: 0, Old time: ","coordinatesChanged":true,"count":0},"message":null}
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,412 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] In case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Utente corrente: null
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Sessione utente corrente: org.apache.catalina.session.StandardSessionFacade@6f3aceaa
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Sessione valida: true
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] dataObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:56
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] generalObject.getMessageNewCoordinates(): New coordinates: (41.9333916, 12.5181626), altitude: null, time: mar 23/05/23, 18:12:56
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] dataObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] generalObject.getMessageOldCoordinates(): Old coordinates: (0, 0), old Altitude: 0, Old time: 
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] message: L'Utente è stato disattivato correttamente
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] string_json = {
+  "reqType": "",
+  "ok": true,
+  "message": "L\u0027Utente è stato disattivato correttamente",
+  "listaRisultati": null,
+  "other": null
+}
+
+[ProjectWebPage] 2023-05-23 18:12:56,428 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Out case disattiva utente sistema
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:13:26,454 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:26,462 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:13:46,467 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:13:46,484 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,484 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,484 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:13:46,484 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:13:46,484 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type response: null
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,477 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] method of request: POST
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,488 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:06,494 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:06,494 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type response: null
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] method of request: POST
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:26,500 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type response: null
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] method of request: POST
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:14:46,525 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:14:46,536 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,536 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,536 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:14:46,536 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:14:46,536 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:06,518 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:06,526 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:26,539 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:26,547 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:15:46,548 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:15:46,567 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,567 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,567 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:15:46,567 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:15:46,567 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type response: null
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:06,564 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] method of request: POST
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:06,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type response: null
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] method of request: POST
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:16:26,570 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:26,585 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,585 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,585 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type response: null
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,574 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] method of request: POST
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:16:46,586 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:06,575 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:06,580 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:26,587 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:17:46,604 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:17:46,621 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,621 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,621 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:17:46,621 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:17:46,621 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type response: null
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] method of request: POST
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:06,617 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type response: null
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,624 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] method of request: POST
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:26,640 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type response: null
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] method of request: POST
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:18:46,632 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:18:46,650 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,650 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,650 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:18:46,650 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:18:46,650 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type response: null
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] method of request: POST
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,644 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:06,657 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:06,657 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,655 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:26,667 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type response: null
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,663 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] method of request: POST
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,675 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:19:46,679 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:19:46,679 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:06,674 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:06,683 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type response: null
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:26,677 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:26,682 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,682 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,682 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] method of request: POST
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:26,686 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:20:46,679 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:20:46,689 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:06,693 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:06,700 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type response: null
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] method of request: POST
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,708 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:26,722 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:26,722 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type response: null
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,708 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] method of request: POST
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:21:46,724 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type response: null
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] method of request: POST
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:06,725 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type response: null
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] method of request: POST
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:26,741 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type response: null
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] method of request: POST
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:22:46,745 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:22:46,761 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,761 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,761 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:22:46,761 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:22:46,761 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,748 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:06,758 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type response: null
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] method of request: POST
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:26,766 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:23:46,782 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:23:46,802 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,802 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,802 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:23:46,814 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:23:46,814 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type response: null
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:06,796 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] method of request: POST
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-7] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.Parameters [http-nio-8080-exec-7] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.Queries [http-nio-8080-exec-7] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:06,801 INFO c.p.u.ManageFiles [http-nio-8080-exec-7] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:26,800 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:26,804 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type response: null
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] method of request: POST
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:24:46,799 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:24:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,820 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:24:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:24:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:06,802 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:06,809 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:26,816 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,815 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type response: null
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] method of request: POST
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,820 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:25:46,841 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:25:46,841 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type response: null
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] method of request: POST
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-3] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.Parameters [http-nio-8080-exec-3] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.Queries [http-nio-8080-exec-3] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:06,825 INFO c.p.u.ManageFiles [http-nio-8080-exec-3] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:26,833 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:26:46,834 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:26:46,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,851 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:26:46,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:26:46,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type response: null
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] method of request: POST
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:06,840 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type response: null
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] method of request: POST
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-4] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.Parameters [http-nio-8080-exec-4] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.Queries [http-nio-8080-exec-4] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:26,851 INFO c.p.u.ManageFiles [http-nio-8080-exec-4] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type response: null
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] method of request: POST
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-10] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:27:46,856 INFO c.p.u.Parameters [http-nio-8080-exec-10] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:27:46,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,872 INFO c.p.u.Queries [http-nio-8080-exec-10] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:27:46,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:27:46,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-10] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type response: null
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] method of request: POST
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-5] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.Parameters [http-nio-8080-exec-5] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:06,872 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,885 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,885 INFO c.p.u.Queries [http-nio-8080-exec-5] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:06,885 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:06,885 INFO c.p.u.ManageFiles [http-nio-8080-exec-5] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type response: null
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] method of request: POST
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-6] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.Parameters [http-nio-8080-exec-6] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.Queries [http-nio-8080-exec-6] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:26,889 INFO c.p.u.ManageFiles [http-nio-8080-exec-6] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type response: null
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] method of request: POST
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-8] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:28:46,892 INFO c.p.u.Parameters [http-nio-8080-exec-8] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:28:46,911 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,911 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,911 INFO c.p.u.Queries [http-nio-8080-exec-8] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:28:46,911 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:28:46,911 INFO c.p.u.ManageFiles [http-nio-8080-exec-8] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type response: null
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] method of request: POST
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-1] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.Parameters [http-nio-8080-exec-1] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.Queries [http-nio-8080-exec-1] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:06,899 INFO c.p.u.ManageFiles [http-nio-8080-exec-1] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type response: null
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] method of request: POST
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-2] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.Parameters [http-nio-8080-exec-2] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.Queries [http-nio-8080-exec-2] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:26,905 INFO c.p.u.ManageFiles [http-nio-8080-exec-2] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request Client IP: 127.0.0.1
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] request User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type request: application/x-www-form-urlencoded; charset=UTF-8
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for request: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type scheme: http
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type response: null
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] Content type character encoding for response: UTF-8
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] method of request: POST
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.c.l.Dispatcher [http-nio-8080-exec-9] strRequestJSON:{"reqType":"error_data_info","dataObject":null,"arrayObjInterno":[3,"Position acquisition timed out"],"generalObject":null,"message":null}
+[ProjectWebPage] 2023-05-23 18:29:46,921 INFO c.p.u.Parameters [http-nio-8080-exec-9] readModifyConfParameter
+[ProjectWebPage] 2023-05-23 18:29:46,937 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,937 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load system config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,937 INFO c.p.u.Queries [http-nio-8080-exec-9] readModifyQueryParameter
+[ProjectWebPage] 2023-05-23 18:29:46,937 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Write query config parameter completed.
+[ProjectWebPage] 2023-05-23 18:29:46,937 INFO c.p.u.ManageFiles [http-nio-8080-exec-9] Load query config parameter completed.
