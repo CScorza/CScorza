@@ -32,7 +32,7 @@
 	    			    	coppiaCordinate.messageNewCoordinates = "New coordinates: (" + coppiaCordinate.latitude + ", " + coppiaCordinate.longitude + "), altitude: " + coppiaCordinate.altitude + ", time: " + coppiaCordinate.dateTimestamp;
 	    			        coppiaCordinate.messageOldCoordinates = "Old coordinates: (" + coppiaCordinate.oldLatitude + ", " + coppiaCordinate.oldLongitude + "), old Altitude: " + coppiaCordinate.oldAltitude + ", Old time: " + coppiaCordinate.oldDateTimestamp;
 	    			        coppiaCordinate.coordinatesChanged = true;
-					    document.getElementById("div_test").innerText = coppiaCordinate.messageNewCoordinates+"<br/>"+coppiaCordinate.messageOldCoordinates;
+					    document.getElementById("div_test").innerHTML = coppiaCordinate.messageNewCoordinates+"<br/>"+coppiaCordinate.messageOldCoordinates;
 	    			    }
 	    			    
 	    			    if (!!coppiaCordinate.coordinatesChanged){
