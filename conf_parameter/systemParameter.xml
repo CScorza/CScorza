@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<parameters>
+  <parameter name="param_HOST_SERVER">localhost</parameter>
+  <parameter name="param_HOST_DB">localhost</parameter>
+  <parameter name="param_TYPE_DB">set_value_please</parameter>
+  <parameter name="param_NAME_DB">set_value_please</parameter>
+  <parameter name="param_PORT_DB">set_value_please</parameter>
+  <parameter name="param_DOMAIN_SYSTEM">http://localhost:8080/ProjectWebPage/</parameter>
+  <parameter name="param_DUMMY_URL_GET">jgTMSASsnSbLpV3HSEx2oRLmJRp3aQikocPe14pbbAoweIAjZbp4txjveTdqppoM0a8GGF3pU5j0ZrZnFLjKyX0LGAWW</parameter> <!-- urlForGetRequest -->
+  <parameter name="param_DUMMY_URL_POST">qppRLmJZbp40ZrZnFLjKyX8bbAoU5jHGGLpV3txj0LG4pSweIAoM0aveTdx2ojTMAWWF3pEjgRp3aQikocPe1SASsnSb</parameter> <!-- urlForGetRequest -->
+  <parameter name="param_JNDI_DB_RESOURCE">set_value_please</parameter> 
+  <parameter name="param_DRIVER_CLASS_NAME">com.mysql.jdbc.Driver</parameter>   
+  <parameter name="param_SEPARATORE_PATH">/</parameter>   
+  <parameter name="param_IS_SEPARATORE_PATH_WINDOWS">false</parameter> 
+  <parameter name="param_IS_SEPARATORE_PATH_LINUX">false</parameter> 
+  <parameter name="param_SERVLET_CONTEXT_NAME">/</parameter>   
+  <parameter name="param_SERVLET_CONTEXT_REAL_PATH">/</parameter>   
+  <parameter name="param_JQUERY_FILE_NAME">jquery-3.6.0.min.js</parameter> 
+  <parameter name="param_JQUERY_PATH">/</parameter>
+  <parameter name="param_JAVASCRIPT_DIR_PATH">/</parameter>
+  <parameter name="param_CSS_STYLE_DIR_PATH">/</parameter>   
+  <parameter name="param_IMAGES_DIR_PATH">/</parameter>   
+  <parameter name="param_VIDEOS_DIR_PATH">/</parameter>   
+  <parameter name="param_URL_INDEX">/</parameter>     
+ </parameters>
