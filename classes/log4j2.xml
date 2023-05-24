@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="MyApp_Name" packages="com.pec">
+	<Properties>
+		<Property name="ProjectName">ProjectWebPage</Property>
+		</Properties>
+	<Appenders>
+		<RollingFile name="RollingFile" fileName="webapps/${ProjectName}/logs/app.log"
+			filePattern="webapps/${ProjectName}/logs/${date:yyyy-MM-dd}/app-%d{HH-mm}.log">
+			<PatternLayout>
+				<Pattern>[${ProjectName}] %d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="30" modulate="true"/>	<!-- mettere interval = "60" per cambiare il file ogni ora -->
+				<SizeBasedTriggeringPolicy size="250 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<!-- setting the threshold of an appender to DEBUG will also allow INFO, WARN, 
+			ERROR and FATAL messages to log along with DEBUG messages. (DEBUG is the lowest level) -->
+		<Root level="debug">  
+			<AppenderRef ref="RollingFile" />
+		</Root>
+		
+	</Loggers>
+</Configuration>
+
+<!--  in questa maniera app.log contiene i messaggi correnti che ogni 
+		minuto vengono canecellati per far spazio ai messaggi del minuto 
+		successivo. Mentre i file generati (del tipo app-MM-dd-yyyy HH-mm.log) 
+		conterranno i messaggi di app.log di ogni minuto (sono uno storico dei 
+		messaggi di app.log)-->
