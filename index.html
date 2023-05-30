@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="description" />
+  <meta name="keywords" content="keywords" />
+  <meta name="author" content="author" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  <title>CScorza</title>
+  <style>
+    body {
+      background-color: rgb(1, 14, 19);
+    }
+
+    .zoom-image {
+      width: 500px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #;
+    }
+
+    #top-right {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      padding: 10px;
+      font-size: 30px;
+      font-family: sans-serif;
+      color: white;
+      background-color:;
+    }
+
+    #center {
+      position: absolute;
+      top: 34px;
+      left: 35%;
+      transform: translateX(-50%);
+      padding: 30px;
+      font-size: 50px;
+      font-family: Impact, 'Arial Narrow Bold', sans-serif;
+      color: white;
+      background-color: ;
+      text-align: center;
+    }
+
+    #button-container {
+      position: absolute;
+      top: 160px;
+      left: 23%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    #button-container ul {
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+    }
+
+    #button-container li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    #logo-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    #quote {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      font-family: sans-serif;
+      color: white;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/zoomooz/dist/zoomooz.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.zoom-image').zoomTo({ duration: 2000 });
+    });
+  </script>
+</head>
+
+<body class="home page-template-default page page-id-4 translatepress-en_US skin-default sidebar-none default_width tb_animation_on ready-view header-top-bar fixed-header-enabled footer-block theme-color-black theme-font-sans-serif tagline-off social-widget-off footer-widgets-off footer-menu-navigation-off filter-hover-sepia filter-featured-only sidemenu-active fixed-header-on cookies-set cookies-accepted mobile_menu_active" cz-shortcut-listen="true">
+
+  <div id="logo-container">
+    <a href="https://github.com/CScorza/">
+      <img src="./Logo.gif" alt="Image" style="width:300px;">
+    </a>
+  </div>
+
+  <div id="center">
+    CScorza - Indagini Telematiche
+  </div>
+
+  <div id="button-container">
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/">
+          <img src="./Linkedin.png" alt="LinkedIn Profile" title="LinkedIn Profile" style="width:45px;">
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/CScorza/">
+          <img src="./GITHUB.png" alt="Github Profile" title="Github Profile" style="width:45px;">
+        </a>
+      </li>
+      <li>
+        <a href="https://t.me/+kP_uYlc6-345Njc8">
+          <img src="./Telegram.png" alt="Telegram Profile" title="Telegram Profile" style="width:45px;">
+        </a>
+      </li>
+    </ul>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="quote">
+	"L'intelligenza è la capacità di adattarsi al cambiamento" <br> Stephen Hawking
+  </div>
+  <head>
+	<style>
+	  #ip-address-container {
+		position: absolute;
+		top: 200px;
+		right: 40px;
+		text-align: right;
+	  }
+	  #ip-address {
+		color: #3366cc;
+		font-family: Arial, sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+	  }
+	  #visitor-counts {
+		color: #ffffff;
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		margin-top: 10px;
+	  }
+	</style>
+	<script>
+	  // Funzione per ottenere l'indirizzo IP del client
+	  function getIPAddress() {
+		fetch('https://api.ipify.org?format=json')
+		  .then(response => response.json())
+		  .then(data => {
+			document.getElementById('ip-address').textContent = data.ip;
+			updateVisitorCounts(data.ip);
+		  })
+		  .catch(error => {
+			console.log('Si è verificato un errore:', error);
+		  });
+	  }
+	  
+	  // Funzione per aggiornare i conteggi dei visitatori
+	  function updateVisitorCounts(ip) {
+		// Verifica se esiste il conteggio giornaliero nel localStorage
+		const today = new Date().toISOString().split('T')[0];
+		let dailyCount = localStorage.getItem(today);
+		if (dailyCount) {
+		  // Se esiste, incrementa il conteggio giornaliero
+		  dailyCount = parseInt(dailyCount) + 1;
+		} else {
+		  // Se non esiste, inizializza il conteggio giornaliero a 1
+		  dailyCount = 1;
+		}
+	  
+		// Aggiorna il conteggio giornaliero nel localStorage
+		localStorage.setItem(today, dailyCount);
+	  
+		// Ottieni il conteggio totale
+		const totalCount = Object.keys(localStorage).length;
+	  
+		// Aggiorna i conteggi visualizzati sulla pagina
+		document.getElementById('daily-count').textContent = dailyCount;
+		document.getElementById('total-count').textContent = totalCount;
+	  }
+	</script>
+  </head>
+  <body onload="getIPAddress()">
+	<div id="ip-address-container">
+		<h1 style="color: #ffffff; font-family: Arial, sans-serif;">Il tuo indirizzo IP:</h1>
+		<p id="ip-address"></p>
+		<div id="visitor-counts">
+			<p>Visitatori giornalieri: <span id="daily-count"></span></p>
+			<p>Visitatori totali: <span id="total-count"></span></p>
+		</div>
+	</div>
+  </body>
+
+
+  
+  
+</html>
+<br>
+<br>
+<br>
+</body>
+
+	<div style="background-color: #0c1a1f; padding: 20px;">
+		<div style="font-size: 40px; font-family: Helvetica; color: white; text-align: left; margin-bottom: 40px;">Strumenti di Analisi e di Verifica</div>
+		<div style="display: flex; justify-content: left;">
+				</div>
+<head>
+	<style>
+		/* Stile per centrare l'elemento */
+		.container {
+			display: flex;
+			justify-content: left;
+			align-items: left;
+			gap: 2px;
+		}
+		
+		/* Stile per l'immagine a sinistra */
+		.image {
+			margin: 0px;
+		}
+	</style>
+</head>
+<body>
+	<style>
+		.gray-frame {
+			width: 25%;
+			border: 2px solid #565656; /* Aggiunto bordo di colore verde scuro */
+			border-radius: 1px;
+			padding: 5px;
+		}
+		
+		.iframe-text {
+			font-size: 18px; /* Ridotto la dimensione del testo */
+			color: white;
+			text-align: center;
+			margin-top: 4px;
+		}
+	</style>
+	<div class="container">
+			<figure class="gray-frame">
+			<iframe src="https://canarytokens.org/generate" width="100%" height="500"></iframe>
+			<div class="iframe-text">Canary Tokens</div>
+		</figure>
+		<figure class="gray-frame">
+			<iframe src="https://who.is/" width="100%" height="500"></iframe>
+			<div class="iframe-text">Analisi IP</div>
+		</figure>
+			<figure class="gray-frame">
+			<iframe src="https://mxtoolbox.com/EmailHeaders.aspx" width="100%" height="500"></iframe>
+			<div class="iframe-text">ANALISI E-MAIL</div>
+		</figure>
+		<figure class="gray-frame">
+			<iframe src="https://29a.ch/photo-forensics/#forensic-magnifier" width="100%" height="500"></iframe>
+			<div class="iframe-text">ANALISI DELLE IMMAGINI</div>
+		</figure>
+	</div>
+</body>
+</html>
+	<br>
+	<br>
+	<br>
+	<head>
+	  </head>
+	  <head>
+		<style>
+		  /* Stile per centrare il contenitore */
+		  .center-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 1vh; /* Imposta l'altezza del contenitore come altezza della viewport */
+		  }
+	  
+		  .container {
+			padding: 10px;
+			margin-left: 10px; /* Aggiunto margine sinistro di 4px */
+
+		  }
+		</style>
+	  </head>
+	  <body>
+		<div class="center-container">
+		  <div class="container">
+			<!--### Verifica Instagram-->
+			<form onsubmit="doSearch01(this.Search01.value); return false;">
+			  <input type="text" id="Search01" name="Search01" size="60" placeholder="Username" value="">
+			  <input type="submit" style="width:160px" value="Istagram Profile">
+			</form>
+	  		<!--### Verifica Email -->
+			<form onsubmit="doSearch16(this.Search16.value); return false;">
+			  <input type="text" id="Search16" name="Search16" size="60" placeholder="Verifica Email" value="">
+			  <input type="submit" style="width:160px" value="Hunter Verify">
+			</form>
+			<!--### Verifica Attendibilità Sito Internet -->
+			<form onsubmit="doSearch48(this.Search48.value); return false;">
+			  <input type="text" id="Search48" name="Search48" size="60" placeholder="Verifica Sito" value="">
+			  <input type="submit" style="width:160px" value="VirusTotal">
+			</form>
+		  </div>
+		</div>
+	  </body>
+	  
+<br>  
+<br>
+<br>
+<br>
+</tr>
+</table>
+
+<div style="background-color: #0c1a1f; padding: 20px;">
+	<div style="font-size: 40px; font-family: Helvetica; color: white; text-align:left; margin-bottom: 40px;">Manuali CScorza</div>
+	<div style="display: flex; justify-content: center;">
+			</div>
+	
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+	<div style="border: 1px solid #565656; border-radius: 8px; padding: 10px; text-align: center; margin-right: 50px;width:90%;height:90%;">
+	  <object data="CScorza - Best Pratics di Digital Forensics.pdf" type="application/pdf" width="100%" height="1000"> </object>
+	</div>
+	<div style="border: 1px solid #565656; border-radius: 8px; padding: 10px; text-align: center;width:90%;height:90%;">
+	  <object data="CScorza - Digital Image Forensics nell OSINT.pdf" type="application/pdf" width="100%" height="1000"> </object>
+	</div>
+  </div>
+</div>
+<br>
+<div style="background-color: #0c1a1f; padding: 20px;">
+	<div style="font-size: 40px; font-family: Helvetica; color: white; text-align: left; margin-bottom: 40px;">Strumenti GitHub - CScorza Investigation</div>
+	<div style="display: flex; justify-content: center;">
+			</div>
+<br>
+<!DOCTYPE html>
+<html>
+<head>
+	
+			<style>
+		/* Stile per centrare l'elemento */
+		.container {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		/* Stile per l'immagine a sinistra */
+		.image {
+			float: left;
+			margin-right: 20px;
+		}
+		
+		/* Stile per i numeri a destra */
+		.counter {
+			font-size: 40px;
+			font-weight: bold;
+			text-align: right;
+			font-family: 'Comic Sans MS', cursive, sans-serif;
+			margin-top: 20px;
+		}
+		
+		/* Stile per il footer */
+		.footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			background-color: #f2f2f2;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<ul>
+				<table style="width:100%">
+					<tr>
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/DistroForensics/"><img
+										src=".\Distro Forensics.gif" alt="Image" style="width:280px;"></a></a>
+						</th>
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/EstensioniChromeOSINT"><img
+										src=".\EstensioniChromeOSINT.gif" alt="Image" style="width:280px;"></a></a>
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/Tool-VATINT"><img
+										src=".\Tool-VATINT.gif" alt="Image" style="width:280px;"></a></a>
+						</th>
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/OSINT-FORENSICS-MOBILE"><img
+										src=".\OSINT-FORENSICS-MOBILE.gif" alt="Image" style="width:280px;">
+						</th>
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/Image-OSINT-Forensics"><img
+										src=".\Image-OSINT-Forensics.gif" alt="Image" style="width:280px;">
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/Data-Protection"><img
+										src=".\Data-Protection.gif" alt="Image" style="width:280px;">
+						</th>
+					<tr>
+						<td>
+							<h2 align="left"><a href="https://github.com/CScorza/CORPINT-Corporate-Intelligence">
+									<img src=".\CORPINT-Corporate-Intelligence.gif" alt="Image" style="width:280px;">
+
+						<td>
+							<h2 align="left"><a href="https://github.com/CScorza/OSINTInvestigation"><img
+										src=".\OSINTInvestigation.gif" alt="Image" style="width:280px;">
+
+
+						<td>
+							<h2 align="left"><a href="https://github.com/CScorza/GEOINTInvestigation"><img
+										src=".\GEOINTInvestigation.gif" alt="Image" style="width:280px;">
+
+
+						<td>
+							<h2 align="left"><a href="https://github.com/CScorza/Analisi-Digital-Forense"><img
+										src=".\Analisi-Digital-Forense.gif" alt="Image" style="width:280px;">
+
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/OSINTAnonimus/"><img
+										src=".\OSINTAnonymous.gif" alt="Image" style="width:280px;">
+
+
+						<th>
+							<h2 align="left"><a href="https://github.com/CScorza/SOCMIntelligence"><img
+										src=".\SOCMIntelligence.gif" alt="Image" style="width:280px;">
+					</tr>
+					<th>
+						<h2 align="left"><a href="https://github.com/CScorza/WEBIntelligence"><img
+									src=".\WEBIntelligence.gif" alt="Image" style="width:280px;">
+					<th>
+						<h2 align="left"><a href="https://github.com/CScorza/OSINTWorkstation"><img
+									src=".\OSINTWorkstaion.gif" alt="Image" style="width:280px;">
+									<th>
+										<h2 align="left"><a href="https://github.com/CScorza/Generatore-di-Password"><img
+									src=".\Generatore di Password.gif" alt="Image" style="width:280px;">
+									<th>
+										<h2 align="left"><a href="https://github.com/CScorza/BruteForceDecryptPDF"><img
+											src=".\BFDecryptPDF.gif" alt="Image" style="width:280px;">
+					<th>
+						<h2 align="left"><a href="https://github.com/CScorza/StegoIntelligence"><img
+									src=".\StegoIntelligence.gif" alt="Image" style="width:280px;">
+					<th>
+						<h2 align="left"><a href="https://github.com/CScorza/WatermarkIntelligence"><img
+									src=".\WatermarkIntelligence.gif" alt="Image" style="width:280px;">
+				</table>
+		</ul>
+	</div>
+	<br>
+<br>
+<style>
+	.legal_and_copy {
+		text-align: center;
+		color: white;
+	}
+</style>
+
+<div class="legal_and_copy text">
+	<div class="copyright">
+		© CScorza - Tutti i diritti riservati
+	</div>
+	<div class="privacy_cookie legal text">
+	<div text=>Aggionamento Maggio 2023
+
+	</div>
+	</div>
+</div>
