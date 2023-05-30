@@ -1,9 +1,0 @@
-<Context path="/ProgettoEncroChat_Realm" reloadable="true" useNaming = "true">
-	<ResourceLink name="jdbc/ProgettoEncroChat_Resource" global="jdbc/ProgettoEncroChat_Resource" type="javax.sql.DataSource" />
-	<Realm
-		className="org.apache.catalina.realm.JAASRealm"
-		appName="ProgettoEncroChat"
-		userClassNames="com.pec.login.JAASUserPrincipal,com.pec.login.JAASPasswordPrincipal"
-		roleClassNames="com.pec.login.JAASRolePrincipal"/> 	
-	<Manager className="org.apache.catalina.session.StandardManager"/>
-</Context>
