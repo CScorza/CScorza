@@ -9,6 +9,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
   <title>CScorza</title>
+  
+  <html lang="en">
+	<head>
+	  <title>Particle System</title>
+	</head>
+	<body>
+	
+	  <div id="particles"></div>
+	
+	  <script>
+		var particles = new ParticleSystem({
+		  container: document.querySelector('#particles'),
+		  particles: {
+			number: 1000,
+			size: {
+			  min: 10,
+			  max: 20
+			},
+			color: {
+			  start: '#000',
+			  end: '#fff'
+			},
+			shape: 'circle',
+			speed: {
+			  min: 1,
+			  max: 3
+			},
+			direction: {
+			  min: 0,
+			  max: 2 * Math.PI
+			},
+			life: {
+			  min: 2,
+			  max: 5
+			}
+		  },
+		  interactivity: {
+			events: {
+			  onHover: function (particle) {
+				particle.color = '#fff';
+			  },
+			  onLeave: function (particle) {
+				particle.color = '#000';
+			  }
+			}
+		  }
+		});
+	  </script>
+  
   <style>
     body {
       background-color: rgb(1, 14, 19);
@@ -477,7 +526,13 @@
 					<th>
 						<h2 align="left"><a href="https://github.com/CScorza/WatermarkIntelligence"><img
 									src=".\WatermarkIntelligence.gif" alt="Image" style="width:280px;">
-				</table>
+									<tr>
+										<td>
+										  <h2 align="left"><a href="https://github.com/CScorza/OSINTSurveillance">
+											<img src=".\OSINTSurveillance.gif" alt="Image" style="width:280px;">
+										  </a></h2>
+										</td>									
+																		</table>
 		</ul>
 	</div>
 	<br>
@@ -494,8 +549,10 @@
 		© CScorza - Tutti i diritti riservati
 	</div>
 	<div class="privacy_cookie legal text">
-	<div text=>Aggionamento Maggio 2023
+	<div text=>Aggionamento Dicembre 2023
 
 	</div>
 	</div>
 </div>
+
+
