@@ -90,7 +90,7 @@
             box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
         }
 
-        /* --- STILE ACCORDION (TENDA) --- */
+        /* --- ACCORDION STYLES --- */
         .accordion-header {
             cursor: pointer;
             display: flex;
@@ -102,35 +102,11 @@
             margin-bottom: 10px;
             user-select: none;
         }
-
-        .accordion-header:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .arrow-icon {
-            transition: transform 0.3s ease;
-            font-size: 1.2rem;
-            color: var(--text-muted);
-        }
-
-        /* Classe per ruotare la freccia quando aperto */
-        .accordion-header.active .arrow-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
-        }
-
-        .accordion-content.open {
-            max-height: 5000px; 
-            opacity: 1;
-            overflow: visible;
-        }
-
+        .accordion-header:hover { background: rgba(255, 255, 255, 0.05); }
+        .arrow-icon { transition: transform 0.3s ease; font-size: 1.2rem; color: var(--text-muted); }
+        .accordion-header.active .arrow-icon { transform: rotate(180deg); }
+        .accordion-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease-out, opacity 0.4s ease-out; }
+        .accordion-content.open { max-height: 5000px; opacity: 1; overflow: visible; }
 
         /* --- SEZIONE MANUALI --- */
         .section-title-gold {
@@ -141,6 +117,7 @@
             border-left: 4px solid var(--gold);
             padding-left: 15px;
             margin: 0;
+            line-height: 1.3;
         }
 
         .manuals-grid {
@@ -171,19 +148,28 @@
         }
 
         .manual-img-container {
-            width: 90px;
-            height: 90px;
+            width: 100%;
+            height: 120px; /* Altezza fissa per l'immagine */
             margin: 0 auto 15px auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,193,7,0.3);
         }
 
         .manual-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            /* FILTRO ORO: Trasforma icone nere in color ORO (#ffc107) */
+            object-fit: cover; /* Copre l'area */
+        }
+
+        /* Stile specifico per le icone grafiche (non foto) */
+        .manual-icon-graphic {
+            width: 80px;
+            height: 80px;
             filter: invert(78%) sepia(68%) saturate(885%) hue-rotate(358deg) brightness(102%) contrast(104%);
         }
 
@@ -193,7 +179,7 @@
         .download-btn {
             background: var(--gold);
             color: #000;
-            padding: 10px 0;
+            padding: 12px 0;
             width: 100%;
             border-radius: 6px;
             text-decoration: none;
@@ -216,6 +202,7 @@
             border-left: 4px solid var(--primary);
             padding-left: 15px;
             margin: 0;
+            line-height: 1.3;
         }
 
         .repo-grid {
@@ -236,38 +223,13 @@
             position: relative;
             overflow: hidden;
         }
+        .repo-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .repo-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--primary); opacity: 0.5; }
 
-        .repo-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-        .repo-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--primary);
-            opacity: 0.5;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         .repo-icon { font-size: 1.5rem; }
         .repo-title { margin: 0; font-size: 1.1rem; color: #fff; font-weight: 600; line-height: 1.3; }
-        
-        .repo-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            line-height: 1.5;
-        }
+        .repo-desc { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
 
         .open-repo-btn {
             text-align: center;
@@ -279,32 +241,73 @@
             font-size: 0.9rem;
             transition: all 0.2s;
         }
-        .open-repo-btn:hover {
-            background: var(--primary);
-            color: #000;
-            border-color: var(--primary);
-            font-weight: 600;
+        .open-repo-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); font-weight: 600; }
+
+        /* --- DONATION SECTION --- */
+        .donation-section {
+            margin-top: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
         }
+        .donation-title { color: var(--text-main); margin-bottom: 20px; font-size: 1.2rem; }
+        .donation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .crypto-card {
+            background: #000;
+            border: 1px solid var(--border);
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 250px;
+        }
+        .crypto-label { color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .crypto-address { font-family: monospace; font-size: 0.85rem; color: #ccc; word-break: break-all; }
 
         /* FOOTER */
         footer {
-            margin-top: 80px;
-            padding-top: 30px;
+            margin-top: 60px;
+            padding-top: 40px;
             border-top: 1px solid var(--border);
             text-align: center;
         }
-        .socials { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }
-        .socials a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-        .socials a:hover { color: var(--primary); }
-
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 40px;
-            border: 1px dashed var(--secondary);
-            color: var(--secondary);
-            border-radius: 12px;
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
         }
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .social-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
+        .email-btn {
+            border-color: var(--secondary);
+            color: #fff;
+        }
+        .email-btn:hover { background: var(--secondary); color: #fff; }
+
+        .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; border: 1px dashed var(--secondary); color: var(--secondary); border-radius: 12px; }
 
     </style>
 </head>
@@ -316,19 +319,24 @@
                 <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="logo-img">
                 <div class="brand-text">
                     <h1>CScorza</h1>
-                    <p>Open Source Intelligence Framework</p>
+                    <p>Framework di Intelligence Open Source <br> <i>Open Source Intelligence Framework</i></p>
                 </div>
             </div>
-            <a href="https://github.com/CScorza" target="_blank" class="open-repo-btn" style="padding: 8px 20px; width: auto;">GitHub Profile</a>
+            <a href="https://github.com/CScorza" target="_blank" class="open-repo-btn" style="padding: 8px 20px; width: auto;">
+                Profilo GitHub <br> <i>GitHub Profile</i>
+            </a>
         </header>
 
         <div class="search-container">
-            <input type="text" id="repo-search" placeholder="Cerca repository o tool (es. Insta, Targa, Wifi, PDF)..." autocomplete="off">
+            <input type="text" id="repo-search" placeholder="Cerca repository o tool... / Search repository or tool..." autocomplete="off">
         </div>
 
         <div class="manuals-wrapper">
             <div class="accordion-header" onclick="toggleSection('manuals-content', this)">
-                <div class="section-title-gold">📚 Manuali Ufficiali CScorza</div>
+                <div class="section-title-gold">
+                    📚 Manuali Ufficiali CScorza <br> 
+                    <span style="font-size:0.9rem; font-style:italic; opacity:0.8;">CScorza Official Manuals</span>
+                </div>
                 <div class="arrow-icon">▼</div>
             </div>
 
@@ -338,34 +346,34 @@
                     <div class="manual-card">
                         <div>
                             <div class="manual-img-container">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2888/2888746.png" alt="HDD Forensics" class="manual-img">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop_hard_drive_exposed_1.jpg/640px-Laptop_hard_drive_exposed_1.jpg" alt="Hard Disk" class="manual-img">
                             </div>
-                            <h3 class="manual-title">Best Pratics di Digital Forensics</h3>
-                            <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.</p>
+                            <h3 class="manual-title">Best Pratics di Digital Forensics <br> <i>Digital Forensics Best Practices</i></h3>
+                            <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.<br><i>Essential guidelines, standard procedures, and methodologies for forensic data acquisition and analysis.</i></p>
                         </div>
-                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Best%20Pratics%20di%20Digital%20Forensics.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Best%20Pratics%20di%20Digital%20Forensics.pdf" target="_blank" class="download-btn">📄 APRI PDF / <i>OPEN PDF</i></a>
                     </div>
 
                     <div class="manual-card">
                         <div>
-                            <div class="manual-img-container">
-                                <img src="https://cdn-icons-png.flaticon.com/512/1042/1042339.png" alt="Image Forensics" class="manual-img">
+                            <div class="manual-img-container" style="background:transparent; border:none;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1042/1042339.png" alt="Image Forensics" class="manual-icon-graphic">
                             </div>
-                            <h3 class="manual-title">Digital Image Forensics nell'OSINT</h3>
-                            <p class="manual-desc">Tecniche avanzate per l'analisi delle immagini, rilevamento di manipolazioni e studio dei metadati nel contesto OSINT.</p>
+                            <h3 class="manual-title">Digital Image Forensics nell'OSINT <br> <i>Digital Image Forensics in OSINT</i></h3>
+                            <p class="manual-desc">Tecniche avanzate per l'analisi delle immagini, rilevamento di manipolazioni e studio dei metadati.<br><i>Advanced techniques for image analysis, manipulation detection, and metadata study.</i></p>
                         </div>
-                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Digital%20Image%20Forensics%20nell'OSINT.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Digital%20Image%20Forensics%20nell'OSINT.pdf" target="_blank" class="download-btn">📄 APRI PDF / <i>OPEN PDF</i></a>
                     </div>
 
                     <div class="manual-card">
                         <div>
-                            <div class="manual-img-container">
-                                <img src="https://cdn-icons-png.flaticon.com/512/7542/7542190.png" alt="OSINT Detective" class="manual-img">
+                            <div class="manual-img-container" style="background:transparent; border:none;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/7542/7542190.png" alt="OSINT Detective" class="manual-icon-graphic">
                             </div>
-                            <h3 class="manual-title">Manuale Basico di OSINT</h3>
-                            <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi nell'investigazione open source.</p>
+                            <h3 class="manual-title">Manuale Basico di OSINT <br> <i>Basic OSINT Manual</i></h3>
+                            <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi.<br><i>The fundamental starting point. Basic concepts, intelligence cycle, and first steps.</i></p>
                         </div>
-                        <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF / <i>OPEN PDF</i></a>
                     </div>
 
                 </div>
@@ -374,7 +382,10 @@
 
         <div class="repos-wrapper">
             <div class="accordion-header active" onclick="toggleSection('repos-content', this)">
-                <div class="section-title-cyan">🗂️ Archivio Repository GitHub</div>
+                <div class="section-title-cyan">
+                    🗂️ Archivio Repository GitHub <br>
+                    <span style="font-size:0.9rem; font-style:italic; opacity:0.8;">GitHub Repository Archive</span>
+                </div>
                 <div class="arrow-icon">▼</div>
             </div>
 
@@ -384,12 +395,39 @@
             </div>
         </div>
 
+        <div class="donation-section">
+            <h3 class="donation-title">☕ Supporta il Progetto / <i>Support the Project</i></h3>
+            <div class="donation-grid">
+                <div class="crypto-card">
+                    <span class="crypto-label">Bitcoin (BTC)</span>
+                    <span class="crypto-address">bc1qfn9kynt7k26eaxk4tc67q2hjuzhfcmutzq2q6a</span>
+                </div>
+                <div class="crypto-card">
+                    <span class="crypto-label">TON (Telegram Open Network)</span>
+                    <span class="crypto-address">UQBtLB6m-7q8j9Y81FeccBEjccvl34Ag5tWaUD</span>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <div class="socials">
-                <a href="https://github.com/CScorza" target="_blank">GitHub</a>
-                <a href="https://cscorza.github.io/CScorza/" target="_blank">Website</a>
-                <a href="https://t.me/CScorzaOSINT" target="_blank">Telegram</a>
-                <a href="https://www.linkedin.com/in/cristian-scorza-936683103/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/CScorza" target="_blank" class="social-btn">
+                    GitHub
+                </a>
+                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
+                    X (Twitter)
+                </a>
+                
+                <a href="mailto:cscorzaosint@protonmail.com" class="social-btn email-btn">
+                    ✉️ cscorzaosint@protonmail.com
+                </a>
+
+                <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
+                    BlueSky
+                </a>
+                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">
+                    Telegram
+                </a>
             </div>
             <p style="color:#555; font-size:0.8rem;">&copy; 2025 CScorza Investigation</p>
         </footer>
@@ -399,8 +437,6 @@
         /* FUNZIONE TENDA (ACCORDION) */
         function toggleSection(contentId, headerElement) {
             const content = document.getElementById(contentId);
-            
-            // Toggle classe 'open' sul contenuto
             if (content.classList.contains('open')) {
                 content.classList.remove('open');
                 headerElement.classList.remove('active');
@@ -410,173 +446,173 @@
             }
         }
 
-        /* DATABASE COMPLETO DEI REPOSITORY CSCORZA */
+        /* DATABASE REPOSITORY BILINGUE */
         const repositories = [
             {
                 name: "InstaOSINT",
                 icon: "📸",
-                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati tramite API non ufficiali.",
+                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati.<br><i>Specific OSINT for Instagram. Python tool for data extraction.</i>",
                 url: "https://github.com/CScorza/InstaOSINT",
                 tags: ["instagram", "social", "python", "api", "foto", "follower"]
             },
             {
                 name: "OSINTSurveillance",
                 icon: "📹",
-                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e reti Wi-Fi aperte.",
+                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e Wi-Fi.<br><i>Search for public WebCams (CCTV), vulnerable IP cameras, and Wi-Fi.</i>",
                 url: "https://github.com/CScorza/OSINTSurveillance",
                 tags: ["cam", "webcam", "cctv", "wifi", "network", "sorveglianza"]
             },
             {
                 name: "CStools",
                 icon: "🐍",
-                desc: "Tool Python proprietario per ricerche incrociate su Telegram, Numeri di Telefono e Username.",
+                desc: "Tool Python proprietario per ricerche incrociate su Telegram e Telefono.<br><i>Proprietary Python tool for cross-searches on Telegram and Phone numbers.</i>",
                 url: "https://github.com/CScorza/CStools",
                 tags: ["python", "telegram", "telefono", "username", "script", "cscorza"]
             },
             {
                 name: "CScorzaAnalysis",
                 icon: "🔗",
-                desc: "Framework e metodologia per collegare dati da fonti diverse (Link Analysis).",
+                desc: "Metodologia per collegare dati da fonti diverse (Link Analysis).<br><i>Methodology to link data from different sources (Link Analysis).</i>",
                 url: "https://github.com/CScorza/CScorzaAnalysis",
                 tags: ["analisi", "link", "collegamenti", "dati", "framework", "intelligence"]
             },
             {
                 name: "BruteForceDecryptPDF",
                 icon: "🔓",
-                desc: "Script Python per decriptare PDF protetti da password (calcolo tempo, hash, metadati).",
+                desc: "Script per decriptare PDF protetti (calcolo tempo, hash).<br><i>Script to decrypt protected PDFs (time calculation, hash).</i>",
                 url: "https://github.com/CScorza/BruteForceDecryptPDF",
                 tags: ["pdf", "password", "crack", "bruteforce", "decrypt", "python"]
             },
             {
                 name: "Generatore-di-Password",
                 icon: "🔑",
-                desc: "Generatore di password sicure e robuste tramite terminale Linux/Python.",
+                desc: "Generatore di password sicure e robuste tramite terminale.<br><i>Secure and robust password generator via terminal.</i>",
                 url: "https://github.com/CScorza/Generatore-di-Password",
                 tags: ["password", "sicurezza", "generator", "python", "terminal"]
             },
             {
                 name: "DistroForensics",
                 icon: "💻",
-                desc: "Elenco delle migliori Distro (Linux, Windows, MacOS) per Digital Forensics.",
+                desc: "Elenco delle migliori Distro per Digital Forensics.<br><i>List of the best Distros for Digital Forensics.</i>",
                 url: "https://github.com/CScorza/DistroForensics",
                 tags: ["linux", "windows", "macos", "vm", "forensics", "distro"]
             },
             {
                 name: "OSINTInvestigation",
                 icon: "🕵️",
-                desc: "Tecniche OSINT generali, strumenti per il DeepWeb e archivio risorse.",
+                desc: "Tecniche OSINT generali e strumenti per il DeepWeb.<br><i>General OSINT techniques and DeepWeb tools.</i>",
                 url: "https://github.com/CScorza/OSINTInvestigation",
                 tags: ["deepweb", "tor", "investigazione", "generale", "framework"]
             },
             {
                 name: "SOCMIntelligence",
                 icon: "👤",
-                desc: "Identificazione profili, relazioni e tracciamento reti su Social Media.",
+                desc: "Identificazione profili e tracciamento reti Social.<br><i>Profile identification and Social network tracking.</i>",
                 url: "https://github.com/CScorza/SOCMIntelligence",
                 tags: ["social", "facebook", "instagram", "telegram", "network", "profili"]
             },
             {
                 name: "Analisi Digital Forensics",
                 icon: "🖥",
-                desc: "Strumenti di acquisizione e analisi di copie forensi (Disk, RAM).",
+                desc: "Strumenti di acquisizione e analisi di copie forensi.<br><i>Forensic copy acquisition and analysis tools.</i>",
                 url: "https://github.com/CScorza/Analisi-Digital-Forense",
                 tags: ["forense", "acquisizione", "disk", "copia", "analisi"]
             },
             {
                 name: "CORPINT - Corporate",
                 icon: "📊",
-                desc: "Business Intelligence: analisi aziende, banche e whitepapers.",
+                desc: "Business Intelligence: analisi aziende e banche.<br><i>Business Intelligence: analysis of companies and banks.</i>",
                 url: "https://github.com/CScorza/CORPINT-Corporate-Intelligence",
                 tags: ["azienda", "business", "corpint", "finanza", "banche"]
             },
             {
                 name: "Tool VATINT",
                 icon: "🚗",
-                desc: "Intelligence sui veicoli e trasporti (Radar, Traffico Aereo/Navale, Targhe).",
+                desc: "Intelligence sui veicoli e trasporti (Targhe, Radar).<br><i>Intelligence on vehicles and transport (Plates, Radar).</i>",
                 url: "https://github.com/CScorza/Tool-VATINT",
                 tags: ["veicoli", "targa", "radar", "aerei", "navi", "traffico"]
             },
             {
                 name: "GEOINTInvestigation",
                 icon: "🌍",
-                desc: "Intelligence tramite Immagini Satellitari, Video, Mappe e Geolocation.",
+                desc: "Intelligence tramite Immagini Satellitari e Mappe.<br><i>Intelligence via Satellite Images and Maps.</i>",
                 url: "https://github.com/CScorza/GEOINTInvestigation",
                 tags: ["mappe", "geo", "satellite", "gps", "coordinate"]
             },
             {
                 name: "Data Protection",
                 icon: "🛡️",
-                desc: "Anonimato nel Web, Messaggistica Sicura, Anti-Phishing e Cookie.",
+                desc: "Anonimato, Messaggistica Sicura, Anti-Phishing.<br><i>Anonymity, Secure Messaging, Anti-Phishing.</i>",
                 url: "https://github.com/CScorza/Data-Protection",
                 tags: ["privacy", "anonimato", "chat", "sicurezza", "phishing"]
             },
             {
                 name: "Image OSINT Forensics",
                 icon: "🌄",
-                desc: "Ricerca inversa e analisi forense delle immagini (Metadati, Photoshop).",
+                desc: "Ricerca inversa e analisi forense delle immagini.<br><i>Reverse search and forensic image analysis.</i>",
                 url: "https://github.com/CScorza/Image-OSINT-Forensics",
                 tags: ["foto", "immagini", "metadata", "exif", "fake"]
             },
             {
                 name: "OSINT-IA",
                 icon: "🤖",
-                desc: "L'Intelligenza Artificiale e il Machine Learning a supporto dell'OSINT.",
+                desc: "L'Intelligenza Artificiale a supporto dell'OSINT.<br><i>Artificial Intelligence supporting OSINT.</i>",
                 url: "https://github.com/CScorza/OSINT-IA",
                 tags: ["ai", "machine learning", "algoritmi", "supporto"]
             },
             {
                 name: "OSINT-FORENSICS-MOBILE",
                 icon: "📲",
-                desc: "Tools specifici per Mobile Forensics, Smartphone e Social App.",
+                desc: "Tools specifici per Mobile Forensics e Smartphone.<br><i>Specific tools for Mobile Forensics and Smartphones.</i>",
                 url: "https://github.com/CScorza/OSINT-FORENSICS-MOBILE",
                 tags: ["mobile", "smartphone", "android", "ios", "app"]
             },
             {
                 name: "WEBIntelligence",
                 icon: "🌐",
-                desc: "Strumenti per Domini, Whois, IP, Data Breach e Email.",
+                desc: "Domini, Whois, IP, Data Breach e Email.<br><i>Domains, Whois, IP, Data Breach, and Email.</i>",
                 url: "https://github.com/CScorza/WEBIntelligence",
                 tags: ["web", "dominio", "ip", "email", "breach", "server"]
             },
             {
                 name: "Estensioni Chrome OSINT",
                 icon: "🧩",
-                desc: "Raccolta di estensioni browser utili per l'investigazione online.",
+                desc: "Raccolta di estensioni browser per l'investigazione.<br><i>Collection of browser extensions for investigation.</i>",
                 url: "https://github.com/CScorza/EstensioniChromeOSINT",
                 tags: ["chrome", "browser", "estensioni", "plugin"]
             },
             {
                 name: "OSINTAnonymous",
                 icon: "🥷🏼",
-                desc: "Creazione identità fake (Sock Puppets), Privacy e Ambiente di Lavoro.",
+                desc: "Creazione identità fake, Privacy e Ambiente.<br><i>Fake identity creation, Privacy, and Environment.</i>",
                 url: "https://github.com/CScorza/OSINTAnonymous",
                 tags: ["fake", "identità", "privacy", "account", "sockpuppet"]
             },
             {
                 name: "WatermarkIntelligence",
                 icon: "©",
-                desc: "Protezione e rimozione copyright/watermark da immagini e video.",
+                desc: "Protezione e rimozione copyright/watermark.<br><i>Copyright/watermark protection and removal.</i>",
                 url: "https://github.com/CScorza/WatermarkIntelligence",
                 tags: ["watermark", "copyright", "video", "editing"]
             },
             {
                 name: "StegoIntelligence",
                 icon: "🩻",
-                desc: "Rilevare ed estrarre informazioni nascoste (Steganografia) nei file.",
+                desc: "Rilevare ed estrarre informazioni nascoste (Steganografia).<br><i>Detect and extract hidden information (Steganography).</i>",
                 url: "https://github.com/CScorza/StegoIntelligence",
                 tags: ["stego", "nascosto", "file", "audio", "messaggio"]
             },
             {
                 name: "OSINTWorkstation",
                 icon: "🏢",
-                desc: "Script e guide per configurare una postazione di lavoro OSINT sicura (VM).",
+                desc: "Configurare una postazione OSINT sicura (VM).<br><i>Configure a secure OSINT workstation (VM).</i>",
                 url: "https://github.com/CScorza/OSINTWorkstation",
                 tags: ["vm", "linux", "setup", "workstation", "configurazione"]
             },
             {
                 name: "OSINTtheory",
                 icon: "🎓",
-                desc: "Teoria pura: Definizioni, Acronimi (SIGINT, HUMINT) e concetti base.",
+                desc: "Teoria pura: Definizioni, Acronimi e concetti.<br><i>Pure theory: Definitions, Acronyms, and concepts.</i>",
                 url: "https://github.com/CScorza/OSINTtheory",
                 tags: ["teoria", "definizioni", "studio", "concetti"]
             }
@@ -600,8 +636,8 @@
             if (filtered.length === 0) {
                 repoGrid.innerHTML = `
                     <div class="no-results">
-                        <h3>Nessun Repository trovato 📂</h3>
-                        <p>Prova termini diversi come "Python", "Instagram" o "Forensics".</p>
+                        <h3>Nessun Repository trovato / <i>No Repository found</i> 📂</h3>
+                        <p>Prova termini diversi / <i>Try different terms</i>.</p>
                     </div>`;
                 return;
             }
@@ -616,7 +652,7 @@
                     </div>
                     <div class="repo-desc">${repo.desc}</div>
                     <a href="${repo.url}" target="_blank" class="open-repo-btn">
-                        APRI REPOSITORY ↗
+                        APRI REPOSITORY / <i>OPEN REPO</i> ↗
                     </a>
                 `;
                 repoGrid.appendChild(card);
