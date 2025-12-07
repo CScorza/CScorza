@@ -148,28 +148,20 @@
         }
 
         .manual-img-container {
-            width: 100%;
-            height: 120px; /* Altezza fissa per l'immagine */
+            width: 100px;
+            height: 100px;
             margin: 0 auto 15px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            border-radius: 8px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,193,7,0.3);
         }
 
-        .manual-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Copre l'area */
-        }
-
-        /* Stile specifico per le icone grafiche (non foto) */
+        /* Stile UNICO per le icone grafiche dorate */
         .manual-icon-graphic {
             width: 80px;
             height: 80px;
+            object-fit: contain;
+            /* FILTRO ORO: Trasforma qualsiasi icona nera in color ORO (#ffc107) */
             filter: invert(78%) sepia(68%) saturate(885%) hue-rotate(358deg) brightness(102%) contrast(104%);
         }
 
@@ -243,55 +235,29 @@
         }
         .open-repo-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); font-weight: 600; }
 
-        /* --- DONATION SECTION --- */
-        .donation-section {
-            margin-top: 60px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px dashed var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-        }
-        .donation-title { color: var(--text-main); margin-bottom: 20px; font-size: 1.2rem; }
-        .donation-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .crypto-card {
-            background: #000;
-            border: 1px solid var(--border);
-            padding: 15px 25px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 250px;
-        }
-        .crypto-label { color: var(--primary); font-weight: 700; margin-bottom: 5px; }
-        .crypto-address { font-family: monospace; font-size: 0.85rem; color: #ccc; word-break: break-all; }
-
-        /* FOOTER */
+        /* --- FOOTER LAYOUT --- */
         footer {
-            margin-top: 60px;
+            margin-top: 80px;
             padding-top: 40px;
             border-top: 1px solid var(--border);
             text-align: center;
-        }
-        .socials {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 25px;
+            flex-direction: column;
+            gap: 25px;
         }
+
+        .footer-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
         .social-btn {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 8px 20px;
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--border);
             border-radius: 50px;
@@ -301,12 +267,36 @@
             font-size: 0.9rem;
         }
         .social-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
+        
         .email-btn {
             border-color: var(--secondary);
             color: #fff;
+            padding: 10px 25px;
+            font-weight: 600;
         }
-        .email-btn:hover { background: var(--secondary); color: #fff; }
+        .email-btn:hover { background: var(--secondary); color: #fff; box-shadow: 0 0 15px var(--secondary); }
 
+        .donation-title-footer {
+             color: var(--text-muted);
+             font-size: 0.9rem;
+             margin-bottom: 10px;
+             width: 100%;
+             opacity: 0.8;
+        }
+        .crypto-card-footer {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+        .crypto-label { color: var(--gold); font-weight: 700; margin-bottom: 3px; font-size: 0.85rem; }
+        .crypto-address { font-family: monospace; color: #ccc; word-break: break-all; }
+
+        .copyright { color:#555; font-size:0.8rem; margin-top: 20px; }
         .no-results { grid-column: 1 / -1; text-align: center; padding: 40px; border: 1px dashed var(--secondary); color: var(--secondary); border-radius: 12px; }
 
     </style>
@@ -346,7 +336,7 @@
                     <div class="manual-card">
                         <div>
                             <div class="manual-img-container">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Laptop_hard_drive_exposed_1.jpg/640px-Laptop_hard_drive_exposed_1.jpg" alt="Hard Disk" class="manual-img">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2888/2888746.png" alt="HDD Forensics" class="manual-icon-graphic">
                             </div>
                             <h3 class="manual-title">Best Pratics di Digital Forensics <br> <i>Digital Forensics Best Practices</i></h3>
                             <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.<br><i>Essential guidelines, standard procedures, and methodologies for forensic data acquisition and analysis.</i></p>
@@ -356,7 +346,7 @@
 
                     <div class="manual-card">
                         <div>
-                            <div class="manual-img-container" style="background:transparent; border:none;">
+                            <div class="manual-img-container">
                                 <img src="https://cdn-icons-png.flaticon.com/512/1042/1042339.png" alt="Image Forensics" class="manual-icon-graphic">
                             </div>
                             <h3 class="manual-title">Digital Image Forensics nell'OSINT <br> <i>Digital Image Forensics in OSINT</i></h3>
@@ -367,7 +357,7 @@
 
                     <div class="manual-card">
                         <div>
-                            <div class="manual-img-container" style="background:transparent; border:none;">
+                            <div class="manual-img-container">
                                 <img src="https://cdn-icons-png.flaticon.com/512/7542/7542190.png" alt="OSINT Detective" class="manual-icon-graphic">
                             </div>
                             <h3 class="manual-title">Manuale Basico di OSINT <br> <i>Basic OSINT Manual</i></h3>
@@ -395,41 +385,33 @@
             </div>
         </div>
 
-        <div class="donation-section">
-            <h3 class="donation-title">☕ Supporta il Progetto / <i>Support the Project</i></h3>
-            <div class="donation-grid">
-                <div class="crypto-card">
-                    <span class="crypto-label">Bitcoin (BTC)</span>
-                    <span class="crypto-address">bc1qfn9kynt7k26eaxk4tc67q2hjuzhfcmutzq2q6a</span>
-                </div>
-                <div class="crypto-card">
-                    <span class="crypto-label">TON (Telegram Open Network)</span>
-                    <span class="crypto-address">UQBtLB6m-7q8j9Y81FeccBEjccvl34Ag5tWaUD</span>
-                </div>
-            </div>
-        </div>
-
         <footer>
-            <div class="socials">
-                <a href="https://github.com/CScorza" target="_blank" class="social-btn">
-                    GitHub
-                </a>
-                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
-                    X (Twitter)
-                </a>
-                
-                <a href="mailto:cscorzaosint@protonmail.com" class="social-btn email-btn">
-                    ✉️ cscorzaosint@protonmail.com
-                </a>
-
-                <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
-                    BlueSky
-                </a>
-                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">
-                    Telegram
-                </a>
+            <div class="footer-row socials-row">
+                <a href="https://github.com/CScorza" target="_blank" class="social-btn">GitHub</a>
+                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">X (Twitter)</a>
+                <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">BlueSky</a>
+                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">Telegram</a>
             </div>
-            <p style="color:#555; font-size:0.8rem;">&copy; 2025 CScorza Investigation</p>
+
+            <div class="footer-row email-row">
+                 <a href="mailto:cscorzaosint@protonmail.com" class="social-btn email-btn">✉️ cscorzaosint@protonmail.com</a>
+            </div>
+
+            <div class="footer-row donation-row">
+                <h3 class="donation-title-footer">☕ Supporta il Progetto / <i>Support the Project</i></h3>
+                 <div class="footer-row">
+                    <div class="crypto-card-footer">
+                        <span class="crypto-label">Bitcoin (BTC)</span>
+                        <span class="crypto-address">bc1qfn9kynt7k26eaxk4tc67q2hjuzhfcmutzq2q6a</span>
+                    </div>
+                    <div class="crypto-card-footer">
+                        <span class="crypto-label">TON (Telegram Open Network)</span>
+                        <span class="crypto-address">UQBtLB6m-7q8j9Y81FeccBEjccvl34Ag5tWaUD</span>
+                    </div>
+                 </div>
+            </div>
+
+            <p class="copyright">&copy; 2025 CScorza Investigation</p>
         </footer>
     </div>
 
