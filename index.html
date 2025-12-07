@@ -4,294 +4,355 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CScorza Intelligence Framework</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- STILE VISIVO "CYBER DASHBOARD" --- */
+        /* --- THEME CONFIGURATION --- */
         :root {
-            --bg-body: #0f172a;       /* Dark Slate */
-            --bg-card: #1e293b;       /* Lighter Slate */
-            --accent-color: #38bdf8;  /* Cyan/Blue Cyber */
-            --accent-hover: #0ea5e9;  /* Darker Blue */
-            --text-main: #f8fafc;     /* White/Grey */
-            --text-muted: #94a3b8;    /* Muted Grey */
-            --border: #334155;        /* Border Grey */
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            --bg-deep: #050505;
+            --bg-panel: rgba(20, 20, 20, 0.6);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --primary-neon: #00f3ff;  /* Ciano Elettrico */
+            --secondary-neon: #bd00ff; /* Viola Cyber */
+            --text-main: #ffffff;
+            --text-muted: #8b9bb4;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --card-hover: rgba(0, 243, 255, 0.05);
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            min-height: 100vh;
+            /* Sfondo Cyber Grid */
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow-x: hidden;
         }
 
-        /* Container Principale */
+        /* Effetto Vignette (Scurisce i bordi) */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, transparent 40%, #000000 100%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
         #app-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            min-height: 90vh;
             display: flex;
             flex-direction: column;
+            min-height: 90vh;
+            position: relative;
+            z-index: 1;
         }
 
-        /* HEADER & LOGO */
+        /* --- HEADER & LOGO --- */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 50px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
         }
 
-        .brand-area {
+        .brand-box {
             display: flex;
             align-items: center;
             gap: 20px;
         }
 
-        .brand-logo {
-            width: 70px;
-            height: 70px;
+        .logo-frame {
+            position: relative;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            border: 2px solid var(--accent-color);
-            padding: 3px;
-            background: var(--bg-card);
+            padding: 4px;
+            background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
         }
 
-        .brand-text h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.5px;
+        .brand-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #000;
+            object-fit: cover;
+            border: 2px solid #000;
         }
 
-        .brand-text p {
+        .brand-info h1 {
             margin: 0;
-            color: var(--accent-color);
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 2rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* BARRA DI RICERCA */
+        .brand-info p {
+            margin: 5px 0 0 0;
+            color: var(--primary-neon);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- SEARCH MODULE --- */
         .search-wrapper {
-            background: var(--bg-card);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            margin-bottom: 40px;
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
             text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Linea neon decorativa in alto */
+        .search-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-neon), transparent);
         }
 
         .search-label {
             display: block;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .input-group {
             display: flex;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            gap: 10px;
+            position: relative;
         }
 
         #search-input {
-            flex-grow: 1;
-            padding: 16px 20px;
-            font-size: 1.1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #0f172a;
+            width: 100%;
+            padding: 18px 25px;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
             color: #fff;
+            border-radius: 50px; /* Pill shape */
+            font-family: inherit;
             outline: none;
             transition: all 0.3s;
         }
 
         #search-input:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
         }
 
         #search-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
             padding: 0 30px;
-            background: var(--accent-color);
-            color: #0f172a;
+            border-radius: 40px;
+            background: var(--primary-neon);
+            color: #000;
             font-weight: 700;
             border: none;
-            border-radius: 8px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        #search-btn:hover { background: var(--accent-hover); }
+        #search-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--primary-neon);
+        }
 
-        /* NAVIGAZIONE CATEGORIE (Grid) */
+        /* --- CATEGORY GRID --- */
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .category-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 25px;
+            background: var(--card-glass);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
             cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .category-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color: var(--primary-neon);
+            box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.2);
         }
 
-        .cat-icon { font-size: 2rem; }
-        .cat-info h3 { margin: 0 0 5px 0; font-size: 1.2rem; color: #fff; }
-        .cat-info p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+        .cat-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .cat-title { font-size: 1.3rem; margin: 0 0 10px 0; color: #fff; font-weight: 600; }
+        .cat-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
 
-        /* RISULTATI TOOLS */
-        .section-header {
+        /* --- TOOLS RESULTS --- */
+        .results-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .back-btn {
             background: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 6px;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 0.9rem;
+            transition: all 0.2s;
+            font-family: inherit;
         }
-        .back-btn:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--accent-color); }
+        .back-btn:hover { color: #fff; border-color: #fff; }
 
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .tool-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+            background: #0f0f0f;
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 20px;
+            padding: 25px;
             transition: all 0.2s;
             position: relative;
-            overflow: hidden;
-        }
-        
-        /* Barra colorata laterale per indicare category */
-        .tool-card::before {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; bottom: 0;
-            width: 4px;
-            background: var(--accent-color);
-            opacity: 0.5;
+            display: flex;
+            flex-direction: column;
         }
 
         .tool-card:hover {
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary-neon);
+            box-shadow: 0 0 15px rgba(189, 0, 255, 0.15);
         }
 
-        .tool-card h4 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
+        .tool-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
         }
 
-        .tool-card a {
+        .tool-link {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
             text-decoration: none;
-            color: var(--accent-color);
+            transition: color 0.2s;
         }
-        .tool-card a:hover { text-decoration: underline; }
+        .tool-link:hover { color: var(--primary-neon); text-decoration: underline; }
 
         .tool-desc {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        .tag-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
+        .tool-meta {
             margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
         }
 
-        /* FOOTER */
+        .relevance-score {
+            color: var(--primary-neon);
+            font-weight: bold;
+        }
+
+        .repo-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #ccc;
+        }
+
+        /* --- FOOTER --- */
         footer {
             margin-top: auto;
-            padding-top: 40px;
-            border-top: 1px solid var(--border);
+            padding-top: 50px;
+            border-top: 1px solid var(--border-color);
             text-align: center;
         }
+
+        .footer-content h4 { color: #fff; font-weight: normal; margin-bottom: 20px; letter-spacing: 1px; }
         
-        .social-links {
+        .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
-        .social-btn {
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
             transition: color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .social-btn:hover { color: var(--accent-color); }
+        .social-item:hover { color: var(--primary-neon); }
+        .social-item span { font-size: 0.8rem; margin-top: 5px; }
 
-        .copyright { color: var(--text-muted); font-size: 0.8rem; }
+        .copyright { color: #444; font-size: 0.8rem; }
+
     </style>
 </head>
 <body>
 
     <div id="app-container">
         <header>
-            <div class="brand-area">
-                <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="brand-logo">
-                <div class="brand-text">
+            <div class="brand-box">
+                <div class="logo-frame">
+                    <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="brand-logo">
+                </div>
+                <div class="brand-info">
                     <h1>CScorza</h1>
-                    <p>Digital Investigation Framework</p>
+                    <p>OSINT & Cyber Investigation Framework</p>
                 </div>
             </div>
-            </header>
+        </header>
 
         <div class="search-wrapper">
             <label class="search-label" for="search-input">
-                Cerca uno strumento specifico (es. "Osint Industries") o un target (es. "Instagram", "Email")
+                Inserisci target (es. "TikTok", "Email") o nome strumento (es. "Sherlock")
             </label>
             <div class="input-group">
-                <input type="text" id="search-input" placeholder="Digita qui per filtrare i tools..." autocomplete="off">
-                <button id="search-btn">CERCA</button>
+                <input type="text" id="search-input" placeholder="Start typing command..." autocomplete="off">
+                <button id="search-btn">SCAN</button>
             </div>
         </div>
 
@@ -299,217 +360,167 @@
             </div>
 
         <footer>
-            <div class="social-links">
-                <a href="https://github.com/CScorza" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    GitHub Profile
-                </a>
-                <a href="https://cscorza.github.io/CScorza/" target="_blank" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h-2v3.057c0 .521-.424.943-.943.943h-2.114c-.52 0-.943-.422-.943-.943v-8.038c0-.521.423-.943.943-.943h2.114c.519 0 .943.422.943.943v2.962h2v-2.962c0-.521.424-.943.943-.943h2.114c.52 0 .943.422.943.943v8.038c0 .521-.424.943-.943.943h-2.114c-.519 0-.943-.422-.943-.943z"/></svg>
-                    Website
-                </a>
-                <a href="#" class="social-btn">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
-                    LinkedIn
-                </a>
-            </div>
-            <div class="copyright">
-                &copy; 2024 CScorza Investigation. Tutti i diritti riservati.
+            <div class="footer-content">
+                <h4>CONTATTI & RISORSE</h4>
+                <div class="social-icons">
+                    <a href="https://github.com/CScorza" target="_blank" class="social-item">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://cscorza.github.io/CScorza/" target="_blank" class="social-item">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        <span>Sito Web</span>
+                    </a>
+                    <a href="#" class="social-item">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-2.02-1.23-2.02-1.23-2.02-1.23.26-.41 3.28-3.14.15-.14.28-.42-.11-.53-.41-.12-4.63 2.8-4.63 2.8-2.15.93-4.15 1.79-4.15 1.79-1.05-.33-1.54-.66-1.54-.66-.69-.22.42-1.08.42-1.08 2.67-1.07 5.98-2.39 8.04-3.18 2.06-.79 4.12-1.58 4.12-1.58.74-.32 1.5.06 1.5.66z"/></svg>
+                        <span>Telegram</span>
+                    </a>
+                </div>
+                <div class="copyright">
+                    &copy; 2024 CScorza Investigation. Framework proprietario.
+                </div>
             </div>
         </footer>
     </div>
 
     <script>
-        /* DATABASE DEGLI STRUMENTI 
-           Nota: Il campo "tags" è fondamentale per la ricerca.
-           Ho aggiunto "general osint" ai tool multi-scopo.
+        /* DATABASE REVISIONATO:
+           1. 'tags': usato per la ricerca Fuzzy (score basso).
+           2. 'platform': usato per ricerca Esatta (score alto).
         */
         const osintData = [
-            /* GENERALI & MULTI-SCOPO (Questi escono se cerchi "OSINT") */
+            /* --- SOCMINT: TIKTOK --- */
             {
-                category: "General OSINT",
-                name: "OSINT Industries",
-                desc: "Motore ricerca email e telefono su 200+ siti web in real-time.",
-                url: "https://osint.industries/",
-                tags: "general osint email phone broad search cross-platform"
-            },
-            {
-                category: "General OSINT",
-                name: "Epios",
-                desc: "Collega email a profili Google, Maps, recensioni e altro.",
-                url: "https://epios.com/",
-                tags: "general osint email google maps calendar broad"
-            },
-            {
-                category: "General OSINT",
-                name: "IntelX",
-                desc: "Intelligence X: Motore di ricerca e archivio dati.",
-                url: "https://intelx.io/",
-                tags: "general osint darkweb leak archive broad"
-            },
-            {
-                category: "General OSINT",
-                name: "CyberBackgroundChecks",
-                desc: "Verifica completa background (US focus).",
-                url: "https://cyberbackgroundchecks.com/",
-                tags: "general osint people background broad"
-            },
-
-            /* SOCMINT (Divisi per tag social) */
-            {
-                category: "Social Media",
-                name: "Sherlock",
-                desc: "Tool Python per trovare username su 300+ piattaforme.",
-                url: "https://github.com/sherlock-project/sherlock",
-                tags: "social username python script cross-platform"
-            },
-            {
-                category: "Social Media",
-                name: "Osintgram",
-                desc: "Analisi avanzata Instagram (Email, follower, post).",
-                url: "https://github.com/Datalux/Osintgram",
-                tags: "social instagram python script photo"
-            },
-            {
-                category: "Social Media",
-                name: "Telegago",
-                desc: "Motore Google CSE per cercare dentro Telegram.",
-                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
-                tags: "social telegram chat group search"
-            },
-            {
-                category: "Social Media",
-                name: "TGStat",
-                desc: "Metriche canali Telegram e ricerca.",
-                url: "https://tgstat.com/",
-                tags: "social telegram analytics channels"
-            },
-            {
-                category: "Social Media",
-                name: "Nitter",
-                desc: "Visualizzatore Twitter/X focalizzato sulla privacy.",
-                url: "https://github.com/zedeus/nitter",
-                tags: "social twitter x privacy viewer"
-            },
-            {
-                category: "Social Media",
                 name: "TikTok Downloader",
-                desc: "Download video TikTok senza watermark.",
+                desc: "Scarica video da TikTok senza watermark e analizza profili.",
                 url: "https://ssstik.io/",
-                tags: "social tiktok video download"
+                repo: "SOCMIntelligence",
+                platform: ["tiktok"],
+                tags: "video download no-watermark social"
+            },
+            {
+                name: "Search4Faces",
+                desc: "Riconoscimento facciale specifico per TikTok e VKontakte.",
+                url: "https://search4faces.com/",
+                repo: "SOCMIntelligence",
+                platform: ["tiktok", "vk"],
+                tags: "face recognition volto social russia"
             },
 
-            /* IMINT */
+            /* --- SOCMINT: INSTAGRAM --- */
             {
-                category: "Images (IMINT)",
-                name: "PimEyes",
-                desc: "Face search engine (Riconoscimento facciale).",
-                url: "https://pimeyes.com/",
-                tags: "image face recognition volto biometric"
+                name: "Osintgram",
+                desc: "Tool Python avanzato per analisi Instagram (email, telefono, follower).",
+                url: "https://github.com/Datalux/Osintgram",
+                repo: "SOCMIntelligence",
+                platform: ["instagram"],
+                tags: "python script followers email"
             },
             {
-                category: "Images (IMINT)",
-                name: "Yandex Images",
-                desc: "Reverse image search (Migliore per volti/Est Europa).",
-                url: "https://yandex.com/images/",
-                tags: "image reverse face russia search"
-            },
-            {
-                category: "Images (IMINT)",
-                name: "FotoForensics",
-                desc: "Analisi ELA per manipolazioni foto.",
-                url: "http://fotoforensics.com/",
-                tags: "image forensic fake edit ela"
+                name: "Imginn",
+                desc: "Visualizzatore anonimo di storie e post Instagram.",
+                url: "https://imginn.com/",
+                repo: "SOCMIntelligence",
+                platform: ["instagram"],
+                tags: "viewer anonymous stories"
             },
 
-            /* EMAIL & BREACH */
+            /* --- SOCMINT: TELEGRAM --- */
             {
-                category: "Email & Leaks",
-                name: "Have I Been Pwned",
-                desc: "Verifica se mail/telefono sono stati violati.",
-                url: "https://haveibeenpwned.com/",
-                tags: "email leak breach password security"
+                name: "Telegago",
+                desc: "Google CSE (Custom Search Engine) ottimizzato per Telegram.",
+                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
+                repo: "SOCMIntelligence",
+                platform: ["telegram"],
+                tags: "google search chat groups"
             },
             {
-                category: "Email & Leaks",
-                name: "DeHashed",
-                desc: "Ricerca password e hash in database leakati.",
-                url: "https://dehashed.com/",
-                tags: "email password leak database search"
-            },
-            {
-                category: "Email & Leaks",
-                name: "Hunter.io",
-                desc: "Trova e verifica indirizzi email aziendali.",
-                url: "https://hunter.io/",
-                tags: "email business corporate verify"
+                name: "TGStat",
+                desc: "Analisi profonda dei canali Telegram e metriche.",
+                url: "https://tgstat.com/",
+                repo: "SOCMIntelligence",
+                platform: ["telegram"],
+                tags: "analytics metrics channels"
             },
 
-            /* IP & NETWORK */
+            /* --- GENERAL OSINT --- */
             {
-                category: "IP & Network",
+                name: "OSINT Industries",
+                desc: "Motore professionale per cercare email e telefono su 200+ siti.",
+                url: "https://osint.industries/",
+                repo: "General",
+                platform: ["all"],
+                tags: "email phone broad search cross-platform osint"
+            },
+            {
+                name: "Sherlock",
+                desc: "Cerca un username su 300+ piattaforme social contemporaneamente.",
+                url: "https://github.com/sherlock-project/sherlock",
+                repo: "SOCMIntelligence",
+                platform: ["all", "instagram", "tiktok", "telegram", "twitter"],
+                tags: "username python script enumerate social"
+            },
+
+            /* --- IP & NETWORK --- */
+            {
                 name: "Shodan",
-                desc: "Search engine per dispositivi IoT e server.",
+                desc: "Motore di ricerca per dispositivi IoT, Webcam e Server.",
                 url: "https://www.shodan.io/",
-                tags: "ip network iot scan camera server"
+                repo: "Analisi IP",
+                platform: ["iot"],
+                tags: "ip network camera server ports scan"
             },
             {
-                category: "IP & Network",
                 name: "IP Location",
-                desc: "Geolocalizzazione IP e ISP info.",
+                desc: "Geolocalizzazione IP precisa e info Provider.",
                 url: "https://www.iplocation.net/",
-                tags: "ip geo location map whereis"
+                repo: "Analisi IP",
+                platform: ["web"],
+                tags: "geo map position whereis"
+            },
+
+            /* --- EMAIL --- */
+            {
+                name: "Have I Been Pwned",
+                desc: "Verifica se email o telefono sono in database violati.",
+                url: "https://haveibeenpwned.com/",
+                repo: "Analisi Email",
+                platform: ["email"],
+                tags: "leak breach password security hack"
             },
             {
-                category: "IP & Network",
-                name: "DNSDumpster",
-                desc: "Mappatura DNS e sottodomini.",
-                url: "https://dnsdumpster.com/",
-                tags: "ip dns domain network map"
-            },
-            
-            /* OPSEC */
-            {
-                category: "OPSEC",
-                name: "Tor Browser",
-                desc: "Navigazione anonima.",
-                url: "https://www.torproject.org/",
-                tags: "opsec anonimato privacy onion"
-            },
-            {
-                category: "OPSEC",
-                name: "Fake Name Generator",
-                desc: "Creazione identità fittizie.",
-                url: "https://www.fakenamegenerator.com/",
-                tags: "opsec identity fake alias"
+                name: "Epios",
+                desc: "Collega un'email a Google, Maps, recensioni e calendari.",
+                url: "https://epios.com/",
+                repo: "Analisi Email",
+                platform: ["email", "google"],
+                tags: "google maps calendar social"
             }
         ];
 
-        /* CATEGORIE DI NAVIGAZIONE (Per la Home Page) */
+        /* CATEGORIE HOME */
         const categories = [
-            { id: "General OSINT", icon: "🚀", label: "General & Broad Tools", desc: "Motori multi-scopo come OSINT Industries." },
-            { id: "Social Media", icon: "👤", label: "Social Media (SOCMINT)", desc: "Instagram, Telegram, Twitter, TikTok." },
-            { id: "Images (IMINT)", icon: "📷", label: "Images & Video", desc: "Reverse search, Face recognition." },
-            { id: "Email & Leaks", icon: "📧", label: "Email & Data Breach", desc: "Password leak, verifica email." },
-            { id: "IP & Network", icon: "🌐", label: "IP & Network Info", desc: "Geolocalizzazione, DNS, IoT." },
-            { id: "OPSEC", icon: "🛡️", label: "OPSEC & Anonimato", desc: "VPN, Identità fake, VM." }
+            { id: "all", label: "General OSINT", icon: "🚀", desc: "Motori multi-scopo (Epios, Osint Industries)" },
+            { id: "instagram", label: "Instagram", icon: "📸", desc: "Viewer anonimi, Analisi Follower" },
+            { id: "tiktok", label: "TikTok", icon: "🎵", desc: "Video Downloader, Face Search" },
+            { id: "telegram", label: "Telegram", icon: "✈️", desc: "Ricerca Gruppi, Analisi Canali" },
+            { id: "email", label: "Email & Leaks", icon: "📧", desc: "Data Breach, Verifica Email" },
+            { id: "ip", label: "IP & Network", icon: "🌐", desc: "Geolocalizzazione, Shodan, IoT" }
         ];
 
         const contentArea = document.getElementById('content-area');
         const searchInput = document.getElementById('search-input');
         const searchBtn = document.getElementById('search-btn');
 
-        /* 1. RENDER HOME PAGE (CATEGORIE) */
+        /* RENDER CATEGORIE */
         function renderHome() {
             let html = `<div class="category-grid">`;
             categories.forEach(cat => {
                 html += `
-                    <div class="category-card" onclick="filterByCategory('${cat.id}')">
-                        <div class="cat-icon">${cat.icon}</div>
-                        <div class="cat-info">
-                            <h3>${cat.label}</h3>
-                            <p>${cat.desc}</p>
-                        </div>
+                    <div class="category-card" onclick="performSearch('${cat.id}')">
+                        <span class="cat-icon">${cat.icon}</span>
+                        <h3 class="cat-title">${cat.label}</h3>
+                        <p class="cat-desc">${cat.desc}</p>
                     </div>
                 `;
             });
@@ -517,90 +528,98 @@
             contentArea.innerHTML = html;
         }
 
-        /* 2. FILTRO PER CATEGORIA (Click sulle card) */
-        function filterByCategory(categoryName) {
-            const results = osintData.filter(tool => tool.category === categoryName);
-            renderResults(results, categoryName);
-        }
-
-        /* 3. LOGICA DI RICERCA (Search Bar) */
-        function performSearch() {
-            const query = searchInput.value.toLowerCase().trim();
+        /* MOTORE DI RICERCA CON PUNTEGGIO (SCORING) */
+        function performSearch(manualQuery = null) {
+            const query = manualQuery || searchInput.value.toLowerCase().trim();
             
-            if (query === "") {
+            if (!query) {
                 renderHome();
                 return;
             }
 
-            // Logica: Se cerco "osint", do priorità ai tools taggati "general osint"
-            // Altrimenti cerco per match su nome, descrizione o tag (social network names)
-            
-            const results = osintData.filter(tool => {
-                const q = query;
-                const matchName = tool.name.toLowerCase().includes(q);
-                const matchDesc = tool.desc.toLowerCase().includes(q);
-                const matchTags = tool.tags.toLowerCase().includes(q);
+            // Aggiorna input se la ricerca viene da un click
+            if(manualQuery) searchInput.value = manualQuery === 'all' ? 'OSINT' : manualQuery;
+
+            /* ALGORITMO DI SCORING:
+               Serve a risolvere il problema "Se cerco TikTok escono cose inutili".
+               Assegna punti in base a dove trova la parola chiave.
+            */
+            const results = osintData.map(tool => {
+                let score = 0;
                 
-                return matchName || matchDesc || matchTags;
-            });
+                // 1. Match Esatto su Piattaforma (es. "tiktok" == tool.platform["tiktok"]) -> Punteggio MASSIMO
+                if (tool.platform.includes(query)) score += 100;
 
-            // Ordinamento speciale: se la query è "osint", metti prima quelli con tag "general osint"
-            if (query === "osint") {
-                results.sort((a, b) => {
-                    const aGen = a.tags.includes("general osint");
-                    const bGen = b.tags.includes("general osint");
-                    return bGen - aGen; // Mette true prima di false
-                });
-            }
+                // 2. Match nel Nome -> Punteggio ALTO
+                if (tool.name.toLowerCase().includes(query)) score += 50;
 
-            renderResults(results, `Risultati per: "${query}"`);
+                // 3. Match nei Tag (parole chiave nascoste) -> Punteggio MEDIO
+                if (tool.tags.includes(query)) score += 20;
+
+                // 4. Match nella Descrizione -> Punteggio BASSO (Evita rumore)
+                if (tool.desc.toLowerCase().includes(query)) score += 5;
+
+                // Gestione speciale per "OSINT" generico
+                if (query === 'osint' || query === 'all') {
+                    if (tool.platform.includes('all')) score += 100;
+                    else score += 10; // Mostra tutto il resto dopo
+                }
+
+                return { ...tool, score };
+            })
+            .filter(tool => tool.score > 0) // Rimuove risultati non pertinenti (score 0)
+            .sort((a, b) => b.score - a.score); // Ordina dal punteggio più alto
+
+            renderResults(results, query);
         }
 
-        /* 4. RENDER DEI RISULTATI (Tools Grid) */
-        function renderResults(tools, title) {
+        /* RENDER RISULTATI */
+        function renderResults(results, query) {
             let html = `
-                <div class="section-header">
-                    <h2 style="margin:0;">${title}</h2>
-                    <button class="back-btn" onclick="clearSearch()">← Torna alle Categorie</button>
+                <div class="results-header">
+                    <h2 style="margin:0; text-transform:uppercase;">Risultati: ${query}</h2>
+                    <button class="back-btn" onclick="clearSearch()">← TORNA ALLA HOME</button>
                 </div>
             `;
 
-            if (tools.length === 0) {
-                html += `<div style="text-align:center; padding:40px; color:#94a3b8;">
-                            <h3>Nessun tool trovato ❌</h3>
-                            <p>Prova a cercare "Instagram", "Email" o "IP".</p>
+            if (results.length === 0) {
+                html += `<div style="text-align:center; padding:50px; border:1px dashed #333; border-radius:10px;">
+                            <h3>Nessun risultato trovato 🕵️‍♂️</h3>
+                            <p style="color:#888">Prova con termini diversi come "IP", "Email", "Social".</p>
                          </div>`;
             } else {
                 html += `<div class="tools-grid">`;
-                tools.forEach(tool => {
+                results.forEach(tool => {
                     html += `
                         <div class="tool-card">
-                            <h4><a href="${tool.url}" target="_blank">${tool.name} ↗</a></h4>
+                            <div class="tool-header">
+                                <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
+                            </div>
                             <div class="tool-desc">${tool.desc}</div>
-                            <span class="tag-badge">${tool.category}</span>
+                            <div class="tool-meta">
+                                <span class="repo-badge">📂 ${tool.repo}</span>
+                                </div>
                         </div>
                     `;
                 });
                 html += `</div>`;
             }
-            
+
             contentArea.innerHTML = html;
         }
 
-        /* UTILITY */
         function clearSearch() {
-            searchInput.value = "";
+            searchInput.value = '';
             renderHome();
         }
 
-        // Event Listeners
-        searchBtn.addEventListener('click', performSearch);
-        
+        /* EVENT LISTENER */
+        searchBtn.addEventListener('click', () => performSearch());
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') performSearch();
         });
 
-        // Avvio
+        // Avvio iniziale
         renderHome();
 
     </script>
