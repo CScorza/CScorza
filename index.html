@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CScorza OSINT Framework</title>
     <style>
-        /* --- STILE CSS --- */
+        /* --- STILE CSS "HACKER / TERMINAL" --- */
         :root {
             --main-green: #00ff00;
             --dark-green: #003300;
@@ -49,7 +49,8 @@
         /* Barra di Ricerca */
         .search-container {
             margin-bottom: 30px;
-            position: relative;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #222;
         }
 
         .search-label {
@@ -59,25 +60,44 @@
             color: var(--main-green);
         }
 
+        .search-box-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
         #osint-search-input {
-            width: 100%;
-            box-sizing: border-box;
+            flex-grow: 1;
             padding: 15px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             background-color: #000;
             color: var(--main-green);
             border: 1px solid var(--main-green);
             font-family: inherit;
             outline: none;
-            transition: box-shadow 0.3s;
         }
 
         #osint-search-input:focus {
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-            border-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
         }
 
-        /* Navigazione e Pulsanti */
+        #search-btn {
+            padding: 0 25px;
+            background: var(--main-green);
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1em;
+            transition: all 0.2s;
+        }
+
+        #search-btn:hover {
+            background: #fff;
+            box-shadow: 0 0 15px var(--main-green);
+        }
+
+        /* Navigazione e Pulsanti Categorie */
         .step-title {
             font-size: 1.4em;
             margin-bottom: 15px;
@@ -92,10 +112,9 @@
             font-size: 0.85em;
             color: var(--text-dim);
             background: var(--dark-green);
-            padding: 2px 8px;
+            padding: 4px 10px;
             border-radius: 4px;
         }
-
         .repo-tag a { color: #fff; text-decoration: none; }
         .repo-tag a:hover { text-decoration: underline; }
 
@@ -115,9 +134,9 @@
         }
 
         .osint-btn:hover {
-            background-color: var(--main-green);
-            color: #000;
-            padding-left: 25px; /* Effetto slide */
+            background-color: var(--dark-green);
+            border-color: var(--main-green);
+            padding-left: 25px;
             font-weight: bold;
         }
 
@@ -131,15 +150,16 @@
             font-family: inherit;
             font-size: 0.9em;
             text-transform: uppercase;
+            display: inline-block;
         }
         .reset-btn:hover { background: #555; }
 
-        /* Griglia Strumenti (Risultati finali) */
+        /* Griglia Strumenti (Risultati) */
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
-            animation: fadeIn 0.5s ease-in;
+            animation: fadeIn 0.4s ease-in;
         }
 
         .tool-card {
@@ -147,7 +167,7 @@
             border: 1px solid #333;
             border-left: 4px solid var(--main-green);
             padding: 20px;
-            transition: transform 0.2s, background-color 0.2s;
+            transition: transform 0.2s;
             position: relative;
         }
 
@@ -161,7 +181,7 @@
             font-size: 0.7em;
             color: var(--main-green);
             opacity: 0.7;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: block;
             text-transform: uppercase;
         }
@@ -182,10 +202,11 @@
         }
 
         .no-results {
-            color: #ff4444;
+            color: #ff5555;
             text-align: center;
             font-style: italic;
             padding: 20px;
+            border: 1px dashed #ff5555;
         }
 
         @keyframes fadeIn {
@@ -193,14 +214,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Footer */
         footer {
-            margin-top: 40px;
+            margin-top: 50px;
             text-align: center;
             font-size: 0.8em;
             color: #555;
             border-top: 1px solid #222;
-            padding-top: 10px;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -214,7 +234,10 @@
 
         <div class="search-container">
             <label for="osint-search-input" class="search-label">>_ SEARCH MODULE:</label>
-            <input type="text" id="osint-search-input" placeholder="Type query (e.g. IP, Email, Camera, Username)..." autocomplete="off">
+            <div class="search-box-wrapper">
+                <input type="text" id="osint-search-input" placeholder="Type query (e.g. IP, Email, Camera, Username)..." autocomplete="off">
+                <button id="search-btn">CERCA</button>
+            </div>
         </div>
 
         <div id="framework-content">
@@ -226,8 +249,8 @@
     </div>
 
     <script>
-        /* DATABASE JSON 
-           Modifica qui sotto per aggiungere nuove categorie o strumenti.
+        /* DATABASE DEL FRAMEWORK 
+           Struttura: Categoria -> Sottocategoria -> Strumenti
         */
         const osintData = {
             title: "🚀 START INVESTIGATION: Select Data Point",
@@ -409,32 +432,107 @@
         /* --- LOGICA DI NAVIGAZIONE E RICERCA --- */
         const container = document.getElementById('framework-content');
         const searchInput = document.getElementById('osint-search-input');
+        const searchBtn = document.getElementById('search-btn');
 
-        // Ascoltatore Input Ricerca
+        /* 1. RENDER PAGINA INIZIALE */
+        function renderStart() {
+            let html = `<div class="step-title">${osintData.title}</div>`;
+            osintData.options.forEach((opt, index) => {
+                html += `<button class="osint-btn" onclick="renderStep(${index})">➤ ${opt.label}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        /* 2. RENDER LIVELLO 2 (Sottocategorie) */
+        function renderStep(index) {
+            searchInput.value = ''; // Pulisce la ricerca quando navighi
+            const step = osintData.options[index].next;
+            
+            let html = `<button class="reset-btn" onclick="renderStart()">← MENU PRINCIPALE</button>`;
+            html += `<div class="step-title">${step.title}</div>`;
+            html += `<div class="repo-tag">📂 Repository: <a href="https://github.com/CScorza/${step.sourceRepo}" target="_blank">CScorza/${step.sourceRepo}</a></div>`;
+            
+            step.options.forEach((subOpt, subIndex) => {
+                html += `<button class="osint-btn" onclick="renderTools(${index}, ${subIndex})">➤ ${subOpt.label}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        /* 3. RENDER LIVELLO 3 (Griglia Strumenti) */
+        function renderTools(parentIndex, subIndex) {
+            const data = osintData.options[parentIndex].next.options[subIndex];
+            
+            let html = `<button class="reset-btn" onclick="renderStep(${parentIndex})">← INDIETRO</button>`;
+            html += `<div class="step-title">Strumenti: ${data.label}</div>`;
+            
+            html += `<div class="tool-grid">`;
+            data.tools.forEach(tool => {
+                html += `
+                    <div class="tool-card">
+                        <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
+                        <div class="tool-desc">${tool.desc}</div>
+                    </div>
+                `;
+            });
+            html += `</div>`;
+            
+            container.innerHTML = html;
+        }
+
+        /* --- FUNZIONI DI RICERCA AGGIORNATE --- */
+        
+        // Funzione Trigger unica
+        function triggerSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            if (query.length > 0) {
+                performSearch(query);
+            } else {
+                renderStart(); // Se vuoto, torna home
+            }
+        }
+
+        // Listener: Click Bottone
+        searchBtn.addEventListener('click', triggerSearch);
+
+        // Listener: Tasto Invio
+        searchInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                triggerSearch();
+            }
+        });
+
+        // Listener: Digitazione Live (Opzionale, parte dopo 2 lettere)
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
-            if (query.length > 1) {
+            if (query.length > 1) { 
                 performSearch(query);
             } else if (query.length === 0) {
                 renderStart();
             }
         });
 
-        // Funzione di Ricerca Profonda
+        // Motore di Ricerca
         function performSearch(query) {
-            let resultsHTML = `<div class="step-title">🔎 Search Results for: "${query}"</div>`;
+            let resultsHTML = `<div class="step-title">🔎 Risultati ricerca: "${query}"</div>`;
             resultsHTML += `<div class="tool-grid">`;
             
             let count = 0;
             osintData.options.forEach(category => {
+                // Controllo se matcha il nome categoria principale
+                const catMatch = category.label.toLowerCase().includes(query);
+
                 if (category.next && category.next.options) {
                     category.next.options.forEach(subCat => {
+                        // Controllo se matcha sottocategoria
+                        const subCatMatch = subCat.label.toLowerCase().includes(query);
+
                         subCat.tools.forEach(tool => {
+                            // Cerca in: Nome Tool, Descrizione Tool, Categoria, Sottocategoria
                             if (
                                 tool.name.toLowerCase().includes(query) || 
                                 tool.desc.toLowerCase().includes(query) ||
-                                subCat.label.toLowerCase().includes(query) ||
-                                category.label.toLowerCase().includes(query)
+                                subCatMatch || 
+                                catMatch
                             ) {
                                 resultsHTML += `
                                     <div class="tool-card">
@@ -451,28 +549,26 @@
             });
 
             resultsHTML += `</div>`;
+            resultsHTML += `<br><button class="reset-btn" onclick="renderStart()">← TORNA ALLA HOME</button>`;
 
             if (count === 0) {
-                container.innerHTML = `<div class="no-results">❌ Nessun tool trovato per "${query}".<br>Prova termini generici come "IP", "Foto", "Email".</div>`;
+                container.innerHTML = `
+                    <div class="no-results">
+                        ❌ Nessun risultato trovato per "${query}"<br>
+                        Prova con "IP", "Email", "Foto", "Social"...
+                    </div>
+                    <div style="text-align:center; margin-top:20px;">
+                        <button class="reset-btn" onclick="renderStart()">TORNA ALLA HOME</button>
+                    </div>
+                `;
             } else {
                 container.innerHTML = resultsHTML;
             }
         }
 
-        // Render Pagina Iniziale (Categorie)
-        function renderStart() {
-            let html = `<div class="step-title">${osintData.title}</div>`;
-            osintData.options.forEach((opt, index) => {
-                html += `<button class="osint-btn" onclick="renderStep(${index})">➤ ${opt.label}</button>`;
-            });
-            container.innerHTML = html;
-        }
+        // AVVIO INIZIALE
+        renderStart();
 
-        // Render Sottocategorie (Livello 2)
-        function renderStep(index) {
-            searchInput.value = ''; // Pulisce la ricerca
-            const step = osintData.options[index].next;
-            
-            let html = `<button class="reset-btn" onclick="renderStart()">← MENU PRINCIPALE</button>`;
-            html += `<div class="step-title">${step.title}</div>`;
-            html += `<div class="repo-tag">📂 Repository: <a href="https://github.com
+    </script>
+</body>
+</html>
