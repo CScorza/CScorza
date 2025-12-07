@@ -12,7 +12,7 @@
             --bg-card: #0e1014;
             --primary: #00f3ff;   /* Ciano (Tools) */
             --secondary: #bd00ff; /* Viola (Deep) */
-            --gold: #ffc107;      /* Oro (Manuali/Formazione) */
+            --gold: #ffc107;      /* Oro (Manuali) */
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.1);
@@ -67,7 +67,7 @@
 
         /* SEARCH BAR */
         .search-container {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             text-align: center;
         }
 
@@ -90,61 +90,73 @@
             box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
         }
 
-        /* --- SEZIONE SPECIALE MANUALI (GOLD STYLE) --- */
-        .manual-section {
-            margin-bottom: 50px;
-            animation: fadeIn 0.5s ease-in;
+        /* --- SEZIONE MANUALI (3 DOWNLOADS) --- */
+        .manuals-wrapper {
+            margin-bottom: 60px;
+        }
+
+        .section-header-gold {
+            color: var(--gold);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--gold);
+            padding-left: 15px;
+        }
+
+        .manuals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .manual-card {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(0,0,0,0.6));
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(0,0,0,0.8));
             border: 1px solid var(--gold);
-            border-radius: 16px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            box-shadow: 0 0 20px rgba(255, 193, 7, 0.1);
-            transition: transform 0.3s;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .manual-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.2);
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(0,0,0,0.8));
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.15);
         }
 
         .manual-icon {
-            font-size: 3rem;
-            background: rgba(255, 193, 7, 0.1);
-            width: 80px;
-            height: 80px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        }
+
+        .manual-title { font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
+        .manual-desc { font-size: 0.9rem; color: #ccc; margin-bottom: 20px; line-height: 1.5; }
+
+        .download-btn {
+            background: var(--gold);
+            color: #000;
+            padding: 10px 0;
+            width: 100%;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-        }
-
-        .manual-content h2 { margin: 0 0 10px 0; color: var(--gold); font-size: 1.8rem; }
-        .manual-content p { margin: 0 0 15px 0; color: #ddd; font-size: 1rem; max-width: 800px; }
-        
-        .manual-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: #000;
-            padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
+            gap: 8px;
             transition: all 0.2s;
         }
-        .manual-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
+        .download-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
 
-        /* --- GRIGLIA REPOSITORY (CYBER STYLE) --- */
+        /* --- GRIGLIA REPOSITORY --- */
         .section-title {
             color: var(--text-muted);
             font-weight: 400;
@@ -195,8 +207,8 @@
             margin-bottom: 15px;
         }
 
-        .repo-icon { font-size: 1.8rem; }
-        .repo-title { margin: 0; font-size: 1.2rem; color: #fff; font-weight: 600; }
+        .repo-icon { font-size: 1.5rem; }
+        .repo-title { margin: 0; font-size: 1.1rem; color: #fff; font-weight: 600; line-height: 1.3; }
         
         .repo-desc {
             color: var(--text-muted);
@@ -243,16 +255,6 @@
             border-radius: 12px;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            .manual-card { flex-direction: column; text-align: center; }
-            .manual-content p { margin: 0 auto 20px auto; }
-        }
     </style>
 </head>
 <body>
@@ -270,21 +272,44 @@
         </header>
 
         <div class="search-container">
-            <input type="text" id="repo-search" placeholder="Cerca repository o tool (es. Targa, Telegram, Bot, Privacy)..." autocomplete="off">
+            <input type="text" id="repo-search" placeholder="Cerca repository o tool (es. Insta, Targa, Wifi, PDF)..." autocomplete="off">
         </div>
 
-        <div class="manual-section" id="manual-section">
-            <div class="manual-card">
-                <div class="manual-icon">📖</div>
-                <div class="manual-content">
-                    <h2>Manuali CScorza & Search</h2>
-                    <p>La base di conoscenza centrale. Guide operative, metodologie di indagine, procedure standard (SOP) e il motore di ricerca personalizzato CScorza Search.</p>
-                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="manual-btn">ACCEDI AI MANUALI</a>
+        <div class="manuals-wrapper">
+            <div class="section-header-gold">📚 Formazione & Manualistica</div>
+            <div class="manuals-grid">
+                
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-icon">📖</div>
+                        <h3 class="manual-title">Teoria OSINT & Definizioni</h3>
+                        <p class="manual-desc">Il fondamento teorico. Definizioni di OSINT, SOCMINT, SIGINT, ciclo dell'intelligence e glossario tecnico.</p>
+                    </div>
+                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
                 </div>
+
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-icon">⚙️</div>
+                        <h3 class="manual-title">Tecniche & Procedure (SOP)</h3>
+                        <p class="manual-desc">Guide operative passo-passo. Come impostare una VM, navigare in sicurezza e gestire un'indagine.</p>
+                    </div>
+                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
+                </div>
+
+                <div class="manual-card">
+                    <div>
+                        <div class="manual-icon">📝</div>
+                        <h3 class="manual-title">Analisi & Reportistica</h3>
+                        <p class="manual-desc">Come analizzare i dati raccolti, creare connessioni logiche e scrivere un report finale professionale.</p>
+                    </div>
+                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
+                </div>
+
             </div>
         </div>
 
-        <div class="section-title">Strumenti & Repository Catalogati</div>
+        <div class="section-title">🗂️ Archivio Repository GitHub</div>
         <div id="repo-grid" class="repo-grid">
             </div>
 
@@ -300,133 +325,175 @@
     </div>
 
     <script>
-        /* DATABASE COMPLETO DEI REPOSITORY CSCORZA */
+        /* DATABASE AGGIORNATO CON TUTTI I REPOSITORY */
         const repositories = [
+            {
+                name: "InstaOSINT",
+                icon: "📸",
+                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati tramite API non ufficiali.",
+                url: "https://github.com/CScorza/InstaOSINT",
+                tags: ["instagram", "social", "python", "api", "foto", "follower"]
+            },
+            {
+                name: "OSINTSurveillance",
+                icon: "📹",
+                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e reti Wi-Fi aperte.",
+                url: "https://github.com/CScorza/OSINTSurveillance",
+                tags: ["cam", "webcam", "cctv", "wifi", "network", "sorveglianza"]
+            },
+            {
+                name: "CStools",
+                icon: "🐍",
+                desc: "Tool Python proprietario per ricerche incrociate su Telegram, Numeri di Telefono e Username.",
+                url: "https://github.com/CScorza/CStools",
+                tags: ["python", "telegram", "telefono", "username", "script", "cscorza"]
+            },
+            {
+                name: "CScorzaAnalysis",
+                icon: "🔗",
+                desc: "Framework e metodologia per collegare dati da fonti diverse (Link Analysis).",
+                url: "https://github.com/CScorza/CScorzaAnalysis",
+                tags: ["analisi", "link", "collegamenti", "dati", "framework", "intelligence"]
+            },
+            {
+                name: "BruteForceDecryptPDF",
+                icon: "🔓",
+                desc: "Script Python per decriptare PDF protetti da password (calcolo tempo, hash, metadati).",
+                url: "https://github.com/CScorza/BruteForceDecryptPDF",
+                tags: ["pdf", "password", "crack", "bruteforce", "decrypt", "python"]
+            },
+            {
+                name: "Generatore-di-Password",
+                icon: "🔑",
+                desc: "Generatore di password sicure e robuste tramite terminale Linux/Python.",
+                url: "https://github.com/CScorza/Generatore-di-Password",
+                tags: ["password", "sicurezza", "generator", "python", "terminal"]
+            },
             {
                 name: "DistroForensics",
                 icon: "💻",
-                desc: "Raccolta delle migliori distribuzioni Linux per Digital Forensics e Investigazioni.",
+                desc: "Elenco delle migliori Distro (Linux, Windows, MacOS) per Digital Forensics.",
                 url: "https://github.com/CScorza/DistroForensics",
-                tags: ["linux", "csi linux", "tsurugi", "kali", "vm", "sistemi", "forensics"]
-            },
-            {
-                name: "Estensioni Chrome OSINT",
-                icon: "🖥",
-                desc: "Collezione di estensioni browser indispensabili per l'analisi e la cattura.",
-                url: "https://github.com/CScorza/Estensioni-Chrome-OSINT",
-                tags: ["browser", "chrome", "plugin", "cattura", "singlefile", "user-agent"]
-            },
-            {
-                name: "VATINT - Vehicle Intelligence",
-                icon: "🚗",
-                desc: "Analisi veicoli: verifica targhe, telai (VIN), tracciamento navi e aerei.",
-                url: "https://github.com/CScorza/Tool---VATINT---Vehicle-And-Transportation-Intelligence",
-                tags: ["auto", "targa", "vin", "veicolo", "trasporti", "marine", "flight"]
-            },
-            {
-                name: "OSINT - Forensics Mobile",
-                icon: "📲",
-                desc: "Toolkit per analisi forense di dispositivi Android/iOS e numeri telefonici.",
-                url: "https://github.com/CScorza/OSINT---Forensics-Mobile",
-                tags: ["telefono", "numero", "android", "adb", "whatsapp", "chiamate"]
-            },
-            {
-                name: "Image OSINT Forensics",
-                icon: "🌄",
-                desc: "Analisi immagini: riconoscimento facciale, metadati (EXIF) e deepfake.",
-                url: "https://github.com/CScorza/Image-OSINT-Forensics",
-                tags: ["foto", "immagini", "faccia", "volto", "exif", "pimeyes", "fake"]
-            },
-            {
-                name: "Data Protection",
-                icon: "🔐",
-                desc: "Guide e strumenti per la protezione dei dati personali, Privacy e GDPR.",
-                url: "https://github.com/CScorza/Data-Protection---Protezione-dei-Dati-Personali",
-                tags: ["privacy", "gdpr", "sicurezza", "tos", "legal", "cancellazione"]
-            },
-            {
-                name: "CORPINT - Corporate Intelligence",
-                icon: "📊",
-                desc: "Intelligence aziendale: analisi società, bilanci e connessioni finanziarie.",
-                url: "https://github.com/CScorza/CORPINT---Corporate-Intelligence",
-                tags: ["azienda", "business", "società", "finanza", "bilancio", "ceo"]
+                tags: ["linux", "windows", "macos", "vm", "forensics", "distro"]
             },
             {
                 name: "OSINTInvestigation",
                 icon: "🕵️",
-                desc: "Framework generali, metodologie investigative e risorse Start.me.",
+                desc: "Tecniche OSINT generali, strumenti per il DeepWeb e archivio risorse.",
                 url: "https://github.com/CScorza/OSINTInvestigation",
-                tags: ["generale", "framework", "startme", "investigazione", "metodo"]
-            },
-            {
-                name: "GEOINTInvestigation",
-                icon: "🌍",
-                desc: "Geospatial Intelligence: Mappe, satelliti, tracking e analisi ambientale.",
-                url: "https://github.com/CScorza/GEOINTInvestigation",
-                tags: ["mappe", "geo", "satellite", "google earth", "coordinate", "gps"]
-            },
-            {
-                name: "Analisi Digital Forensics",
-                icon: "🖥",
-                desc: "Software per acquisizione e analisi forense di dischi, RAM e Network.",
-                url: "https://github.com/CScorza/Analisi-Digital-Forensics",
-                tags: ["forense", "disk", "ram", "autopsy", "wireshark", "acquisizione"]
-            },
-            {
-                name: "OSINTAnonimo",
-                icon: "🥷🏼",
-                desc: "Strumenti per l'anonimato, VPN, Tor e sicurezza operativa (OPSEC).",
-                url: "https://github.com/CScorza/OSINTAnonimo",
-                tags: ["opsec", "anonimato", "tor", "vpn", "identità", "fake"]
+                tags: ["deepweb", "tor", "investigazione", "generale", "framework"]
             },
             {
                 name: "SOCMIntelligence",
                 icon: "👤",
-                desc: "Social Media Intelligence: Analisi profili, username e piattaforme social.",
+                desc: "Identificazione profili, relazioni e tracciamento reti su Social Media.",
                 url: "https://github.com/CScorza/SOCMIntelligence",
-                tags: ["social", "facebook", "instagram", "telegram", "tiktok", "username", "sherlock"]
+                tags: ["social", "facebook", "instagram", "telegram", "network", "profili"]
+            },
+            {
+                name: "Analisi Digital Forensics",
+                icon: "🖥",
+                desc: "Strumenti di acquisizione e analisi di copie forensi (Disk, RAM).",
+                url: "https://github.com/CScorza/Analisi-Digital-Forense",
+                tags: ["forense", "acquisizione", "disk", "copia", "analisi"]
+            },
+            {
+                name: "CORPINT - Corporate",
+                icon: "📊",
+                desc: "Business Intelligence: analisi aziende, banche e whitepapers.",
+                url: "https://github.com/CScorza/CORPINT-Corporate-Intelligence",
+                tags: ["azienda", "business", "corpint", "finanza", "banche"]
+            },
+            {
+                name: "Tool VATINT",
+                icon: "🚗",
+                desc: "Intelligence sui veicoli e trasporti (Radar, Traffico Aereo/Navale, Targhe).",
+                url: "https://github.com/CScorza/Tool-VATINT",
+                tags: ["veicoli", "targa", "radar", "aerei", "navi", "traffico"]
+            },
+            {
+                name: "GEOINTInvestigation",
+                icon: "🌍",
+                desc: "Intelligence tramite Immagini Satellitari, Video, Mappe e Geolocation.",
+                url: "https://github.com/CScorza/GEOINTInvestigation",
+                tags: ["mappe", "geo", "satellite", "gps", "coordinate"]
+            },
+            {
+                name: "Data Protection",
+                icon: "🛡️",
+                desc: "Anonimato nel Web, Messaggistica Sicura, Anti-Phishing e Cookie.",
+                url: "https://github.com/CScorza/Data-Protection",
+                tags: ["privacy", "anonimato", "chat", "sicurezza", "phishing"]
+            },
+            {
+                name: "Image OSINT Forensics",
+                icon: "🌄",
+                desc: "Ricerca inversa e analisi forense delle immagini (Metadati, Photoshop).",
+                url: "https://github.com/CScorza/Image-OSINT-Forensics",
+                tags: ["foto", "immagini", "metadata", "exif", "fake"]
+            },
+            {
+                name: "OSINT-IA",
+                icon: "🤖",
+                desc: "L'Intelligenza Artificiale e il Machine Learning a supporto dell'OSINT.",
+                url: "https://github.com/CScorza/OSINT-IA",
+                tags: ["ai", "machine learning", "algoritmi", "supporto"]
+            },
+            {
+                name: "OSINT-FORENSICS-MOBILE",
+                icon: "📲",
+                desc: "Tools specifici per Mobile Forensics, Smartphone e Social App.",
+                url: "https://github.com/CScorza/OSINT-FORENSICS-MOBILE",
+                tags: ["mobile", "smartphone", "android", "ios", "app"]
             },
             {
                 name: "WEBIntelligence",
                 icon: "🌐",
-                desc: "Analisi domini, siti web, indirizzi IP, DNS e infrastrutture.",
+                desc: "Strumenti per Domini, Whois, IP, Data Breach e Email.",
                 url: "https://github.com/CScorza/WEBIntelligence",
-                tags: ["web", "sito", "dominio", "ip", "dns", "url", "whois"]
+                tags: ["web", "dominio", "ip", "email", "breach", "server"]
             },
             {
-                name: "OSINTWorkstation",
-                icon: "🏢",
-                desc: "Configurazione macchine virtuali e ambienti di lavoro investigativi.",
-                url: "https://github.com/CScorza/OSINTWorkstation",
-                tags: ["workstation", "vm", "setup", "config", "ambiente"]
+                name: "Estensioni Chrome OSINT",
+                icon: "🧩",
+                desc: "Raccolta di estensioni browser utili per l'investigazione online.",
+                url: "https://github.com/CScorza/EstensioniChromeOSINT",
+                tags: ["chrome", "browser", "estensioni", "plugin"]
             },
             {
-                name: "StegoIntelligence",
-                icon: "🩻",
-                desc: "Strumenti per la steganografia e l'analisi di dati nascosti nei file.",
-                url: "https://github.com/CScorza/StegoIntelligence",
-                tags: ["stego", "nascosto", "ctf", "codice", "messaggio", "hex"]
+                name: "OSINTAnonymous",
+                icon: "🥷🏼",
+                desc: "Creazione identità fake (Sock Puppets), Privacy e Ambiente di Lavoro.",
+                url: "https://github.com/CScorza/OSINTAnonymous",
+                tags: ["fake", "identità", "privacy", "account", "sockpuppet"]
             },
             {
                 name: "WatermarkIntelligence",
                 icon: "©",
-                desc: "Analisi e rimozione watermark, verifica copyright e loghi.",
+                desc: "Protezione e rimozione copyright/watermark da immagini e video.",
                 url: "https://github.com/CScorza/WatermarkIntelligence",
-                tags: ["watermark", "logo", "copyright", "brand", "rimozione"]
+                tags: ["watermark", "copyright", "video", "editing"]
             },
             {
-                name: "BOTInvestigation",
-                icon: "🤖",
-                desc: "Analisi di Bot, automazioni e account falsi sui social media.",
-                url: "https://github.com/CScorza/BOTInvestigation",
-                tags: ["bot", "fake", "automazione", "spam", "twitter bot"]
+                name: "StegoIntelligence",
+                icon: "🩻",
+                desc: "Rilevare ed estrarre informazioni nascoste (Steganografia) nei file.",
+                url: "https://github.com/CScorza/StegoIntelligence",
+                tags: ["stego", "nascosto", "file", "audio", "messaggio"]
             },
             {
-                name: "OSINT-IA",
-                icon: "👁‍🗨",
-                desc: "Strumenti di Intelligenza Artificiale (ChatGPT, Whisper) per OSINT.",
-                url: "https://github.com/CScorza/OSINT-IA",
-                tags: ["ai", "intelligenza artificiale", "gpt", "deepfake", "trascrizione"]
+                name: "OSINTWorkstation",
+                icon: "🏢",
+                desc: "Script e guide per configurare una postazione di lavoro OSINT sicura (VM).",
+                url: "https://github.com/CScorza/OSINTWorkstation",
+                tags: ["vm", "linux", "setup", "workstation", "configurazione"]
+            },
+            {
+                name: "OSINTtheory",
+                icon: "🎓",
+                desc: "Teoria pura: Definizioni, Acronimi (SIGINT, HUMINT) e concetti base.",
+                url: "https://github.com/CScorza/OSINTtheory",
+                tags: ["teoria", "definizioni", "studio", "concetti"]
             }
         ];
 
@@ -449,7 +516,7 @@
                 repoGrid.innerHTML = `
                     <div class="no-results">
                         <h3>Nessun Repository trovato 📂</h3>
-                        <p>Prova termini generici come "Forensics", "Social" o "Linux".</p>
+                        <p>Prova termini diversi come "Python", "Instagram" o "Forensics".</p>
                     </div>`;
                 return;
             }
