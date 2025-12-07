@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CScorza Intelligence Framework</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* --- THEME CONFIGURATION --- */
+        /* --- CONFIGURAZIONE TEMA --- */
         :root {
             --bg-deep: #050505;
-            --bg-panel: rgba(20, 20, 20, 0.6);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --primary-neon: #00f3ff;  /* Ciano Elettrico */
-            --secondary-neon: #bd00ff; /* Viola Cyber */
+            --bg-grid: rgba(255, 255, 255, 0.03);
+            --primary-neon: #00f3ff;   /* Ciano Cyber */
+            --secondary-neon: #7000ff; /* Viola Deep */
+            --alert-color: #ff0055;    /* Rosso Alert */
             --text-main: #ffffff;
-            --text-muted: #8b9bb4;
-            --card-glass: rgba(255, 255, 255, 0.03);
-            --card-hover: rgba(0, 243, 255, 0.05);
+            --text-muted: #9ca3af;
+            --card-glass: rgba(20, 20, 20, 0.7);
+            --border-glass: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -26,43 +26,27 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            /* Sfondo Cyber Grid */
+            /* Griglia di sfondo animata statica */
             background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            overflow-x: hidden;
-        }
-
-        /* Effetto Vignette (Scurisce i bordi) */
-        body::after {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle, transparent 40%, #000000 100%);
-            pointer-events: none;
-            z-index: -1;
+                linear-gradient(var(--bg-grid) 1px, transparent 1px),
+                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
 
         #app-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 90vh;
-            position: relative;
-            z-index: 1;
+            padding: 20px;
         }
 
-        /* --- HEADER & LOGO --- */
+        /* --- HEADER --- */
         header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 60px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-glass);
+            margin-bottom: 40px;
         }
 
         .brand-box {
@@ -71,191 +55,166 @@
             gap: 20px;
         }
 
-        .logo-frame {
-            position: relative;
+        .logo-container {
             width: 80px;
             height: 80px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(45deg, var(--primary-neon), var(--secondary-neon));
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--secondary-neon), var(--primary-neon));
+            padding: 3px; /* Bordo colorato */
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
         }
 
-        .brand-logo {
+        .logo-img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            background-color: #000;
+            border-radius: 9px;
+            background: #000;
             object-fit: cover;
-            border: 2px solid #000;
         }
 
-        .brand-info h1 {
+        .brand-text h1 {
             margin: 0;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #fff, var(--text-muted));
+            font-size: 2.2rem;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #fff, #aaa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .brand-info p {
+        .brand-text p {
             margin: 5px 0 0 0;
             color: var(--primary-neon);
             font-size: 0.9rem;
-            letter-spacing: 1px;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* --- SEARCH MODULE --- */
-        .search-wrapper {
+        /* --- SEARCH BAR --- */
+        .search-section {
             background: var(--card-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-glass);
             border-radius: 16px;
-            padding: 40px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
             text-align: center;
-            margin-bottom: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .input-wrapper {
             position: relative;
-            overflow: hidden;
-        }
-
-        /* Linea neon decorativa in alto */
-        .search-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-neon), transparent);
-        }
-
-        .search-label {
-            display: block;
-            margin-bottom: 20px;
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        .input-group {
-            display: flex;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            position: relative;
         }
 
         #search-input {
             width: 100%;
             padding: 18px 25px;
+            padding-right: 140px; /* Spazio per il bottone */
             font-size: 1.2rem;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--border-glass);
             color: #fff;
-            border-radius: 50px; /* Pill shape */
-            font-family: inherit;
+            border-radius: 50px;
             outline: none;
             transition: all 0.3s;
+            font-family: inherit;
         }
 
         #search-input:focus {
             border-color: var(--primary-neon);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.15);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
         }
 
         #search-btn {
             position: absolute;
-            right: 5px;
-            top: 5px;
-            bottom: 5px;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
             padding: 0 30px;
-            border-radius: 40px;
             background: var(--primary-neon);
             color: #000;
             font-weight: 700;
             border: none;
+            border-radius: 40px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s;
         }
 
-        #search-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px var(--primary-neon);
-        }
+        #search-btn:hover { transform: scale(1.05); }
 
         /* --- CATEGORY GRID --- */
-        .category-grid {
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .category-card {
+        .cat-card {
             background: var(--card-glass);
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border-glass);
             border-radius: 12px;
-            padding: 30px;
+            padding: 25px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .category-card:hover {
+        /* Hover effect */
+        .cat-card:hover {
             transform: translateY(-5px);
-            background: var(--card-hover);
             border-color: var(--primary-neon);
-            box-shadow: 0 10px 30px -10px rgba(0, 243, 255, 0.2);
+            background: rgba(0, 243, 255, 0.05);
         }
 
-        .cat-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
-        .cat-title { font-size: 1.3rem; margin: 0 0 10px 0; color: #fff; font-weight: 600; }
-        .cat-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
+        .cat-icon {
+            font-size: 1.8rem;
+            background: rgba(255,255,255,0.05);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
 
-        /* --- TOOLS RESULTS --- */
+        .cat-info h3 { margin: 0; font-size: 1rem; color: #fff; }
+        .cat-info span { font-size: 0.75rem; color: var(--text-muted); }
+
+        /* --- RESULTS LIST --- */
         .results-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .back-btn {
-            background: transparent;
-            color: var(--text-muted);
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
-        }
-        .back-btn:hover { color: #fff; border-color: #fff; }
-
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-glass);
         }
 
         .tool-card {
-            background: #0f0f0f;
-            border: 1px solid var(--border-color);
+            background: #0a0a0a;
+            border: 1px solid var(--border-glass);
+            border-left: 3px solid var(--primary-neon);
             border-radius: 8px;
-            padding: 25px;
+            padding: 20px;
+            margin-bottom: 15px;
             transition: all 0.2s;
-            position: relative;
             display: flex;
             flex-direction: column;
         }
 
         .tool-card:hover {
+            background: #111;
             border-color: var(--secondary-neon);
-            box-shadow: 0 0 15px rgba(189, 0, 255, 0.15);
+            border-left-color: var(--secondary-neon);
+            transform: translateX(5px);
         }
 
-        .tool-header {
+        .tool-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
@@ -267,92 +226,64 @@
             font-weight: 700;
             color: #fff;
             text-decoration: none;
-            transition: color 0.2s;
         }
-        .tool-link:hover { color: var(--primary-neon); text-decoration: underline; }
-
-        .tool-desc {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .tool-meta {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-        }
-
-        .relevance-score {
-            color: var(--primary-neon);
-            font-weight: bold;
-        }
+        .tool-link:hover { text-decoration: underline; color: var(--primary-neon); }
 
         .repo-badge {
-            background: rgba(255,255,255,0.1);
+            font-size: 0.7rem;
+            background: #1a1a1a;
             padding: 4px 8px;
             border-radius: 4px;
-            color: #ccc;
+            color: var(--text-muted);
+            border: 1px solid #333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
+        .tool-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
 
         /* --- FOOTER --- */
         footer {
-            margin-top: auto;
-            padding-top: 50px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
             text-align: center;
-        }
-
-        .footer-content h4 { color: #fff; font-weight: normal; margin-bottom: 20px; letter-spacing: 1px; }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .social-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-glass);
+            padding-top: 30px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin: 0 10px;
             text-decoration: none;
             transition: color 0.2s;
         }
-
-        .social-item:hover { color: var(--primary-neon); }
-        .social-item span { font-size: 0.8rem; margin-top: 5px; }
-
-        .copyright { color: #444; font-size: 0.8rem; }
+        .social-links a:hover { color: var(--primary-neon); }
 
     </style>
 </head>
 <body>
 
     <div id="app-container">
+        
         <header>
             <div class="brand-box">
-                <div class="logo-frame">
-                    <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="brand-logo">
+                <div class="logo-container">
+                    <img src="https://github.com/CScorza.png" alt="Logo" class="logo-img">
                 </div>
-                <div class="brand-info">
+                <div class="brand-text">
                     <h1>CScorza</h1>
-                    <p>OSINT & Cyber Investigation Framework</p>
+                    <p>Advanced Intelligence Framework</p>
                 </div>
             </div>
+            <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" style="color:var(--text-muted); text-decoration:none; font-size:0.9rem;">📖 Manuali</a>
         </header>
 
-        <div class="search-wrapper">
-            <label class="search-label" for="search-input">
-                Inserisci target (es. "TikTok", "Email") o nome strumento (es. "Sherlock")
-            </label>
-            <div class="input-group">
-                <input type="text" id="search-input" placeholder="Start typing command..." autocomplete="off">
-                <button id="search-btn">SCAN</button>
+        <div class="search-section">
+            <h3 style="margin-top:0; color:var(--text-muted); font-weight:400;">Cosa vuoi analizzare oggi?</h3>
+            <div class="input-wrapper">
+                <input type="text" id="search-input" placeholder="Es. Targa, IP, Telegram, Steganografia, Metadati..." autocomplete="off">
+                <button id="search-btn">INDAGA</button>
             </div>
         </div>
 
@@ -360,167 +291,276 @@
             </div>
 
         <footer>
-            <div class="footer-content">
-                <h4>CONTATTI & RISORSE</h4>
-                <div class="social-icons">
-                    <a href="https://github.com/CScorza" target="_blank" class="social-item">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://cscorza.github.io/CScorza/" target="_blank" class="social-item">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                        <span>Sito Web</span>
-                    </a>
-                    <a href="#" class="social-item">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-2.02-1.23-2.02-1.23-2.02-1.23.26-.41 3.28-3.14.15-.14.28-.42-.11-.53-.41-.12-4.63 2.8-4.63 2.8-2.15.93-4.15 1.79-4.15 1.79-1.05-.33-1.54-.66-1.54-.66-.69-.22.42-1.08.42-1.08 2.67-1.07 5.98-2.39 8.04-3.18 2.06-.79 4.12-1.58 4.12-1.58.74-.32 1.5.06 1.5.66z"/></svg>
-                        <span>Telegram</span>
-                    </a>
-                </div>
-                <div class="copyright">
-                    &copy; 2024 CScorza Investigation. Framework proprietario.
-                </div>
+            <div class="social-links">
+                <a href="https://github.com/CScorza" target="_blank">GitHub</a> |
+                <a href="https://cscorza.github.io/CScorza/" target="_blank">Website</a> |
+                <a href="#">Telegram</a>
             </div>
+            <p>&copy; 2025 CScorza Investigation. Framework proprietario per indagini OSINT.</p>
         </footer>
+
     </div>
 
     <script>
-        /* DATABASE REVISIONATO:
-           1. 'tags': usato per la ricerca Fuzzy (score basso).
-           2. 'platform': usato per ricerca Esatta (score alto).
+        /* DATABASE COMPLETO MAPPATO SUI TUOI REPOSITORY
+           Ogni tool ha un campo 'repo' che corrisponde al nome esatto del tuo repository.
+           'keywords' serve per la ricerca intelligente (es. auto -> vatint).
         */
-        const osintData = [
-            /* --- SOCMINT: TIKTOK --- */
+        const toolsDB = [
+            /* --- 1. VATINT (Veicoli) --- */
             {
-                name: "TikTok Downloader",
-                desc: "Scarica video da TikTok senza watermark e analizza profili.",
-                url: "https://ssstik.io/",
-                repo: "SOCMIntelligence",
-                platform: ["tiktok"],
-                tags: "video download no-watermark social"
+                name: "SevEwa Check",
+                desc: "Verifica targhe e assicurazione veicoli (Database Europeo).",
+                url: "https://www.sevewa.com/", 
+                repo: "VATINT - Vehicle Intelligence",
+                keywords: ["auto", "targa", "veicolo", "macchina", "assicurazione", "vin", "transport"]
             },
             {
-                name: "Search4Faces",
-                desc: "Riconoscimento facciale specifico per TikTok e VKontakte.",
-                url: "https://search4faces.com/",
-                repo: "SOCMIntelligence",
-                platform: ["tiktok", "vk"],
-                tags: "face recognition volto social russia"
-            },
-
-            /* --- SOCMINT: INSTAGRAM --- */
-            {
-                name: "Osintgram",
-                desc: "Tool Python avanzato per analisi Instagram (email, telefono, follower).",
-                url: "https://github.com/Datalux/Osintgram",
-                repo: "SOCMIntelligence",
-                platform: ["instagram"],
-                tags: "python script followers email"
+                name: "VinCheck.info",
+                desc: "Controllo gratuito del numero di telaio (VIN) e storico veicolo.",
+                url: "https://vincheck.info/",
+                repo: "VATINT - Vehicle Intelligence",
+                keywords: ["vin", "telaio", "history", "auto", "usa"]
             },
             {
-                name: "Imginn",
-                desc: "Visualizzatore anonimo di storie e post Instagram.",
-                url: "https://imginn.com/",
-                repo: "SOCMIntelligence",
-                platform: ["instagram"],
-                tags: "viewer anonymous stories"
+                name: "MarineTraffic",
+                desc: "Tracciamento in tempo reale di navi e imbarcazioni.",
+                url: "https://www.marinetraffic.com/",
+                repo: "VATINT - Vehicle Intelligence",
+                keywords: ["navi", "barche", "ais", "marine", "transport"]
             },
 
-            /* --- SOCMINT: TELEGRAM --- */
+            /* --- 2. STEGO INTELLIGENCE --- */
             {
-                name: "Telegago",
-                desc: "Google CSE (Custom Search Engine) ottimizzato per Telegram.",
-                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
-                repo: "SOCMIntelligence",
-                platform: ["telegram"],
-                tags: "google search chat groups"
+                name: "AperiSolve",
+                desc: "Piattaforma all-in-one per analisi steganografica (Lsb, Exif, Strings).",
+                url: "https://aperisolve.com/",
+                repo: "StegoIntelligence",
+                keywords: ["stego", "steganografia", "nascosto", "immagine", "ctf"]
             },
             {
-                name: "TGStat",
-                desc: "Analisi profonda dei canali Telegram e metriche.",
-                url: "https://tgstat.com/",
-                repo: "SOCMIntelligence",
-                platform: ["telegram"],
-                tags: "analytics metrics channels"
+                name: "StegOnline",
+                desc: "Tool online per estrarre bit nascosti nelle immagini.",
+                url: "https://stegonline.georgeom.net/",
+                repo: "StegoIntelligence",
+                keywords: ["stego", "bit", "plane", "lsb"]
             },
 
-            /* --- GENERAL OSINT --- */
+            /* --- 3. GEOINT --- */
             {
-                name: "OSINT Industries",
-                desc: "Motore professionale per cercare email e telefono su 200+ siti.",
-                url: "https://osint.industries/",
-                repo: "General",
-                platform: ["all"],
-                tags: "email phone broad search cross-platform osint"
+                name: "Google Earth Pro",
+                desc: "Strumento essenziale per analisi satellitare e storica.",
+                url: "https://www.google.com/earth/versions/",
+                repo: "GEOINTInvestigation",
+                keywords: ["geo", "mappe", "satellite", "earth", "luogo"]
             },
+            {
+                name: "SunCalc",
+                desc: "Calcola la posizione del sole e delle ombre per cronolocalizzazione.",
+                url: "https://suncalc.org/",
+                repo: "GEOINTInvestigation",
+                keywords: ["sole", "ombre", "ora", "time", "shadow", "chrono"]
+            },
+            {
+                name: "Overpass Turbo",
+                desc: "Query avanzate su OpenStreetMap per trovare infrastrutture specifiche.",
+                url: "https://overpass-turbo.eu/",
+                repo: "GEOINTInvestigation",
+                keywords: ["osm", "mappe", "query", "infrastrutture"]
+            },
+
+            /* --- 4. SOCMINT (Social) --- */
             {
                 name: "Sherlock",
-                desc: "Cerca un username su 300+ piattaforme social contemporaneamente.",
+                desc: "Cerca username su 300+ piattaforme social (Script Python).",
                 url: "https://github.com/sherlock-project/sherlock",
                 repo: "SOCMIntelligence",
-                platform: ["all", "instagram", "tiktok", "telegram", "twitter"],
-                tags: "username python script enumerate social"
+                keywords: ["social", "username", "user", "profilo", "python"]
+            },
+            {
+                name: "Maigret",
+                desc: "Analisi username avanzata con generazione report PDF.",
+                url: "https://github.com/soxoj/maigret",
+                repo: "SOCMIntelligence",
+                keywords: ["social", "username", "report", "pdf"]
+            },
+            {
+                name: "Telegago",
+                desc: "Motore di ricerca Google specifico per Telegram.",
+                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
+                repo: "SOCMIntelligence",
+                keywords: ["telegram", "chat", "gruppi", "social"]
             },
 
-            /* --- IP & NETWORK --- */
+            /* --- 5. IMAGE OSINT --- */
             {
-                name: "Shodan",
-                desc: "Motore di ricerca per dispositivi IoT, Webcam e Server.",
-                url: "https://www.shodan.io/",
-                repo: "Analisi IP",
-                platform: ["iot"],
-                tags: "ip network camera server ports scan"
+                name: "PimEyes",
+                desc: "Motore di ricerca volti (Riconoscimento Facciale).",
+                url: "https://pimeyes.com/",
+                repo: "Image OSINT Forensics",
+                keywords: ["face", "volto", "facciale", "recog", "foto"]
             },
             {
-                name: "IP Location",
-                desc: "Geolocalizzazione IP precisa e info Provider.",
-                url: "https://www.iplocation.net/",
-                repo: "Analisi IP",
-                platform: ["web"],
-                tags: "geo map position whereis"
+                name: "FotoForensics",
+                desc: "Analisi ELA per scoprire manipolazioni nelle foto.",
+                url: "http://fotoforensics.com/",
+                repo: "Image OSINT Forensics",
+                keywords: ["forensics", "fake", "ela", "photoshop", "edit"]
+            },
+            {
+                name: "ExifTool",
+                desc: "Standard mondiale per leggere/scrivere metadati.",
+                url: "https://exiftool.org/",
+                repo: "Image OSINT Forensics",
+                keywords: ["exif", "metadata", "dati", "camera"]
             },
 
-            /* --- EMAIL --- */
+            /* --- 6. MOBILE FORENSICS --- */
             {
-                name: "Have I Been Pwned",
-                desc: "Verifica se email o telefono sono in database violati.",
-                url: "https://haveibeenpwned.com/",
-                repo: "Analisi Email",
-                platform: ["email"],
-                tags: "leak breach password security hack"
+                name: "ADB & Fastboot",
+                desc: "Tools ufficiali Android per interazione forense col dispositivo.",
+                url: "https://developer.android.com/studio/releases/platform-tools",
+                repo: "OSINT - Forensics Mobile",
+                keywords: ["android", "mobile", "telefono", "forensics", "adb"]
             },
             {
-                name: "Epios",
-                desc: "Collega un'email a Google, Maps, recensioni e calendari.",
-                url: "https://epios.com/",
-                repo: "Analisi Email",
-                platform: ["email", "google"],
-                tags: "google maps calendar social"
+                name: "TrueCaller",
+                desc: "Identificazione chiamante e numeri spam.",
+                url: "https://www.truecaller.com/",
+                repo: "OSINT - Forensics Mobile",
+                keywords: ["telefono", "numero", "chiamata", "id"]
+            },
+
+            /* --- 7. CHROME EXTENSIONS --- */
+            {
+                name: "SingleFile",
+                desc: "Salva una pagina web completa come singolo file HTML (Forense).",
+                url: "https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle",
+                repo: "Estensioni Chrome OSINT",
+                keywords: ["chrome", "estensione", "save", "forensic", "web"]
+            },
+            {
+                name: "Goowil (User-Agent Switcher)",
+                desc: "Cambia l'identità del browser per simulare mobile o altri OS.",
+                url: "#", 
+                repo: "Estensioni Chrome OSINT",
+                keywords: ["chrome", "spoof", "user-agent", "mobile"]
+            },
+
+            /* --- 8. DISTRO FORENSICS --- */
+            {
+                name: "CSI Linux",
+                desc: "Distro specializzata per Cyber Investigation e OSINT.",
+                url: "https://csilinux.com/",
+                repo: "DistroForensics",
+                keywords: ["linux", "os", "vm", "virtual", "machine"]
+            },
+            {
+                name: "Tsurugi Linux",
+                desc: "Distribuzione Linux ottimizzata per DFIR (Digital Forensics).",
+                url: "https://tsurugi-linux.org/",
+                repo: "DistroForensics",
+                keywords: ["linux", "dfir", "forensics", "japan"]
+            },
+
+            /* --- 9. CORPINT (Corporate) --- */
+            {
+                name: "OpenCorporates",
+                desc: "Il più grande database aperto di aziende al mondo.",
+                url: "https://opencorporates.com/",
+                repo: "CORPINT - Corporate Intelligence",
+                keywords: ["azienda", "business", "società", "owner", "ceo"]
+            },
+            {
+                name: "Occrp Aleph",
+                desc: "Database investigativo globale su crimine organizzato e corruzione.",
+                url: "https://aleph.occrp.org/",
+                repo: "CORPINT - Corporate Intelligence",
+                keywords: ["leak", "business", "crime", "soldi", "money"]
+            },
+
+            /* --- 10. OSINT AI --- */
+            {
+                name: "ChatGPT (Analisi)",
+                desc: "Utilizzo di LLM per analizzare testi o generare dork.",
+                url: "https://chat.openai.com/",
+                repo: "OSINT-IA",
+                keywords: ["ai", "gpt", "text", "analisi"]
+            },
+            {
+                name: "Whisper",
+                desc: "AI per trascrizione audio-testo (Speech to Text).",
+                url: "https://github.com/openai/whisper",
+                repo: "OSINT-IA",
+                keywords: ["ai", "audio", "voice", "trascrizione"]
+            },
+
+            /* --- 11. BOT INVESTIGATION --- */
+            {
+                name: "Botometer",
+                desc: "Controlla se un account Twitter è probabile che sia un bot.",
+                url: "https://botometer.osome.iu.edu/",
+                repo: "BOTInvestigation",
+                keywords: ["bot", "fake", "twitter", "automation"]
+            },
+            
+            /* --- 12. WEB INTELLIGENCE --- */
+            {
+                name: "Whois DomainTools",
+                desc: "Informazioni registrazione domini e storico.",
+                url: "https://whois.domaintools.com/",
+                repo: "WEBIntelligence",
+                keywords: ["domain", "sito", "web", "owner", "whois"]
+            },
+            {
+                name: "Archive.org",
+                desc: "Wayback Machine: vedi versioni passate dei siti web.",
+                url: "https://archive.org/web/",
+                repo: "WEBIntelligence",
+                keywords: ["history", "archive", "deleted", "web"]
+            },
+
+            /* --- 13. DATA PROTECTION --- */
+            {
+                name: "TOSDR",
+                desc: "Terms of Service; Didn't Read. Analisi privacy policy.",
+                url: "https://tosdr.org/",
+                repo: "Data Protection",
+                keywords: ["privacy", "tos", "legal", "gdpr"]
             }
         ];
 
-        /* CATEGORIE HOME */
+        /* CATEGORIE VISIVE (Macro-Aree) */
         const categories = [
-            { id: "all", label: "General OSINT", icon: "🚀", desc: "Motori multi-scopo (Epios, Osint Industries)" },
-            { id: "instagram", label: "Instagram", icon: "📸", desc: "Viewer anonimi, Analisi Follower" },
-            { id: "tiktok", label: "TikTok", icon: "🎵", desc: "Video Downloader, Face Search" },
-            { id: "telegram", label: "Telegram", icon: "✈️", desc: "Ricerca Gruppi, Analisi Canali" },
-            { id: "email", label: "Email & Leaks", icon: "📧", desc: "Data Breach, Verifica Email" },
-            { id: "ip", label: "IP & Network", icon: "🌐", desc: "Geolocalizzazione, Shodan, IoT" }
+            { id: "SOCMIntelligence", label: "Social Media (SOCMINT)", icon: "👤" },
+            { id: "VATINT - Vehicle Intelligence", label: "Veicoli (VATINT)", icon: "🚗" },
+            { id: "Image OSINT Forensics", label: "Immagini & Volti", icon: "🌄" },
+            { id: "GEOINTInvestigation", label: "GEOINT (Mappe)", icon: "🌍" },
+            { id: "OSINT - Forensics Mobile", label: "Mobile Forensics", icon: "📲" },
+            { id: "StegoIntelligence", label: "Steganografia", icon: "🩻" },
+            { id: "CORPINT - Corporate Intelligence", label: "Aziende (CORPINT)", icon: "📊" },
+            { id: "DistroForensics", label: "Sistemi (Distro/VM)", icon: "💻" },
+            { id: "Estensioni Chrome OSINT", label: "Estensioni Browser", icon: "🧩" },
+            { id: "OSINT-IA", label: "Intelligenza Artificiale", icon: "🤖" },
+            { id: "WEBIntelligence", label: "Web & Domini", icon: "🌐" },
+            { id: "BOTInvestigation", label: "Bot Analysis", icon: "👾" }
         ];
 
         const contentArea = document.getElementById('content-area');
         const searchInput = document.getElementById('search-input');
         const searchBtn = document.getElementById('search-btn');
 
-        /* RENDER CATEGORIE */
+        /* 1. RENDER HOME */
         function renderHome() {
-            let html = `<div class="category-grid">`;
+            let html = `<div class="grid-container">`;
             categories.forEach(cat => {
                 html += `
-                    <div class="category-card" onclick="performSearch('${cat.id}')">
-                        <span class="cat-icon">${cat.icon}</span>
-                        <h3 class="cat-title">${cat.label}</h3>
-                        <p class="cat-desc">${cat.desc}</p>
+                    <div class="cat-card" onclick="filterByRepo('${cat.id}')">
+                        <div class="cat-icon">${cat.icon}</div>
+                        <div class="cat-info">
+                            <h3>${cat.label}</h3>
+                            <span>Clicca per aprire</span>
+                        </div>
                     </div>
                 `;
             });
@@ -528,77 +568,71 @@
             contentArea.innerHTML = html;
         }
 
-        /* MOTORE DI RICERCA CON PUNTEGGIO (SCORING) */
-        function performSearch(manualQuery = null) {
-            const query = manualQuery || searchInput.value.toLowerCase().trim();
-            
-            if (!query) {
+        /* 2. CERCA NEL DATABASE */
+        function performSearch(repoFilter = null) {
+            const query = searchInput.value.toLowerCase().trim();
+
+            if (!query && !repoFilter) {
                 renderHome();
                 return;
             }
 
-            // Aggiorna input se la ricerca viene da un click
-            if(manualQuery) searchInput.value = manualQuery === 'all' ? 'OSINT' : manualQuery;
+            // Filtro principale
+            const results = toolsDB.filter(tool => {
+                // Se c'è un filtro repo attivo (click su card)
+                if (repoFilter && tool.repo !== repoFilter) return false;
 
-            /* ALGORITMO DI SCORING:
-               Serve a risolvere il problema "Se cerco TikTok escono cose inutili".
-               Assegna punti in base a dove trova la parola chiave.
-            */
-            const results = osintData.map(tool => {
-                let score = 0;
-                
-                // 1. Match Esatto su Piattaforma (es. "tiktok" == tool.platform["tiktok"]) -> Punteggio MASSIMO
-                if (tool.platform.includes(query)) score += 100;
+                // Se non c'è query testuale, mostra tutto del repo
+                if (!query) return true;
 
-                // 2. Match nel Nome -> Punteggio ALTO
-                if (tool.name.toLowerCase().includes(query)) score += 50;
+                // Ricerca "Smart" su Keywords, Nome e Descrizione
+                const matchName = tool.name.toLowerCase().includes(query);
+                const matchDesc = tool.desc.toLowerCase().includes(query);
+                const matchRepo = tool.repo.toLowerCase().includes(query);
+                const matchKeys = tool.keywords.some(k => k.includes(query));
 
-                // 3. Match nei Tag (parole chiave nascoste) -> Punteggio MEDIO
-                if (tool.tags.includes(query)) score += 20;
+                return matchName || matchDesc || matchRepo || matchKeys;
+            });
 
-                // 4. Match nella Descrizione -> Punteggio BASSO (Evita rumore)
-                if (tool.desc.toLowerCase().includes(query)) score += 5;
-
-                // Gestione speciale per "OSINT" generico
-                if (query === 'osint' || query === 'all') {
-                    if (tool.platform.includes('all')) score += 100;
-                    else score += 10; // Mostra tutto il resto dopo
-                }
-
-                return { ...tool, score };
-            })
-            .filter(tool => tool.score > 0) // Rimuove risultati non pertinenti (score 0)
-            .sort((a, b) => b.score - a.score); // Ordina dal punteggio più alto
-
-            renderResults(results, query);
+            const title = repoFilter ? `Repository: ${repoFilter}` : `Risultati per: "${query}"`;
+            renderResults(results, title);
         }
 
-        /* RENDER RISULTATI */
-        function renderResults(results, query) {
+        /* Helper per i click sulle categorie */
+        function filterByRepo(repoName) {
+            searchInput.value = ""; // Pulisce la ricerca testuale
+            performSearch(repoName);
+        }
+
+        /* 3. MOSTRA RISULTATI */
+        function renderResults(tools, title) {
             let html = `
                 <div class="results-header">
-                    <h2 style="margin:0; text-transform:uppercase;">Risultati: ${query}</h2>
-                    <button class="back-btn" onclick="clearSearch()">← TORNA ALLA HOME</button>
+                    <h2 style="margin:0; font-weight:400;">${title}</h2>
+                    <button onclick="clearSearch()" style="background:transparent; border:1px solid var(--border-glass); color:var(--text-muted); padding:5px 15px; cursor:pointer; border-radius:4px;">
+                        ← Torna alla Dashboard
+                    </button>
                 </div>
             `;
 
-            if (results.length === 0) {
-                html += `<div style="text-align:center; padding:50px; border:1px dashed #333; border-radius:10px;">
-                            <h3>Nessun risultato trovato 🕵️‍♂️</h3>
-                            <p style="color:#888">Prova con termini diversi come "IP", "Email", "Social".</p>
-                         </div>`;
+            if (tools.length === 0) {
+                html += `
+                    <div style="text-align:center; padding:50px; opacity:0.6;">
+                        <h3>Nessun tool trovato.</h3>
+                        <p>Prova a cercare in un'altra categoria.</p>
+                    </div>
+                `;
             } else {
-                html += `<div class="tools-grid">`;
-                results.forEach(tool => {
+                // Creiamo una griglia anche per i risultati
+                html += `<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap:20px;">`;
+                tools.forEach(tool => {
                     html += `
                         <div class="tool-card">
-                            <div class="tool-header">
+                            <div class="tool-top">
                                 <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
+                                <span class="repo-badge">📂 ${tool.repo}</span>
                             </div>
                             <div class="tool-desc">${tool.desc}</div>
-                            <div class="tool-meta">
-                                <span class="repo-badge">📂 ${tool.repo}</span>
-                                </div>
                         </div>
                     `;
                 });
@@ -609,17 +643,18 @@
         }
 
         function clearSearch() {
-            searchInput.value = '';
+            searchInput.value = "";
             renderHome();
         }
 
         /* EVENT LISTENER */
         searchBtn.addEventListener('click', () => performSearch());
+        
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') performSearch();
         });
 
-        // Avvio iniziale
+        // Avvio
         renderHome();
 
     </script>
