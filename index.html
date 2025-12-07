@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CScorza Intelligence Framework</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>CScorza SOCMIntelligence Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- CONFIGURAZIONE TEMA --- */
+        /* --- TEMA CYBER-INTELLIGENCE --- */
         :root {
             --bg-deep: #050505;
-            --bg-grid: rgba(255, 255, 255, 0.03);
-            --primary-neon: #00f3ff;   /* Ciano Cyber */
-            --secondary-neon: #7000ff; /* Viola Deep */
-            --alert-color: #ff0055;    /* Rosso Alert */
+            --bg-card: #0f1012;
+            --primary-neon: #00f3ff;   /* Ciano */
+            --secondary-neon: #ff0055; /* Rosso Cyber */
+            --accent-purple: #bd00ff;  /* Viola */
             --text-main: #ffffff;
-            --text-muted: #9ca3af;
-            --card-glass: rgba(20, 20, 20, 0.7);
+            --text-muted: #94a3b8;
             --border-glass: rgba(255, 255, 255, 0.1);
+            --card-hover: rgba(0, 243, 255, 0.05);
         }
 
         body {
@@ -26,11 +26,7 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            /* Griglia di sfondo animata statica */
-            background-image: 
-                linear-gradient(var(--bg-grid) 1px, transparent 1px),
-                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-image: radial-gradient(circle at 50% 0%, rgba(0, 243, 255, 0.1) 0%, transparent 50%);
         }
 
         #app-container {
@@ -39,226 +35,223 @@
             padding: 20px;
         }
 
-        /* --- HEADER --- */
+        /* --- HEADER & BRANDING --- */
         header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 30px 0;
+            align-items: center;
+            padding: 40px 0;
             border-bottom: 1px solid var(--border-glass);
             margin-bottom: 40px;
         }
 
-        .brand-box {
+        .brand-section {
             display: flex;
             align-items: center;
             gap: 20px;
         }
 
-        .logo-container {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--secondary-neon), var(--primary-neon));
-            padding: 3px; /* Bordo colorato */
-            box-shadow: 0 0 25px rgba(0, 243, 255, 0.2);
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--primary-neon), var(--accent-purple));
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
         }
 
         .logo-img {
             width: 100%;
             height: 100%;
-            border-radius: 9px;
+            border-radius: 50%;
             background: #000;
             object-fit: cover;
+            border: 2px solid #000;
         }
 
-        .brand-text h1 {
+        .brand-info h1 {
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2rem;
             letter-spacing: -1px;
-            background: linear-gradient(90deg, #fff, #aaa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
         }
 
-        .brand-text p {
+        .brand-info p {
             margin: 5px 0 0 0;
             color: var(--primary-neon);
             font-size: 0.9rem;
-            text-transform: uppercase;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        /* --- SEARCH BAR --- */
-        .search-section {
-            background: var(--card-glass);
-            backdrop-filter: blur(10px);
+        /* --- SEARCH MODULE --- */
+        .search-container {
+            background: rgba(255,255,255,0.03);
             border: 1px solid var(--border-glass);
-            border-radius: 16px;
             padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.5);
+            border-radius: 16px;
+            margin-bottom: 50px;
+            backdrop-filter: blur(10px);
             text-align: center;
         }
 
-        .input-wrapper {
+        .search-box {
             position: relative;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         #search-input {
             width: 100%;
             padding: 18px 25px;
-            padding-right: 140px; /* Spazio per il bottone */
-            font-size: 1.2rem;
-            background: rgba(0,0,0,0.6);
+            font-size: 1.1rem;
+            background: #000;
             border: 1px solid var(--border-glass);
             color: #fff;
             border-radius: 50px;
             outline: none;
             transition: all 0.3s;
-            font-family: inherit;
         }
 
         #search-input:focus {
             border-color: var(--primary-neon);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
         }
 
-        #search-btn {
-            position: absolute;
-            right: 6px;
-            top: 6px;
-            bottom: 6px;
-            padding: 0 30px;
-            background: var(--primary-neon);
-            color: #000;
-            font-weight: 700;
-            border: none;
-            border-radius: 40px;
+        /* --- CATEGORY TABS --- */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--border-glass);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
-        #search-btn:hover { transform: scale(1.05); }
+        .tab-btn:hover, .tab-btn.active {
+            background: rgba(0, 243, 255, 0.1);
+            color: var(--primary-neon);
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        }
 
-        /* --- CATEGORY GRID --- */
-        .grid-container {
+        /* --- TOOLS GRID --- */
+        .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
         }
 
-        .cat-card {
-            background: var(--card-glass);
+        .tool-card {
+            background: var(--bg-card);
             border: 1px solid var(--border-glass);
             border-radius: 12px;
             padding: 25px;
-            cursor: pointer;
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
             display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Hover effect */
-        .cat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-neon);
-            background: rgba(0, 243, 255, 0.05);
-        }
-
-        .cat-icon {
-            font-size: 1.8rem;
-            background: rgba(255,255,255,0.05);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-        }
-
-        .cat-info h3 { margin: 0; font-size: 1rem; color: #fff; }
-        .cat-info span { font-size: 0.75rem; color: var(--text-muted); }
-
-        /* --- RESULTS LIST --- */
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-glass);
-        }
-
-        .tool-card {
-            background: #0a0a0a;
-            border: 1px solid var(--border-glass);
-            border-left: 3px solid var(--primary-neon);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            transition: all 0.2s;
-            display: flex;
             flex-direction: column;
         }
 
-        .tool-card:hover {
-            background: #111;
-            border-color: var(--secondary-neon);
-            border-left-color: var(--secondary-neon);
-            transform: translateX(5px);
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--border-glass);
+            transition: background 0.3s;
         }
 
-        .tool-top {
+        .tool-card:hover {
+            transform: translateY(-5px);
+            background: #151618;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tool-card:hover::before { background: var(--primary-neon); }
+
+        .card-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .tool-link {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 700;
             color: #fff;
             text-decoration: none;
         }
-        .tool-link:hover { text-decoration: underline; color: var(--primary-neon); }
+        .tool-link:hover { color: var(--primary-neon); text-decoration: underline; }
 
-        .repo-badge {
+        .platform-badge {
             font-size: 0.7rem;
-            background: #1a1a1a;
+            text-transform: uppercase;
             padding: 4px 8px;
             border-radius: 4px;
+            background: rgba(255,255,255,0.05);
             color: var(--text-muted);
-            border: 1px solid #333;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .tool-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; }
+        .tool-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            flex-grow: 1;
+        }
 
-        /* --- FOOTER --- */
+        /* --- CONTACT FOOTER --- */
         footer {
-            margin-top: 60px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            margin-top: 80px;
             border-top: 1px solid var(--border-glass);
-            padding-top: 30px;
+            padding: 40px 0;
+            text-align: center;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         }
 
-        .social-links a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.2s;
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
         }
-        .social-links a:hover { color: var(--primary-neon); }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid var(--border-glass);
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: var(--primary-neon);
+            color: #fff;
+            background: rgba(0, 243, 255, 0.05);
+            transform: scale(1.05);
+        }
+
+        .footer-logo { font-weight: 700; color: #fff; letter-spacing: 1px; font-size: 1.2rem; }
 
     </style>
 </head>
@@ -267,395 +260,310 @@
     <div id="app-container">
         
         <header>
-            <div class="brand-box">
-                <div class="logo-container">
-                    <img src="https://github.com/CScorza.png" alt="Logo" class="logo-img">
+            <div class="brand-section">
+                <div class="logo-frame">
+                    <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="logo-img">
                 </div>
-                <div class="brand-text">
+                <div class="brand-info">
                     <h1>CScorza</h1>
-                    <p>Advanced Intelligence Framework</p>
+                    <p>SOCMINT Intelligence Framework</p>
                 </div>
             </div>
-            <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" style="color:var(--text-muted); text-decoration:none; font-size:0.9rem;">📖 Manuali</a>
+            <div>
+                <a href="https://github.com/CScorza/SOCMIntelligence" target="_blank" class="contact-item" style="border-radius:8px; border-color:var(--accent-purple); color:var(--accent-purple);">
+                    📂 Open Repo
+                </a>
+            </div>
         </header>
 
-        <div class="search-section">
-            <h3 style="margin-top:0; color:var(--text-muted); font-weight:400;">Cosa vuoi analizzare oggi?</h3>
-            <div class="input-wrapper">
-                <input type="text" id="search-input" placeholder="Es. Targa, IP, Telegram, Steganografia, Metadati..." autocomplete="off">
-                <button id="search-btn">INDAGA</button>
+        <div class="search-container">
+            <h2 style="margin-top:0; color:#fff;">Esplora Social Media Intelligence</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Cerca tool (es. 'Facebook', 'Username', 'Follower')..." autocomplete="off">
             </div>
         </div>
 
-        <div id="content-area">
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="filterTools('all')">Tutti i Tool</button>
+            <button class="tab-btn" onclick="filterTools('username')">👤 Username Check</button>
+            <button class="tab-btn" onclick="filterTools('facebook')">📘 Facebook</button>
+            <button class="tab-btn" onclick="filterTools('instagram')">📸 Instagram</button>
+            <button class="tab-btn" onclick="filterTools('telegram')">✈️ Telegram</button>
+            <button class="tab-btn" onclick="filterTools('twitter')">🐦 Twitter / X</button>
+            <button class="tab-btn" onclick="filterTools('analytics')">📊 Analytics</button>
+        </div>
+
+        <div id="results-area" class="tools-grid">
             </div>
 
         <footer>
-            <div class="social-links">
-                <a href="https://github.com/CScorza" target="_blank">GitHub</a> |
-                <a href="https://cscorza.github.io/CScorza/" target="_blank">Website</a> |
-                <a href="#">Telegram</a>
+            <div class="footer-logo">CONTATTI UFFICIALI CSCORZA</div>
+            <div class="contact-grid">
+                <a href="https://github.com/CScorza" target="_blank" class="contact-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub Profile
+                </a>
+                <a href="https://t.me/CScorzaOSINT" target="_blank" class="contact-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-2.02-1.23-2.02-1.23-2.02-1.23.26-.41 3.28-3.14.15-.14.28-.42-.11-.53-.41-.12-4.63 2.8-4.63 2.8-2.15.93-4.15 1.79-4.15 1.79-1.05-.33-1.54-.66-1.54-.66-.69-.22.42-1.08.42-1.08 2.67-1.07 5.98-2.39 8.04-3.18 2.06-.79 4.12-1.58 4.12-1.58.74-.32 1.5.06 1.5.66z"/></svg>
+                    Telegram Channel
+                </a>
+                <a href="https://cscorza.github.io/CScorza/" target="_blank" class="contact-item">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+                    Website / Blog
+                </a>
             </div>
-            <p>&copy; 2025 CScorza Investigation. Framework proprietario per indagini OSINT.</p>
+            <p style="margin-top:30px; font-size:0.8rem; color:#666;">&copy; 2025 CScorza Investigation.</p>
         </footer>
 
     </div>
 
     <script>
-        /* DATABASE COMPLETO MAPPATO SUI TUOI REPOSITORY
-           Ogni tool ha un campo 'repo' che corrisponde al nome esatto del tuo repository.
-           'keywords' serve per la ricerca intelligente (es. auto -> vatint).
+        /* DATABASE SOCMINT 
+           Tools estratti e categorizzati dal Repo SOCMIntelligence
         */
-        const toolsDB = [
-            /* --- 1. VATINT (Veicoli) --- */
+        const socmintData = [
+            /* USERNAME CHECK */
             {
-                name: "SevEwa Check",
-                desc: "Verifica targhe e assicurazione veicoli (Database Europeo).",
-                url: "https://www.sevewa.com/", 
-                repo: "VATINT - Vehicle Intelligence",
-                keywords: ["auto", "targa", "veicolo", "macchina", "assicurazione", "vin", "transport"]
-            },
-            {
-                name: "VinCheck.info",
-                desc: "Controllo gratuito del numero di telaio (VIN) e storico veicolo.",
-                url: "https://vincheck.info/",
-                repo: "VATINT - Vehicle Intelligence",
-                keywords: ["vin", "telaio", "history", "auto", "usa"]
-            },
-            {
-                name: "MarineTraffic",
-                desc: "Tracciamento in tempo reale di navi e imbarcazioni.",
-                url: "https://www.marinetraffic.com/",
-                repo: "VATINT - Vehicle Intelligence",
-                keywords: ["navi", "barche", "ais", "marine", "transport"]
-            },
-
-            /* --- 2. STEGO INTELLIGENCE --- */
-            {
-                name: "AperiSolve",
-                desc: "Piattaforma all-in-one per analisi steganografica (Lsb, Exif, Strings).",
-                url: "https://aperisolve.com/",
-                repo: "StegoIntelligence",
-                keywords: ["stego", "steganografia", "nascosto", "immagine", "ctf"]
-            },
-            {
-                name: "StegOnline",
-                desc: "Tool online per estrarre bit nascosti nelle immagini.",
-                url: "https://stegonline.georgeom.net/",
-                repo: "StegoIntelligence",
-                keywords: ["stego", "bit", "plane", "lsb"]
-            },
-
-            /* --- 3. GEOINT --- */
-            {
-                name: "Google Earth Pro",
-                desc: "Strumento essenziale per analisi satellitare e storica.",
-                url: "https://www.google.com/earth/versions/",
-                repo: "GEOINTInvestigation",
-                keywords: ["geo", "mappe", "satellite", "earth", "luogo"]
-            },
-            {
-                name: "SunCalc",
-                desc: "Calcola la posizione del sole e delle ombre per cronolocalizzazione.",
-                url: "https://suncalc.org/",
-                repo: "GEOINTInvestigation",
-                keywords: ["sole", "ombre", "ora", "time", "shadow", "chrono"]
-            },
-            {
-                name: "Overpass Turbo",
-                desc: "Query avanzate su OpenStreetMap per trovare infrastrutture specifiche.",
-                url: "https://overpass-turbo.eu/",
-                repo: "GEOINTInvestigation",
-                keywords: ["osm", "mappe", "query", "infrastrutture"]
-            },
-
-            /* --- 4. SOCMINT (Social) --- */
-            {
+                category: "username",
                 name: "Sherlock",
-                desc: "Cerca username su 300+ piattaforme social (Script Python).",
+                desc: "Script Python per ricercare un username su oltre 300 siti web.",
                 url: "https://github.com/sherlock-project/sherlock",
-                repo: "SOCMIntelligence",
-                keywords: ["social", "username", "user", "profilo", "python"]
+                platform: "Cross-Platform"
             },
             {
+                category: "username",
                 name: "Maigret",
-                desc: "Analisi username avanzata con generazione report PDF.",
+                desc: "Analisi avanzata username, raccoglie dati e genera report PDF.",
                 url: "https://github.com/soxoj/maigret",
-                repo: "SOCMIntelligence",
-                keywords: ["social", "username", "report", "pdf"]
+                platform: "Terminal Tool"
             },
             {
+                category: "username",
+                name: "WhatsMyName",
+                desc: "Web App rapida per verificare l'esistenza di un profilo utente.",
+                url: "https://whatsmyname.app/",
+                platform: "Web App"
+            },
+            {
+                category: "username",
+                name: "Namechk",
+                desc: "Verifica disponibilità username e domini web associati.",
+                url: "https://namechk.com/",
+                platform: "Web App"
+            },
+
+            /* FACEBOOK */
+            {
+                category: "facebook",
+                name: "Graph.Tips",
+                desc: "Strumento per Facebook Graph Search e analisi ID.",
+                url: "https://graph.tips/",
+                platform: "Facebook"
+            },
+            {
+                category: "facebook",
+                name: "Sowdust FB Tools",
+                desc: "Raccolta di script per convertire URL in ID e viceversa.",
+                url: "https://sowdust.github.io/fb-linked-search/",
+                platform: "Facebook"
+            },
+            {
+                category: "facebook",
+                name: "WhoPostedWhat?",
+                desc: "Ricerca post pubblici su Facebook per data e keyword.",
+                url: "https://whopostedwhat.com/",
+                platform: "Facebook"
+            },
+            {
+                category: "facebook",
+                name: "Lookup-ID",
+                desc: "Trova il Facebook ID numerico partendo dal link del profilo.",
+                url: "https://lookup-id.com/",
+                platform: "Facebook"
+            },
+
+            /* INSTAGRAM */
+            {
+                category: "instagram",
+                name: "Osintgram",
+                desc: "Tool Python avanzato: email, telefono, follower, commenti.",
+                url: "https://github.com/Datalux/Osintgram",
+                platform: "Instagram"
+            },
+            {
+                category: "instagram",
+                name: "Imginn",
+                desc: "Visualizzatore anonimo di Storie, Post e Reel senza login.",
+                url: "https://imginn.com/",
+                platform: "Instagram"
+            },
+            {
+                category: "instagram",
+                name: "Picuki",
+                desc: "Editor e visualizzatore Instagram online anonimo.",
+                url: "https://www.picuki.com/",
+                platform: "Instagram"
+            },
+            {
+                category: "instagram",
+                name: "Instaloader",
+                desc: "Scarica foto, video e metadati dai profili Instagram.",
+                url: "https://instaloader.github.io/",
+                platform: "Python / CLI"
+            },
+
+            /* TELEGRAM */
+            {
+                category: "telegram",
                 name: "Telegago",
-                desc: "Motore di ricerca Google specifico per Telegram.",
+                desc: "Google Custom Search Engine ottimizzato per Telegram.",
                 url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
-                repo: "SOCMIntelligence",
-                keywords: ["telegram", "chat", "gruppi", "social"]
+                platform: "Telegram"
+            },
+            {
+                category: "telegram",
+                name: "TGStat",
+                desc: "Database enorme di canali Telegram, statistiche e ricerca.",
+                url: "https://tgstat.com/",
+                platform: "Telegram"
+            },
+            {
+                category: "telegram",
+                name: "Telemetr.io",
+                desc: "Analisi dell'audience e catalogo canali Telegram.",
+                url: "https://telemetr.io/",
+                platform: "Telegram"
+            },
+            {
+                category: "telegram",
+                name: "Lyzem",
+                desc: "Motore di ricerca per trovare messaggi all'interno di canali/gruppi.",
+                url: "https://lyzem.com/",
+                platform: "Telegram"
             },
 
-            /* --- 5. IMAGE OSINT --- */
+            /* TWITTER / X */
             {
-                name: "PimEyes",
-                desc: "Motore di ricerca volti (Riconoscimento Facciale).",
-                url: "https://pimeyes.com/",
-                repo: "Image OSINT Forensics",
-                keywords: ["face", "volto", "facciale", "recog", "foto"]
+                category: "twitter",
+                name: "Nitter",
+                desc: "Frontend alternativo per Twitter focalizzato sulla privacy.",
+                url: "https://github.com/zedeus/nitter",
+                platform: "Twitter/X"
             },
             {
-                name: "FotoForensics",
-                desc: "Analisi ELA per scoprire manipolazioni nelle foto.",
-                url: "http://fotoforensics.com/",
-                repo: "Image OSINT Forensics",
-                keywords: ["forensics", "fake", "ela", "photoshop", "edit"]
+                category: "twitter",
+                name: "TweetBeaver",
+                desc: "Strumenti di analisi: scarica follower, timeline, preferiti (CSV).",
+                url: "https://tweetbeaver.com/",
+                platform: "Twitter/X"
             },
             {
-                name: "ExifTool",
-                desc: "Standard mondiale per leggere/scrivere metadati.",
-                url: "https://exiftool.org/",
-                repo: "Image OSINT Forensics",
-                keywords: ["exif", "metadata", "dati", "camera"]
-            },
-
-            /* --- 6. MOBILE FORENSICS --- */
-            {
-                name: "ADB & Fastboot",
-                desc: "Tools ufficiali Android per interazione forense col dispositivo.",
-                url: "https://developer.android.com/studio/releases/platform-tools",
-                repo: "OSINT - Forensics Mobile",
-                keywords: ["android", "mobile", "telefono", "forensics", "adb"]
-            },
-            {
-                name: "TrueCaller",
-                desc: "Identificazione chiamante e numeri spam.",
-                url: "https://www.truecaller.com/",
-                repo: "OSINT - Forensics Mobile",
-                keywords: ["telefono", "numero", "chiamata", "id"]
+                category: "twitter",
+                name: "Social Bearing",
+                desc: "Analisi sentiment e statistiche avanzate per account e tweet.",
+                url: "https://socialbearing.com/",
+                platform: "Twitter/X"
             },
 
-            /* --- 7. CHROME EXTENSIONS --- */
+            /* ANALYTICS & GENERAL */
             {
-                name: "SingleFile",
-                desc: "Salva una pagina web completa come singolo file HTML (Forense).",
-                url: "https://chrome.google.com/webstore/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle",
-                repo: "Estensioni Chrome OSINT",
-                keywords: ["chrome", "estensione", "save", "forensic", "web"]
+                category: "analytics",
+                name: "Social Blade",
+                desc: "Statistiche globali (YouTube, Twitch, Instagram, Twitter).",
+                url: "https://socialblade.com/",
+                platform: "Multi"
             },
             {
-                name: "Goowil (User-Agent Switcher)",
-                desc: "Cambia l'identità del browser per simulare mobile o altri OS.",
-                url: "#", 
-                repo: "Estensioni Chrome OSINT",
-                keywords: ["chrome", "spoof", "user-agent", "mobile"]
-            },
-
-            /* --- 8. DISTRO FORENSICS --- */
-            {
-                name: "CSI Linux",
-                desc: "Distro specializzata per Cyber Investigation e OSINT.",
-                url: "https://csilinux.com/",
-                repo: "DistroForensics",
-                keywords: ["linux", "os", "vm", "virtual", "machine"]
+                category: "analytics",
+                name: "Social Searcher",
+                desc: "Motore di ricerca in tempo reale su tutti i social media.",
+                url: "https://www.social-searcher.com/",
+                platform: "Multi"
             },
             {
-                name: "Tsurugi Linux",
-                desc: "Distribuzione Linux ottimizzata per DFIR (Digital Forensics).",
-                url: "https://tsurugi-linux.org/",
-                repo: "DistroForensics",
-                keywords: ["linux", "dfir", "forensics", "japan"]
-            },
-
-            /* --- 9. CORPINT (Corporate) --- */
-            {
-                name: "OpenCorporates",
-                desc: "Il più grande database aperto di aziende al mondo.",
-                url: "https://opencorporates.com/",
-                repo: "CORPINT - Corporate Intelligence",
-                keywords: ["azienda", "business", "società", "owner", "ceo"]
-            },
-            {
-                name: "Occrp Aleph",
-                desc: "Database investigativo globale su crimine organizzato e corruzione.",
-                url: "https://aleph.occrp.org/",
-                repo: "CORPINT - Corporate Intelligence",
-                keywords: ["leak", "business", "crime", "soldi", "money"]
-            },
-
-            /* --- 10. OSINT AI --- */
-            {
-                name: "ChatGPT (Analisi)",
-                desc: "Utilizzo di LLM per analizzare testi o generare dork.",
-                url: "https://chat.openai.com/",
-                repo: "OSINT-IA",
-                keywords: ["ai", "gpt", "text", "analisi"]
-            },
-            {
-                name: "Whisper",
-                desc: "AI per trascrizione audio-testo (Speech to Text).",
-                url: "https://github.com/openai/whisper",
-                repo: "OSINT-IA",
-                keywords: ["ai", "audio", "voice", "trascrizione"]
-            },
-
-            /* --- 11. BOT INVESTIGATION --- */
-            {
-                name: "Botometer",
-                desc: "Controlla se un account Twitter è probabile che sia un bot.",
-                url: "https://botometer.osome.iu.edu/",
-                repo: "BOTInvestigation",
-                keywords: ["bot", "fake", "twitter", "automation"]
-            },
-            
-            /* --- 12. WEB INTELLIGENCE --- */
-            {
-                name: "Whois DomainTools",
-                desc: "Informazioni registrazione domini e storico.",
-                url: "https://whois.domaintools.com/",
-                repo: "WEBIntelligence",
-                keywords: ["domain", "sito", "web", "owner", "whois"]
-            },
-            {
-                name: "Archive.org",
-                desc: "Wayback Machine: vedi versioni passate dei siti web.",
-                url: "https://archive.org/web/",
-                repo: "WEBIntelligence",
-                keywords: ["history", "archive", "deleted", "web"]
-            },
-
-            /* --- 13. DATA PROTECTION --- */
-            {
-                name: "TOSDR",
-                desc: "Terms of Service; Didn't Read. Analisi privacy policy.",
-                url: "https://tosdr.org/",
-                repo: "Data Protection",
-                keywords: ["privacy", "tos", "legal", "gdpr"]
+                category: "analytics",
+                name: "Hashatit",
+                desc: "Ricerca Hashtag su tutte le piattaforme social.",
+                url: "https://www.hashatit.com/",
+                platform: "Multi"
             }
         ];
 
-        /* CATEGORIE VISIVE (Macro-Aree) */
-        const categories = [
-            { id: "SOCMIntelligence", label: "Social Media (SOCMINT)", icon: "👤" },
-            { id: "VATINT - Vehicle Intelligence", label: "Veicoli (VATINT)", icon: "🚗" },
-            { id: "Image OSINT Forensics", label: "Immagini & Volti", icon: "🌄" },
-            { id: "GEOINTInvestigation", label: "GEOINT (Mappe)", icon: "🌍" },
-            { id: "OSINT - Forensics Mobile", label: "Mobile Forensics", icon: "📲" },
-            { id: "StegoIntelligence", label: "Steganografia", icon: "🩻" },
-            { id: "CORPINT - Corporate Intelligence", label: "Aziende (CORPINT)", icon: "📊" },
-            { id: "DistroForensics", label: "Sistemi (Distro/VM)", icon: "💻" },
-            { id: "Estensioni Chrome OSINT", label: "Estensioni Browser", icon: "🧩" },
-            { id: "OSINT-IA", label: "Intelligenza Artificiale", icon: "🤖" },
-            { id: "WEBIntelligence", label: "Web & Domini", icon: "🌐" },
-            { id: "BOTInvestigation", label: "Bot Analysis", icon: "👾" }
-        ];
-
-        const contentArea = document.getElementById('content-area');
+        /* LOGICA APPLICAZIONE */
+        const resultsArea = document.getElementById('results-area');
         const searchInput = document.getElementById('search-input');
-        const searchBtn = document.getElementById('search-btn');
+        const buttons = document.querySelectorAll('.tab-btn');
 
-        /* 1. RENDER HOME */
-        function renderHome() {
-            let html = `<div class="grid-container">`;
-            categories.forEach(cat => {
-                html += `
-                    <div class="cat-card" onclick="filterByRepo('${cat.id}')">
-                        <div class="cat-icon">${cat.icon}</div>
-                        <div class="cat-info">
-                            <h3>${cat.label}</h3>
-                            <span>Clicca per aprire</span>
-                        </div>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-            contentArea.innerHTML = html;
-        }
+        let currentCategory = 'all';
 
-        /* 2. CERCA NEL DATABASE */
-        function performSearch(repoFilter = null) {
-            const query = searchInput.value.toLowerCase().trim();
-
-            if (!query && !repoFilter) {
-                renderHome();
+        // 1. Funzione di Rendering
+        function renderTools(tools) {
+            resultsArea.innerHTML = '';
+            
+            if (tools.length === 0) {
+                resultsArea.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:50px; color:#666;">Nessun risultato trovato</div>`;
                 return;
             }
 
-            // Filtro principale
-            const results = toolsDB.filter(tool => {
-                // Se c'è un filtro repo attivo (click su card)
-                if (repoFilter && tool.repo !== repoFilter) return false;
-
-                // Se non c'è query testuale, mostra tutto del repo
-                if (!query) return true;
-
-                // Ricerca "Smart" su Keywords, Nome e Descrizione
-                const matchName = tool.name.toLowerCase().includes(query);
-                const matchDesc = tool.desc.toLowerCase().includes(query);
-                const matchRepo = tool.repo.toLowerCase().includes(query);
-                const matchKeys = tool.keywords.some(k => k.includes(query));
-
-                return matchName || matchDesc || matchRepo || matchKeys;
-            });
-
-            const title = repoFilter ? `Repository: ${repoFilter}` : `Risultati per: "${query}"`;
-            renderResults(results, title);
-        }
-
-        /* Helper per i click sulle categorie */
-        function filterByRepo(repoName) {
-            searchInput.value = ""; // Pulisce la ricerca testuale
-            performSearch(repoName);
-        }
-
-        /* 3. MOSTRA RISULTATI */
-        function renderResults(tools, title) {
-            let html = `
-                <div class="results-header">
-                    <h2 style="margin:0; font-weight:400;">${title}</h2>
-                    <button onclick="clearSearch()" style="background:transparent; border:1px solid var(--border-glass); color:var(--text-muted); padding:5px 15px; cursor:pointer; border-radius:4px;">
-                        ← Torna alla Dashboard
-                    </button>
-                </div>
-            `;
-
-            if (tools.length === 0) {
-                html += `
-                    <div style="text-align:center; padding:50px; opacity:0.6;">
-                        <h3>Nessun tool trovato.</h3>
-                        <p>Prova a cercare in un'altra categoria.</p>
+            tools.forEach(tool => {
+                const card = document.createElement('div');
+                card.className = 'tool-card';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
+                        <span class="platform-badge">${tool.platform}</span>
                     </div>
+                    <div class="tool-desc">${tool.desc}</div>
                 `;
+                resultsArea.appendChild(card);
+            });
+        }
+
+        // 2. Filtro per Categoria (Tabs)
+        function filterTools(category) {
+            currentCategory = category;
+            
+            // Gestione stato bottoni
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active'); // Nota: event.target funziona al click
+
+            // Reset ricerca testuale quando cambio tab
+            searchInput.value = '';
+
+            if (category === 'all') {
+                renderTools(socmintData);
             } else {
-                // Creiamo una griglia anche per i risultati
-                html += `<div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap:20px;">`;
-                tools.forEach(tool => {
-                    html += `
-                        <div class="tool-card">
-                            <div class="tool-top">
-                                <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
-                                <span class="repo-badge">📂 ${tool.repo}</span>
-                            </div>
-                            <div class="tool-desc">${tool.desc}</div>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
+                const filtered = socmintData.filter(t => t.category === category);
+                renderTools(filtered);
             }
-
-            contentArea.innerHTML = html;
         }
 
-        function clearSearch() {
-            searchInput.value = "";
-            renderHome();
+        // 3. Funzione di Ricerca Testuale
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            // Filtra prima per categoria attiva, poi per testo
+            const baseSet = currentCategory === 'all' 
+                ? socmintData 
+                : socmintData.filter(t => t.category === currentCategory);
+
+            const results = baseSet.filter(tool => 
+                tool.name.toLowerCase().includes(query) || 
+                tool.desc.toLowerCase().includes(query) ||
+                tool.platform.toLowerCase().includes(query)
+            );
+
+            renderTools(results);
         }
 
-        /* EVENT LISTENER */
-        searchBtn.addEventListener('click', () => performSearch());
+        // Event Listeners
+        searchInput.addEventListener('input', performSearch);
         
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') performSearch();
-        });
+        // Avvio Iniziale
+        renderTools(socmintData);
 
-        // Avvio
-        renderHome();
+        // Fix per il pulsante attivo iniziale (estetico)
+        document.querySelector('.tab-btn.active').click();
 
     </script>
 </body>
