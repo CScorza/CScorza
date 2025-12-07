@@ -3,100 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CScorza SOCMINT Framework</title>
+    <title>CScorza SOCMINT Engine</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- STILE VISIVO "CYBER" --- */
+        /* --- CONFIGURAZIONE VISIVA --- */
         :root {
-            --bg-deep: #02040a;
-            --bg-card: #0d1117;
-            --primary-neon: #00f0ff;
-            --secondary-neon: #7000ff;
-            --text-main: #e6edf3;
-            --text-muted: #8b949e;
-            --border-color: #30363d;
-            --accent-hover: rgba(0, 240, 255, 0.1);
+            --bg-body: #050505;
+            --bg-panel: #0f1115;
+            --primary: #00f3ff;   /* Ciano Cyber */
+            --accent: #bd00ff;    /* Viola Cyber */
+            --text-main: #ffffff;
+            --text-dim: #9ca3af;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            background-color: var(--bg-deep);
+            background-color: var(--bg-body);
             color: var(--text-main);
             font-family: 'Space Grotesk', sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            /* Pattern griglia sottile */
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        #app-container {
+        #main-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* HEADER */
+        /* --- HEADER --- */
         header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             padding-bottom: 30px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border);
             margin-bottom: 40px;
         }
 
-        .brand {
+        .brand-box {
             display: flex;
             align-items: center;
             gap: 20px;
         }
 
-        .brand-logo {
-            width: 60px;
-            height: 60px;
+        .logo-img {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            border: 2px solid var(--primary-neon);
-            box-shadow: 0 0 15px var(--primary-neon);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
         }
 
-        .brand-text h1 { margin: 0; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .brand-text p { margin: 0; color: var(--primary-neon); font-size: 0.9rem; letter-spacing: 2px; }
+        .brand-title h1 { margin: 0; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
+        .brand-title span { color: var(--primary); font-size: 0.9rem; letter-spacing: 1px; }
 
-        /* SEARCH BAR */
-        .search-wrapper {
-            margin-bottom: 30px;
+        .repo-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .repo-link:hover { border-color: var(--primary); color: #fff; }
+
+        /* --- MOTORE DI RICERCA --- */
+        .search-area {
             text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.03);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(5px);
         }
 
-        #search-input {
+        .search-area h2 { margin-top: 0; font-weight: 400; color: var(--text-dim); }
+
+        #smart-search {
             width: 100%;
-            max-width: 600px;
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            background: #0d1117;
-            border: 1px solid var(--primary-neon);
+            max-width: 700px;
+            padding: 16px 24px;
+            font-size: 1.2rem;
+            background: #000;
+            border: 1px solid var(--primary);
             color: #fff;
             border-radius: 50px;
             outline: none;
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
-            transition: all 0.3s;
+            font-family: inherit;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+            transition: box-shadow 0.3s;
         }
-        #search-input:focus { box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); }
 
-        /* TABS CATEGORIE */
-        .tabs-container {
+        #smart-search:focus { box-shadow: 0 0 30px rgba(0, 243, 255, 0.3); }
+
+        /* --- FILTRI CATEGORIE --- */
+        .filters {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 12px;
             margin-bottom: 40px;
         }
 
-        .tab-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
+        .filter-btn {
+            background: var(--bg-panel);
+            color: var(--text-dim);
+            border: 1px solid var(--border);
             padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
@@ -105,27 +125,27 @@
             transition: all 0.2s;
         }
 
-        .tab-btn:hover { border-color: var(--primary-neon); color: #fff; }
+        .filter-btn:hover { color: #fff; border-color: #fff; }
 
-        .tab-btn.active {
-            background: var(--primary-neon);
+        .filter-btn.active {
+            background: var(--primary);
             color: #000;
-            border-color: var(--primary-neon);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
         }
 
-        /* GRID RISULTATI */
-        .tools-grid {
+        /* --- GRIGLIA RISULTATI --- */
+        .grid-results {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
-        .tool-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
+        .card {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
             transition: transform 0.2s, border-color 0.2s;
             display: flex;
             flex-direction: column;
@@ -133,234 +153,362 @@
             overflow: hidden;
         }
 
-        .tool-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-neon);
+            border-color: var(--primary);
         }
 
-        .tool-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 3px; height: 100%;
-            background: var(--primary-neon);
-            opacity: 0.5;
-        }
-
-        .tool-header {
+        .card-top {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
         }
 
-        .tool-name {
+        .card-title {
             font-size: 1.2rem;
             font-weight: 700;
             color: #fff;
             text-decoration: none;
         }
-        .tool-name:hover { text-decoration: underline; color: var(--primary-neon); }
+        .card-title:hover { text-decoration: underline; color: var(--primary); }
 
-        .tool-cat-badge {
+        .badge {
             font-size: 0.7rem;
-            background: rgba(255,255,255,0.1);
-            padding: 3px 8px;
-            border-radius: 4px;
             text-transform: uppercase;
-            color: var(--text-muted);
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-dim);
+            border: 1px solid var(--border);
         }
 
-        .tool-desc {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-dim);
             line-height: 1.5;
         }
-
-        /* FOOTER */
-        footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-        
-        .footer-links a {
-            color: var(--text-muted);
-            margin: 0 15px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .footer-links a:hover { color: var(--primary-neon); }
 
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
-            padding: 40px;
-            border: 1px dashed var(--border-color);
-            color: var(--secondary-neon);
+            padding: 50px;
+            color: var(--accent);
+            border: 1px dashed var(--accent);
+            background: rgba(189, 0, 255, 0.05);
+            border-radius: 12px;
         }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        .social-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .social-link:hover { color: var(--primary); }
+
     </style>
 </head>
 <body>
 
-    <div id="app-container">
+    <div id="main-wrapper">
+        
         <header>
-            <div class="brand">
-                <img src="https://github.com/CScorza.png" alt="Logo" class="brand-logo">
-                <div class="brand-text">
+            <div class="brand-box">
+                <img src="https://github.com/CScorza.png" alt="CScorza" class="logo-img">
+                <div class="brand-title">
                     <h1>CScorza</h1>
-                    <p>SOCMINT Intelligence Framework</p>
+                    <span>SOCMIntelligence Framework</span>
                 </div>
             </div>
-            <div>
-                <a href="https://github.com/CScorza/SOCMIntelligence" target="_blank" style="color:#fff; text-decoration:none; border:1px solid #333; padding:8px 15px; border-radius:5px;">📂 Open Repo</a>
-            </div>
+            <a href="https://github.com/CScorza/SOCMIntelligence" target="_blank" class="repo-link">📂 View Repo</a>
         </header>
 
-        <div class="search-wrapper">
-            <input type="text" id="search-input" placeholder="Cerca strumento (es. Sherlock, Telegram, Foto)..." autocomplete="off">
+        <div class="search-area">
+            <h2>Cosa vuoi indagare oggi?</h2>
+            <input type="text" id="smart-search" placeholder="Digita query (es. 'Facebook ID', 'Foto', 'Username', 'Telegram Bot')..." autocomplete="off">
         </div>
 
-        <div class="tabs-container" id="category-tabs">
-            <button class="tab-btn active" data-cat="all">Tutti</button>
-            <button class="tab-btn" data-cat="username">👤 Username</button>
-            <button class="tab-btn" data-cat="facebook">📘 Facebook</button>
-            <button class="tab-btn" data-cat="instagram">📸 Instagram</button>
-            <button class="tab-btn" data-cat="telegram">✈️ Telegram</button>
-            <button class="tab-btn" data-cat="twitter">🐦 Twitter / X</button>
-            <button class="tab-btn" data-cat="tiktok">🎵 TikTok</button>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">TUTTI</button>
+            <button class="filter-btn" data-filter="username">👤 USERNAME</button>
+            <button class="filter-btn" data-filter="facebook">📘 FACEBOOK</button>
+            <button class="filter-btn" data-filter="instagram">📸 INSTAGRAM</button>
+            <button class="filter-btn" data-filter="telegram">✈️ TELEGRAM</button>
+            <button class="filter-btn" data-filter="twitter">🐦 TWITTER</button>
+            <button class="filter-btn" data-filter="tiktok">🎵 TIKTOK</button>
         </div>
 
-        <div id="tools-container" class="tools-grid">
+        <div id="results-grid" class="grid-results">
             </div>
 
         <footer>
-            <div class="footer-links">
-                <a href="https://github.com/CScorza">GitHub</a>
-                <a href="https://cscorza.github.io/CScorza/">Website</a>
-                <a href="https://t.me/CScorzaOSINT">Telegram Channel</a>
+            <div class="social-box">
+                <a href="https://github.com/CScorza" target="_blank" class="social-link">
+                    GitHub
+                </a>
+                <a href="https://cscorza.github.io/CScorza/" target="_blank" class="social-link">
+                    Sito Web
+                </a>
+                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-link">
+                    Telegram
+                </a>
             </div>
-            <p style="margin-top:20px; font-size:0.8rem; color:#555;">&copy; 2025 CScorza Investigation</p>
+            <p style="color:#555; font-size:0.8rem;">&copy; 2025 CScorza Investigation</p>
         </footer>
+
     </div>
 
     <script>
-        /* --- 1. DATABASE STRUMENTI --- */
-        /* Nota: Il campo 'cat' deve corrispondere esattamente al 'data-cat' dei bottoni sopra */
-        const toolsDB = [
-            /* USERNAME */
-            { name: "Sherlock", cat: "username", url: "https://github.com/sherlock-project/sherlock", desc: "Script Python potente per trovare username su 300+ siti." },
-            { name: "Maigret", cat: "username", url: "https://github.com/soxoj/maigret", desc: "Analisi username profonda con reportistica PDF." },
-            { name: "WhatsMyName", cat: "username", url: "https://whatsmyname.app/", desc: "Web app veloce per enumerazione username." },
-            { name: "Namechk", cat: "username", url: "https://namechk.com/", desc: "Verifica disponibilità username e domini." },
+        /* DATABASE "SOCMINT" CON SISTEMA DI KEYWORDS (TAGS)
+           Il campo 'keys' contiene parole chiave nascoste per migliorare la ricerca.
+           Anche se l'utente scrive "Foto" e il tool si chiama "Imginn", lo troverà.
+        */
+        const tools = [
+            /* --- USERNAME --- */
+            { 
+                name: "Sherlock", 
+                cat: "username", 
+                url: "https://github.com/sherlock-project/sherlock", 
+                desc: "Cerca un username su oltre 300 siti web e social network.", 
+                keys: ["user", "nome", "profilo", "account", "python", "script", "person", "persona", "check"]
+            },
+            { 
+                name: "Maigret", 
+                cat: "username", 
+                url: "https://github.com/soxoj/maigret", 
+                desc: "Analisi username profonda con generazione report PDF.", 
+                keys: ["user", "report", "pdf", "documento", "deep", "search", "dossier"]
+            },
+            { 
+                name: "WhatsMyName", 
+                cat: "username", 
+                url: "https://whatsmyname.app/", 
+                desc: "Web App velocissima per verificare dove è registrato un nome.", 
+                keys: ["fast", "web", "online", "user", "nome", "check", "lista"]
+            },
+            { 
+                name: "Namechk", 
+                cat: "username", 
+                url: "https://namechk.com/", 
+                desc: "Verifica disponibilità username e domini web .com/.net.", 
+                keys: ["domain", "dominio", "sito", "url", "disponibile", "brand"]
+            },
 
-            /* FACEBOOK */
-            { name: "Graph.Tips", cat: "facebook", url: "https://graph.tips/", desc: "Strumento sperimentale per Facebook Graph Search." },
-            { name: "Lookup-ID", cat: "facebook", url: "https://lookup-id.com/", desc: "Trova ID numerico Facebook da un URL profilo." },
-            { name: "WhoPostedWhat", cat: "facebook", url: "https://whopostedwhat.com/", desc: "Ricerca post pubblici per data e keyword specifica." },
-            { name: "Sowdust Tools", cat: "facebook", url: "https://sowdust.github.io/fb-linked-search/", desc: "Suite di script per analisi correlazioni Facebook." },
+            /* --- FACEBOOK --- */
+            { 
+                name: "Graph.Tips", 
+                cat: "facebook", 
+                url: "https://graph.tips/", 
+                desc: "Motore avanzato per Facebook Graph Search (ID, Post, Foto).", 
+                keys: ["graph", "id", "uid", "numeric", "ricerca", "avanzata", "meta"]
+            },
+            { 
+                name: "Lookup-ID", 
+                cat: "facebook", 
+                url: "https://lookup-id.com/", 
+                desc: "Trova l'ID numerico di un profilo Facebook dal link.", 
+                keys: ["id", "uid", "numero", "codice", "profilo", "link", "convert"]
+            },
+            { 
+                name: "WhoPostedWhat", 
+                cat: "facebook", 
+                url: "https://whopostedwhat.com/", 
+                desc: "Cerca post pubblici su Facebook per data specifica e parola chiave.", 
+                keys: ["post", "pubblico", "data", "date", "history", "keyword", "messaggio"]
+            },
+            { 
+                name: "Sowdust Tools", 
+                cat: "facebook", 
+                url: "https://sowdust.github.io/fb-linked-search/", 
+                desc: "Toolbox per convertire profili e analizzare connessioni.", 
+                keys: ["tool", "script", "connessioni", "link", "analyst"]
+            },
 
-            /* INSTAGRAM */
-            { name: "Osintgram", cat: "instagram", url: "https://github.com/Datalux/Osintgram", desc: "Tool Python completo: email, telefono, followers." },
-            { name: "Imginn", cat: "instagram", url: "https://imginn.com/", desc: "Visualizza storie e post Instagram in anonimato." },
-            { name: "Picuki", cat: "instagram", url: "https://www.picuki.com/", desc: "Instagram editor e viewer online senza account." },
-            { name: "Instaloader", cat: "instagram", url: "https://instaloader.github.io/", desc: "Download massivo di foto/video e metadati." },
+            /* --- INSTAGRAM --- */
+            { 
+                name: "Osintgram", 
+                cat: "instagram", 
+                url: "https://github.com/Datalux/Osintgram", 
+                desc: "Tool Python: trova email, telefono, follower e geolocalizzazione.", 
+                keys: ["email", "phone", "telefono", "follower", "geo", "python", "script", "terminal"]
+            },
+            { 
+                name: "Imginn", 
+                cat: "instagram", 
+                url: "https://imginn.com/", 
+                desc: "Visualizza e scarica Storie, Post e Reel in anonimato.", 
+                keys: ["storie", "story", "stories", "reel", "video", "foto", "download", "anonimo", "viewer"]
+            },
+            { 
+                name: "Picuki", 
+                cat: "instagram", 
+                url: "https://www.picuki.com/", 
+                desc: "Instagram web viewer ed editor. Non richiede login.", 
+                keys: ["web", "online", "no login", "account", "viewer", "foto"]
+            },
+            { 
+                name: "Instaloader", 
+                cat: "instagram", 
+                url: "https://instaloader.github.io/", 
+                desc: "Download massivo di profili (foto, video, metadati).", 
+                keys: ["download", "bulk", "backup", "save", "meta", "data"]
+            },
 
-            /* TELEGRAM */
-            { name: "Telegago", cat: "telegram", url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg", desc: "Google CSE specifico per trovare gruppi Telegram." },
-            { name: "TGStat", cat: "telegram", url: "https://tgstat.com/", desc: "Metriche avanzate e ricerca canali Telegram." },
-            { name: "Telemetr.io", cat: "telegram", url: "https://telemetr.io/", desc: "Analisi e catalogazione canali Telegram globali." },
-            { name: "Lyzem", cat: "telegram", url: "https://lyzem.com/", desc: "Motore di ricerca per messaggi dentro i canali." },
+            /* --- TELEGRAM --- */
+            { 
+                name: "Telegago", 
+                cat: "telegram", 
+                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg", 
+                desc: "Google CSE (Custom Search) per trovare gruppi e canali privati.", 
+                keys: ["google", "ricerca", "gruppo", "canale", "invito", "link", "join"]
+            },
+            { 
+                name: "TGStat", 
+                cat: "telegram", 
+                url: "https://tgstat.com/", 
+                desc: "Analisi metriche canali, grafici crescita e ricerca globale.", 
+                keys: ["analytics", "statistiche", "grafici", "data", "canali", "list"]
+            },
+            { 
+                name: "Lyzem", 
+                cat: "telegram", 
+                url: "https://lyzem.com/", 
+                desc: "Cerca parole chiave dentro i messaggi dei canali Telegram.", 
+                keys: ["messaggi", "text", "testo", "chat", "search", "content"]
+            },
+            { 
+                name: "Telemetr.io", 
+                cat: "telegram", 
+                url: "https://telemetr.io/", 
+                desc: "Enorme database di canali Telegram con analisi audience.", 
+                keys: ["database", "audience", "marketing", "canali", "lista"]
+            },
 
-            /* TWITTER */
-            { name: "Nitter", cat: "twitter", url: "https://github.com/zedeus/nitter", desc: "Frontend privacy-oriented per Twitter (no tracking)." },
-            { name: "TweetBeaver", cat: "twitter", url: "https://tweetbeaver.com/", desc: "Scarica timeline, follower e amici in CSV." },
-            { name: "Social Bearing", cat: "twitter", url: "https://socialbearing.com/", desc: "Analisi sentiment e geo-localizzazione tweet." },
+            /* --- TWITTER --- */
+            { 
+                name: "Nitter", 
+                cat: "twitter", 
+                url: "https://github.com/zedeus/nitter", 
+                desc: "Interfaccia alternativa per Twitter. Privacy focus, no tracking.", 
+                keys: ["privacy", "no track", "anonimo", "view", "read", "leggere"]
+            },
+            { 
+                name: "TweetBeaver", 
+                cat: "twitter", 
+                url: "https://tweetbeaver.com/", 
+                desc: "Scarica timeline, follower, amici e preferiti in CSV.", 
+                keys: ["csv", "excel", "download", "data", "follower", "friends", "timeline"]
+            },
 
-            /* TIKTOK */
-            { name: "TikTok Downloader", cat: "tiktok", url: "https://ssstik.io/", desc: "Scarica video TikTok senza watermark." },
-            { name: "Urlebird", cat: "tiktok", url: "https://urlebird.com/", desc: "Visualizzatore TikTok online e downloader." }
+            /* --- TIKTOK --- */
+            { 
+                name: "TikTok Downloader", 
+                cat: "tiktok", 
+                url: "https://ssstik.io/", 
+                desc: "Scarica video TikTok senza watermark (logo).", 
+                keys: ["video", "download", "watermark", "logo", "mp4", "save"]
+            },
+            { 
+                name: "Urlebird", 
+                cat: "tiktok", 
+                url: "https://urlebird.com/", 
+                desc: "Visualizzatore online TikTok e downloader analitico.", 
+                keys: ["viewer", "online", "analytics", "music", "video"]
+            }
         ];
 
-        /* --- 2. STATO DELL'APPLICAZIONE --- */
-        let currentCategory = 'all';
-        let currentSearch = '';
+        /* --- MOTORE DI RICERCA IBRIDO --- */
+        const container = document.getElementById('results-grid');
+        const searchInput = document.getElementById('smart-search');
+        const filterBtns = document.querySelectorAll('.filter-btn');
 
-        /* --- 3. ELEMENTI DOM --- */
-        const container = document.getElementById('tools-container');
-        const searchInput = document.getElementById('search-input');
-        const tabButtons = document.querySelectorAll('.tab-btn');
+        let activeCategory = 'all';
 
-        /* --- 4. FUNZIONE PRINCIPALE DI FILTRO (CORE LOGIC) --- */
-        function applyFilters() {
-            // Pulisce il contenitore
+        function renderTools() {
+            const query = searchInput.value.toLowerCase().trim();
             container.innerHTML = '';
 
-            // Filtra il database
-            const filteredTools = toolsDB.filter(tool => {
-                // 1. Controllo Categoria
-                const categoryMatch = (currentCategory === 'all') || (tool.cat === currentCategory);
+            // FILTRO LOGICO: 
+            // 1. Corrisponde alla categoria selezionata?
+            // 2. Corrisponde alla ricerca (Nome, Descrizione OPPURE Parole Chiave)?
+            
+            const filtered = tools.filter(tool => {
+                const isCatMatch = (activeCategory === 'all' || tool.cat === activeCategory);
                 
-                // 2. Controllo Ricerca Testuale
-                const searchMatch = tool.name.toLowerCase().includes(currentSearch) || 
-                                    tool.desc.toLowerCase().includes(currentSearch);
+                // Ricerca approfondita (Deep Search)
+                const isNameMatch = tool.name.toLowerCase().includes(query);
+                const isDescMatch = tool.desc.toLowerCase().includes(query);
+                // La magia: controlla se QUALCUNA delle parole chiave contiene la query
+                const isKeyMatch = tool.keys.some(k => k.includes(query));
 
-                return categoryMatch && searchMatch;
+                return isCatMatch && (isNameMatch || isDescMatch || isKeyMatch);
             });
 
-            // Rendering
-            if (filteredTools.length === 0) {
+            if (filtered.length === 0) {
                 container.innerHTML = `
                     <div class="no-results">
-                        <h3>Nessun tool trovato ❌</h3>
-                        <p>Prova a cambiare categoria o termine di ricerca.</p>
-                    </div>`;
+                        <h3>Nessun risultato trovato 🕵️‍♂️</h3>
+                        <p>Prova parole generiche come "Foto", "ID", "Gruppo" o "Analisi".</p>
+                    </div>
+                `;
                 return;
             }
 
-            filteredTools.forEach(tool => {
+            filtered.forEach(tool => {
                 const card = document.createElement('div');
-                card.className = 'tool-card';
+                card.className = 'card';
                 card.innerHTML = `
-                    <div class="tool-header">
-                        <a href="${tool.url}" target="_blank" class="tool-name">${tool.name} ↗</a>
-                        <span class="tool-cat-badge">${tool.cat}</span>
+                    <div class="card-top">
+                        <a href="${tool.url}" target="_blank" class="card-title">${tool.name} ↗</a>
+                        <span class="badge">${tool.cat}</span>
                     </div>
-                    <div class="tool-desc">${tool.desc}</div>
+                    <div class="card-desc">${tool.desc}</div>
                 `;
                 container.appendChild(card);
             });
         }
 
-        /* --- 5. GESTIONE EVENTI (LISTENERS) --- */
-
-        // Gestione Click sui Bottoni Categoria
-        tabButtons.forEach(btn => {
+        // Event Listeners per i Bottoni
+        filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Aggiorna UI attiva
-                tabButtons.forEach(b => b.classList.remove('active'));
+                // Rimuovi classe active dagli altri
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Aggiungi a quello cliccato
                 btn.classList.add('active');
-
-                // Aggiorna Stato
-                currentCategory = btn.getAttribute('data-cat');
                 
-                // Opzionale: Resetta la ricerca quando cambi categoria per non confondere
-                // currentSearch = ''; 
-                // searchInput.value = '';
-
-                // Applica filtri
-                applyFilters();
+                // Imposta categoria
+                activeCategory = btn.getAttribute('data-filter');
+                
+                // Opzionale: Pulisci la ricerca se cambi categoria
+                // searchInput.value = ''; 
+                
+                renderTools();
             });
         });
 
-        // Gestione Input Ricerca
-        searchInput.addEventListener('input', (e) => {
-            currentSearch = e.target.value.toLowerCase().trim();
-            applyFilters();
-        });
+        // Event Listener per la Ricerca (Live)
+        searchInput.addEventListener('input', renderTools);
 
-        /* --- 6. AVVIO INIZIALE --- */
-        applyFilters();
+        // Avvio
+        renderTools();
 
     </script>
 </body>
