@@ -90,7 +90,7 @@
             box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
         }
 
-        /* --- SEZIONE MANUALI (3 DOWNLOADS) --- */
+        /* --- SEZIONE MANUALI (AGGIORNATA CON IMMAGINI) --- */
         .manuals-wrapper {
             margin-bottom: 60px;
         }
@@ -130,11 +130,28 @@
             box-shadow: 0 0 25px rgba(255, 193, 7, 0.15);
         }
 
-        .manual-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--gold);
-            text-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+        /* Nuovo contenitore per le immagini dei manuali */
+        .manual-img-container {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: rgba(255, 193, 7, 0.1);
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        .manual-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            /* Opzionale: filtro per rendere le immagini più "cyber/gold" */
+            filter: sepia(100%) hue-rotate(5deg) saturate(150%);
         }
 
         .manual-title { font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
@@ -276,34 +293,40 @@
         </div>
 
         <div class="manuals-wrapper">
-            <div class="section-header-gold">📚 Formazione & Manualistica</div>
+            <div class="section-header-gold">📚 Manuali Ufficiali CScorza</div>
             <div class="manuals-grid">
                 
                 <div class="manual-card">
                     <div>
-                        <div class="manual-icon">📖</div>
-                        <h3 class="manual-title">Teoria OSINT & Definizioni</h3>
-                        <p class="manual-desc">Il fondamento teorico. Definizioni di OSINT, SOCMINT, SIGINT, ciclo dell'intelligence e glossario tecnico.</p>
+                        <div class="manual-img-container">
+                            <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="manual-img">
+                        </div>
+                        <h3 class="manual-title">Best Pratics di Digital Forensics</h3>
+                        <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.</p>
                     </div>
-                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
+                    <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Best%20Pratics%20di%20Digital%20Forensics.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
                 </div>
 
                 <div class="manual-card">
                     <div>
-                        <div class="manual-icon">⚙️</div>
-                        <h3 class="manual-title">Tecniche & Procedure (SOP)</h3>
-                        <p class="manual-desc">Guide operative passo-passo. Come impostare una VM, navigare in sicurezza e gestire un'indagine.</p>
+                        <div class="manual-img-container">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2083/2083358.png" alt="Image Forensics Hacker" class="manual-img" style="filter: invert(1) sepia(1) hue-rotate(0deg);">
+                        </div>
+                        <h3 class="manual-title">Digital Image Forensics nell'OSINT</h3>
+                        <p class="manual-desc">Tecniche avanzate per l'analisi delle immagini, rilevamento di manipolazioni e studio dei metadati nel contesto OSINT.</p>
                     </div>
-                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
+                    <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Digital%20Image%20Forensics%20nell'OSINT.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
                 </div>
 
                 <div class="manual-card">
                     <div>
-                        <div class="manual-icon">📝</div>
-                        <h3 class="manual-title">Analisi & Reportistica</h3>
-                        <p class="manual-desc">Come analizzare i dati raccolti, creare connessioni logiche e scrivere un report finale professionale.</p>
+                        <div class="manual-img-container">
+                             <img src="https://cdn-icons-png.flaticon.com/512/2322/2322999.png" alt="OSINT Hacker" class="manual-img" style="filter: invert(1) sepia(1) hue-rotate(180deg);">
+                        </div>
+                        <h3 class="manual-title">Manuale Basico di OSINT</h3>
+                        <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi nell'investigazione open source.</p>
                     </div>
-                    <a href="https://github.com/CScorza/Manuali-CScorza" target="_blank" class="download-btn">📥 SCARICA PDF</a>
+                    <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
                 </div>
 
             </div>
@@ -325,7 +348,7 @@
     </div>
 
     <script>
-        /* DATABASE AGGIORNATO CON TUTTI I REPOSITORY */
+        /* DATABASE COMPLETO DEI REPOSITORY CSCORZA */
         const repositories = [
             {
                 name: "InstaOSINT",
