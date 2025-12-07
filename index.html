@@ -90,25 +90,65 @@
             box-shadow: 0 0 25px rgba(0, 243, 255, 0.3);
         }
 
-        /* --- SEZIONE MANUALI (AGGIORNATA CON IMMAGINI) --- */
-        .manuals-wrapper {
-            margin-bottom: 60px;
+        /* --- STILE ACCORDION (TENDA) --- */
+        .accordion-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            margin-bottom: 10px;
+            user-select: none;
         }
 
-        .section-header-gold {
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* Classe per ruotare la freccia quando aperto */
+        .accordion-header.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease-out, opacity 0.4s ease-out;
+        }
+
+        .accordion-content.open {
+            max-height: 5000px; /* Valore alto per permettere l'apertura */
+            opacity: 1;
+            overflow: visible;
+        }
+
+
+        /* --- SEZIONE MANUALI --- */
+        .section-title-gold {
             color: var(--gold);
             font-size: 1.4rem;
-            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-left: 4px solid var(--gold);
             padding-left: 15px;
+            margin: 0; /* Margin gestito dall'accordion header */
         }
 
         .manuals-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
+            padding-top: 10px;
+            padding-bottom: 40px;
         }
 
         .manual-card {
@@ -130,7 +170,6 @@
             box-shadow: 0 0 25px rgba(255, 193, 7, 0.15);
         }
 
-        /* Nuovo contenitore per le immagini dei manuali */
         .manual-img-container {
             width: 90px;
             height: 90px;
@@ -138,20 +177,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            border: 2px solid var(--gold);
-            background: rgba(255, 193, 7, 0.1);
-            padding: 5px;
-            overflow: hidden;
+            /* Rimosso bordo/background circolare per dare risalto alle icone sagomate */
         }
 
         .manual-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            /* Opzionale: filtro per rendere le immagini più "cyber/gold" */
-            filter: sepia(100%) hue-rotate(5deg) saturate(150%);
+            object-fit: contain;
+            /* FILTRO ORO: Trasforma icone nere in color ORO (#ffc107) */
+            filter: invert(78%) sepia(68%) saturate(885%) hue-rotate(358deg) brightness(102%) contrast(104%);
         }
 
         .manual-title { font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
@@ -174,21 +208,22 @@
         .download-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
 
         /* --- GRIGLIA REPOSITORY --- */
-        .section-title {
+        .section-title-cyan {
             color: var(--text-muted);
             font-weight: 400;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
             font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+            margin: 0;
         }
 
         .repo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 25px;
+            padding-top: 10px;
         }
 
         .repo-card {
@@ -293,48 +328,62 @@
         </div>
 
         <div class="manuals-wrapper">
-            <div class="section-header-gold">📚 Manuali Ufficiali CScorza</div>
-            <div class="manuals-grid">
-                
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-img-container">
-                            <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="manual-img">
-                        </div>
-                        <h3 class="manual-title">Best Pratics di Digital Forensics</h3>
-                        <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.</p>
-                    </div>
-                    <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Best%20Pratics%20di%20Digital%20Forensics.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
-                </div>
+            <div class="accordion-header" onclick="toggleSection('manuals-content', this)">
+                <div class="section-title-gold">📚 Manuali Ufficiali CScorza</div>
+                <div class="arrow-icon">▼</div>
+            </div>
 
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-img-container">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2083/2083358.png" alt="Image Forensics Hacker" class="manual-img" style="filter: invert(1) sepia(1) hue-rotate(0deg);">
+            <div id="manuals-content" class="accordion-content open">
+                <div class="manuals-grid">
+                    
+                    <div class="manual-card">
+                        <div>
+                            <div class="manual-img-container">
+                                <img src="https://cdn-icons-png.flaticon.com/512/9678/9678122.png" alt="HDD Forensics" class="manual-img">
+                            </div>
+                            <h3 class="manual-title">Best Pratics di Digital Forensics</h3>
+                            <p class="manual-desc">Linee guida essenziali, procedure standard e metodologie per l'acquisizione e l'analisi forense dei dati.</p>
                         </div>
-                        <h3 class="manual-title">Digital Image Forensics nell'OSINT</h3>
-                        <p class="manual-desc">Tecniche avanzate per l'analisi delle immagini, rilevamento di manipolazioni e studio dei metadati nel contesto OSINT.</p>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Best%20Pratics%20di%20Digital%20Forensics.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
                     </div>
-                    <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Digital%20Image%20Forensics%20nell'OSINT.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
-                </div>
 
-                <div class="manual-card">
-                    <div>
-                        <div class="manual-img-container">
-                             <img src="https://cdn-icons-png.flaticon.com/512/2322/2322999.png" alt="OSINT Hacker" class="manual-img" style="filter: invert(1) sepia(1) hue-rotate(180deg);">
+                    <div class="manual-card">
+                        <div>
+                            <div class="manual-img-container">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1042/1042339.png" alt="Image Forensics" class="manual-img">
+                            </div>
+                            <h3 class="manual-title">Digital Image Forensics nell'OSINT</h3>
+                            <p class="manual-desc">Tecniche avanzate per l'analisi delle immagini, rilevamento di manipolazioni e studio dei metadati nel contesto OSINT.</p>
                         </div>
-                        <h3 class="manual-title">Manuale Basico di OSINT</h3>
-                        <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi nell'investigazione open source.</p>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/CScorza%20-%20Digital%20Image%20Forensics%20nell'OSINT.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
                     </div>
-                    <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
-                </div>
 
+                    <div class="manual-card">
+                        <div>
+                            <div class="manual-img-container">
+                                <img src="https://cdn-icons-png.flaticon.com/512/7542/7542190.png" alt="OSINT Detective" class="manual-img">
+                            </div>
+                            <h3 class="manual-title">Manuale Basico di OSINT</h3>
+                            <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi nell'investigazione open source.</p>
+                        </div>
+                        <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF</a>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="section-title">🗂️ Archivio Repository GitHub</div>
-        <div id="repo-grid" class="repo-grid">
+        <div class="repos-wrapper">
+            <div class="accordion-header active" onclick="toggleSection('repos-content', this)">
+                <div class="section-title-cyan">🗂️ Archivio Repository GitHub</div>
+                <div class="arrow-icon">▼</div>
             </div>
+
+            <div id="repos-content" class="accordion-content open">
+                <div id="repo-grid" class="repo-grid">
+                    </div>
+            </div>
+        </div>
 
         <footer>
             <div class="socials">
@@ -348,6 +397,20 @@
     </div>
 
     <script>
+        /* FUNZIONE TENDA (ACCORDION) */
+        function toggleSection(contentId, headerElement) {
+            const content = document.getElementById(contentId);
+            
+            // Toggle classe 'open' sul contenuto
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                headerElement.classList.remove('active');
+            } else {
+                content.classList.add('open');
+                headerElement.classList.add('active');
+            }
+        }
+
         /* DATABASE COMPLETO DEI REPOSITORY CSCORZA */
         const repositories = [
             {
