@@ -3,680 +3,605 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CScorza OSINT Framework</title>
+    <title>CScorza Intelligence Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- STILE VISIVO "CYBER INTELLIGENCE" --- */
+        /* --- STILE VISIVO "CYBER DASHBOARD" --- */
         :root {
-            --main-green: #00ff00;       /* Colore principale (Testo/Bordi) */
-            --dark-green: #003300;       /* Sfondi scuri */
-            --bg-black: #0a0a0a;         /* Sfondo pagina */
-            --card-bg: #141414;          /* Sfondo delle card */
-            --text-dim: #cccccc;         /* Testo secondario */
-            --highlight: #ccffcc;        /* Hover */
+            --bg-body: #0f172a;       /* Dark Slate */
+            --bg-card: #1e293b;       /* Lighter Slate */
+            --accent-color: #38bdf8;  /* Cyan/Blue Cyber */
+            --accent-hover: #0ea5e9;  /* Darker Blue */
+            --text-main: #f8fafc;     /* White/Grey */
+            --text-muted: #94a3b8;    /* Muted Grey */
+            --border: #334155;        /* Border Grey */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
 
         body {
-            background-color: var(--bg-black);
-            color: var(--main-green);
-            font-family: 'Courier New', Courier, monospace; /* Font monospaziato */
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 20px;
-            line-height: 1.5;
+            padding: 0;
+            line-height: 1.6;
         }
 
-        /* Contenitore Principale */
-        #cscorza-framework {
+        /* Container Principale */
+        #app-container {
             max-width: 1200px;
             margin: 0 auto;
-            border: 2px solid var(--main-green);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 0 25px rgba(0, 255, 0, 0.1);
-            background-color: #0f0f0f;
-            min-height: 80vh;
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px dashed var(--dark-green);
-            padding-bottom: 20px;
-        }
-
-        h1 { margin: 0; font-size: 2em; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 10px var(--dark-green); }
-        .subtitle { color: var(--text-dim); font-size: 0.9em; margin-top: 10px; font-style: italic; }
-
-        /* Barra di Ricerca */
-        .search-container {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(0, 51, 0, 0.2);
-            border: 1px solid var(--dark-green);
-            border-radius: 5px;
-        }
-
-        .search-label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        .search-box-wrapper {
-            display: flex;
-            gap: 15px;
-        }
-
-        #osint-search-input {
-            flex-grow: 1;
-            padding: 15px;
-            font-size: 1.2em;
-            background-color: #000;
-            color: var(--main-green);
-            border: 1px solid var(--main-green);
-            font-family: inherit;
-            outline: none;
-        }
-
-        #osint-search-input:focus { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
-
-        #search-btn {
-            padding: 0 30px;
-            background: var(--main-green);
-            color: #000;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1.1em;
-            text-transform: uppercase;
-        }
-
-        #search-btn:hover { background: #fff; }
-
-        /* Pulsanti Categorie */
-        .step-title {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 6px solid var(--main-green);
-            color: #fff;
-            text-transform: uppercase;
-        }
-
-        .repo-link {
-            font-size: 0.8em;
-            color: #888;
-            margin-bottom: 20px;
-            display: inline-block;
-            text-decoration: none;
-            border: 1px solid #333;
-            padding: 5px 10px;
-        }
-        .repo-link:hover { border-color: var(--main-green); color: var(--main-green); }
-
-        .osint-btn {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            margin-bottom: 12px;
-            background-color: transparent;
-            color: var(--main-green);
-            border: 1px solid #333;
-            text-align: left;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 1.2em;
-            transition: all 0.2s ease;
-        }
-
-        .osint-btn:hover {
-            background-color: var(--dark-green);
-            border-color: var(--main-green);
-            padding-left: 30px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        /* Pulsanti di navigazione (Indietro) */
-        .nav-btn {
-            background: #222;
-            color: #fff;
-            border: 1px solid #444;
-            padding: 8px 16px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            font-family: inherit;
-            font-size: 0.9em;
-            text-transform: uppercase;
-        }
-        .nav-btn:hover { background: #444; }
-
-        /* GRIGLIA STRUMENTI (Risultati) */
-        .tool-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            animation: fadeIn 0.4s ease-in;
-        }
-
-        .tool-card {
-            background: var(--card-bg);
-            border: 1px solid #333;
-            border-top: 3px solid var(--main-green);
-            padding: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
+            padding: 40px 20px;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
         }
 
-        .tool-card:hover {
-            transform: translateY(-5px);
-            background-color: #1a1a1a;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            border-color: #fff;
+        /* HEADER & LOGO */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
         }
 
-        .category-tag {
-            font-size: 0.7em;
-            color: var(--main-green);
-            opacity: 0.6;
-            margin-bottom: 10px;
+        .brand-area {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .brand-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            padding: 3px;
+            background: var(--bg-card);
+        }
+
+        .brand-text h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text p {
+            margin: 0;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .tool-link {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #fff;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
+        /* BARRA DI RICERCA */
+        .search-wrapper {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            text-align: center;
         }
-        .tool-link:hover { color: var(--main-green); text-decoration: underline; }
+
+        .search-label {
+            display: block;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        #search-input {
+            flex-grow: 1;
+            padding: 16px 20px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #0f172a;
+            color: #fff;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        #search-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+        }
+
+        #search-btn {
+            padding: 0 30px;
+            background: var(--accent-color);
+            color: #0f172a;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #search-btn:hover { background: var(--accent-hover); }
+
+        /* NAVIGAZIONE CATEGORIE (Grid) */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+
+        .cat-icon { font-size: 2rem; }
+        .cat-info h3 { margin: 0 0 5px 0; font-size: 1.2rem; color: #fff; }
+        .cat-info p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+        /* RISULTATI TOOLS */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .back-btn {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        .back-btn:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--accent-color); }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Barra colorata laterale per indicare category */
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: var(--accent-color);
+            opacity: 0.5;
+        }
+
+        .tool-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .tool-card a {
+            text-decoration: none;
+            color: var(--accent-color);
+        }
+        .tool-card a:hover { text-decoration: underline; }
 
         .tool-desc {
-            font-size: 0.95em;
-            color: var(--text-dim);
-            flex-grow: 1;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
         }
 
-        .no-results {
-            text-align: center;
-            padding: 40px;
-            color: #ff5555;
-            border: 1px dashed #ff5555;
-            background: rgba(255, 0, 0, 0.05);
+        .tag-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            margin-top: auto;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Footer */
+        /* FOOTER */
         footer {
-            margin-top: 60px;
+            margin-top: auto;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
             text-align: center;
-            font-size: 0.8em;
-            color: #444;
-            border-top: 1px solid #111;
-            padding-top: 20px;
         }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn:hover { color: var(--accent-color); }
+
+        .copyright { color: var(--text-muted); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <div id="cscorza-framework">
+    <div id="app-container">
         <header>
-            <h1>CScorza OSINT Framework</h1>
-            <div class="subtitle">Strumenti Catalogati & Risorse Investigative (Multi-Language Search)</div>
-        </header>
-
-        <div class="search-container">
-            <label for="osint-search-input" class="search-label">>_ INIZIA INDAGINE / START INVESTIGATION:</label>
-            <div class="search-box-wrapper">
-                <input type="text" id="osint-search-input" placeholder="Cerca tool (es. 'IP', 'Face', 'Email', 'Telegram')..." autocomplete="off">
-                <button id="search-btn">CERCA / SEARCH</button>
+            <div class="brand-area">
+                <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>CScorza</h1>
+                    <p>Digital Investigation Framework</p>
+                </div>
             </div>
-            <div style="margin-top:10px; font-size:0.8em; color:#666;">
-                *Supports Italian & English keywords (e.g. "Volto" or "Face")
+            </header>
+
+        <div class="search-wrapper">
+            <label class="search-label" for="search-input">
+                Cerca uno strumento specifico (es. "Osint Industries") o un target (es. "Instagram", "Email")
+            </label>
+            <div class="input-group">
+                <input type="text" id="search-input" placeholder="Digita qui per filtrare i tools..." autocomplete="off">
+                <button id="search-btn">CERCA</button>
             </div>
         </div>
 
-        <div id="framework-content">
+        <div id="content-area">
             </div>
 
         <footer>
-            &copy; 2024 CScorza Investigation - Powered by GitHub Pages
+            <div class="social-links">
+                <a href="https://github.com/CScorza" target="_blank" class="social-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub Profile
+                </a>
+                <a href="https://cscorza.github.io/CScorza/" target="_blank" class="social-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h-2v3.057c0 .521-.424.943-.943.943h-2.114c-.52 0-.943-.422-.943-.943v-8.038c0-.521.423-.943.943-.943h2.114c.519 0 .943.422.943.943v2.962h2v-2.962c0-.521.424-.943.943-.943h2.114c.52 0 .943.422.943.943v8.038c0 .521-.424.943-.943.943h-2.114c-.519 0-.943-.422-.943-.943z"/></svg>
+                    Website
+                </a>
+                <a href="#" class="social-btn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 CScorza Investigation. Tutti i diritti riservati.
+            </div>
         </footer>
     </div>
 
     <script>
-        /* DATABASE OSINT
-           Ogni tool ha: name, desc (descrizione), url, tags (parole chiave nascoste per la ricerca ENG/ITA)
+        /* DATABASE DEGLI STRUMENTI 
+           Nota: Il campo "tags" è fondamentale per la ricerca.
+           Ho aggiunto "general osint" ai tool multi-scopo.
         */
-        const osintData = {
-            title: "📂 Seleziona Categoria di Partenza / Select Category",
-            options: [
-                /* --- 1. OPSEC --- */
-                {
-                    label: "🛡️ OPSEC & Anonimato (Preparation)",
-                    next: {
-                        title: "Sicurezza Operativa",
-                        sourceRepo: "OSINTWorkstation / OSINTAnonymous",
-                        options: [
-                            {
-                                label: "Navigazione Sicura & VPN",
-                                tools: [
-                                    { name: "Tor Browser", desc: "Navigazione anonima standard (Dark Web)", url: "https://www.torproject.org/", tags: "onion darkweb privacy ip hide browser" },
-                                    { name: "ProtonVPN", desc: "VPN sicura Svizzera (Free tier)", url: "https://protonvpn.com/", tags: "vpn ip change location mask" },
-                                    { name: "Mullvad", desc: "VPN senza registrazione (Massima privacy)", url: "https://mullvad.net/", tags: "vpn anonimato privacy no-logs" }
-                                ]
-                            },
-                            {
-                                label: "Identità Fittizie (Sock Puppets)",
-                                tools: [
-                                    { name: "Fake Name Generator", desc: "Genera nomi, indirizzi e dati falsi completi", url: "https://www.fakenamegenerator.com/", tags: "identity fake alias sockpuppet persona" },
-                                    { name: "ThisPersonDoesNotExist", desc: "Genera volti realistici con IA", url: "https://thispersondoesnotexist.com/", tags: "ai face volto fake photo foto" },
-                                    { name: "Temp Mail", desc: "Email temporanee usa e getta", url: "https://temp-mail.org/", tags: "email disposable temporanea burner" }
-                                ]
-                            },
-                            {
-                                label: "Sistemi Operativi (VM)",
-                                tools: [
-                                    { name: "CSI Linux", desc: "Distro Linux specifica per investigazioni", url: "https://csilinux.com/", tags: "linux os vm virtual machine distro" },
-                                    { name: "Tsurugi Linux", desc: "Linux per DFIR e OSINT forense", url: "https://tsurugi-linux.org/", tags: "forensics dfir linux os" },
-                                    { name: "Kali Linux", desc: "Pentesting e Security tools", url: "https://www.kali.org/", tags: "hacking pentest security linux" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+        const osintData = [
+            /* GENERALI & MULTI-SCOPO (Questi escono se cerchi "OSINT") */
+            {
+                category: "General OSINT",
+                name: "OSINT Industries",
+                desc: "Motore ricerca email e telefono su 200+ siti web in real-time.",
+                url: "https://osint.industries/",
+                tags: "general osint email phone broad search cross-platform"
+            },
+            {
+                category: "General OSINT",
+                name: "Epios",
+                desc: "Collega email a profili Google, Maps, recensioni e altro.",
+                url: "https://epios.com/",
+                tags: "general osint email google maps calendar broad"
+            },
+            {
+                category: "General OSINT",
+                name: "IntelX",
+                desc: "Intelligence X: Motore di ricerca e archivio dati.",
+                url: "https://intelx.io/",
+                tags: "general osint darkweb leak archive broad"
+            },
+            {
+                category: "General OSINT",
+                name: "CyberBackgroundChecks",
+                desc: "Verifica completa background (US focus).",
+                url: "https://cyberbackgroundchecks.com/",
+                tags: "general osint people background broad"
+            },
 
-                /* --- 2. IP & RETE --- */
-                {
-                    label: "🌐 Analisi IP & Domini (Network)",
-                    next: {
-                        title: "Network Intelligence",
-                        sourceRepo: "Analisi IP",
-                        options: [
-                            {
-                                label: "Geolocalizzazione IP",
-                                tools: [
-                                    { name: "IP Location", desc: "Trova posizione geografica dell'IP", url: "https://www.iplocation.net/", tags: "geo map position whereis locator" },
-                                    { name: "MaxMind Demo", desc: "Database GeoIP preciso (Demo)", url: "https://www.maxmind.com/en/geoip-demo", tags: "geo precision database" },
-                                    { name: "Spur.us", desc: "Rileva se IP è VPN o Proxy residenziale", url: "https://spur.us/", tags: "vpn check proxy detection anon" }
-                                ]
-                            },
-                            {
-                                label: "Infrastruttura & DNS",
-                                tools: [
-                                    { name: "DNSDumpster", desc: "Mappa visiva dei record DNS", url: "https://dnsdumpster.com/", tags: "dns map graph domain records" },
-                                    { name: "SecurityTrails", desc: "Storico DNS e domini correlati", url: "https://securitytrails.com/", tags: "history storico dns subdomains" },
-                                    { name: "Whois DomainTools", desc: "Informazioni registrazione dominio", url: "https://whois.domaintools.com/", tags: "whois owner proprietario registrar" },
-                                    { name: "UrlScan.io", desc: "Scansione sito web (screenshot e analisi)", url: "https://urlscan.io/", tags: "scan malware screenshot web" }
-                                ]
-                            },
-                            {
-                                label: "IoT & Port Scanning",
-                                tools: [
-                                    { name: "Shodan", desc: "Motore di ricerca per dispositivi connessi", url: "https://www.shodan.io/", tags: "iot webcam server ports open scan" },
-                                    { name: "Censys", desc: "Analisi superficie d'attacco globale", url: "https://search.censys.io/", tags: "scan attack surface certificates" },
-                                    { name: "Fofa", desc: "Motore ricerca cyberspazio (alternativa Shodan)", url: "https://fofa.info/", tags: "iot search china scan" }
-                                ]
-                            },
-                            {
-                                label: "Trappole (Active Defense)",
-                                tools: [
-                                    { name: "Canary Tokens", desc: "Crea link/file trappola per tracciare chi ti spia", url: "https://canarytokens.org/", tags: "honeytoken trap tracking logger ip" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+            /* SOCMINT (Divisi per tag social) */
+            {
+                category: "Social Media",
+                name: "Sherlock",
+                desc: "Tool Python per trovare username su 300+ piattaforme.",
+                url: "https://github.com/sherlock-project/sherlock",
+                tags: "social username python script cross-platform"
+            },
+            {
+                category: "Social Media",
+                name: "Osintgram",
+                desc: "Analisi avanzata Instagram (Email, follower, post).",
+                url: "https://github.com/Datalux/Osintgram",
+                tags: "social instagram python script photo"
+            },
+            {
+                category: "Social Media",
+                name: "Telegago",
+                desc: "Motore Google CSE per cercare dentro Telegram.",
+                url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg",
+                tags: "social telegram chat group search"
+            },
+            {
+                category: "Social Media",
+                name: "TGStat",
+                desc: "Metriche canali Telegram e ricerca.",
+                url: "https://tgstat.com/",
+                tags: "social telegram analytics channels"
+            },
+            {
+                category: "Social Media",
+                name: "Nitter",
+                desc: "Visualizzatore Twitter/X focalizzato sulla privacy.",
+                url: "https://github.com/zedeus/nitter",
+                tags: "social twitter x privacy viewer"
+            },
+            {
+                category: "Social Media",
+                name: "TikTok Downloader",
+                desc: "Download video TikTok senza watermark.",
+                url: "https://ssstik.io/",
+                tags: "social tiktok video download"
+            },
 
-                /* --- 3. EMAIL --- */
-                {
-                    label: "📧 Analisi E-mail (Email INT)",
-                    next: {
-                        title: "Email Intelligence",
-                        sourceRepo: "ANALISI E-MAIL",
-                        options: [
-                            {
-                                label: "Violazioni & Password (Leaks)",
-                                tools: [
-                                    { name: "Have I Been Pwned", desc: "Verifica se mail è in database violati", url: "https://haveibeenpwned.com/", tags: "breach hack password leak pwned" },
-                                    { name: "DeHashed", desc: "Ricerca password in chiaro (Login)", url: "https://dehashed.com/", tags: "password cleartext breach database search" },
-                                    { name: "BreachDirectory", desc: "Search engine gratuito per leaks", url: "https://breachdirectory.org/", tags: "breach leak password free" },
-                                    { name: "Snusbase", desc: "Database indicizzato di breach", url: "https://snusbase.com/", tags: "database leak search" }
-                                ]
-                            },
-                            {
-                                label: "Info Tecniche & Verifica",
-                                tools: [
-                                    { name: "Hunter.io", desc: "Pattern email aziendali e verifica", url: "https://hunter.io/", tags: "corporate business verify format" },
-                                    { name: "Email Hippo", desc: "Verifica esistenza tecnica indirizzo", url: "https://tools.verifyemailaddress.io/", tags: "verify exist ping smtp" },
-                                    { name: "MXToolbox", desc: "Analisi record MX e Blacklist", url: "https://mxtoolbox.com/", tags: "mx blacklist server smtp" }
-                                ]
-                            },
-                            {
-                                label: "Correlazione Social (OSINT)",
-                                tools: [
-                                    { name: "Epios", desc: "Trova account Google/Maps/Skype collegati", url: "https://epios.com/", tags: "google maps calendar social link" },
-                                    { name: "Holehe", desc: "Tool GitHub per verificare registrazioni su 120 siti", url: "https://github.com/megadose/holehe", tags: "registration check github python social" },
-                                    { name: "GHunt", desc: "Analisi profonda account Google (GitHub)", url: "https://github.com/mxrch/GHunt", tags: "google gmail drive photos map" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+            /* IMINT */
+            {
+                category: "Images (IMINT)",
+                name: "PimEyes",
+                desc: "Face search engine (Riconoscimento facciale).",
+                url: "https://pimeyes.com/",
+                tags: "image face recognition volto biometric"
+            },
+            {
+                category: "Images (IMINT)",
+                name: "Yandex Images",
+                desc: "Reverse image search (Migliore per volti/Est Europa).",
+                url: "https://yandex.com/images/",
+                tags: "image reverse face russia search"
+            },
+            {
+                category: "Images (IMINT)",
+                name: "FotoForensics",
+                desc: "Analisi ELA per manipolazioni foto.",
+                url: "http://fotoforensics.com/",
+                tags: "image forensic fake edit ela"
+            },
 
-                /* --- 4. IMMAGINI --- */
-                {
-                    label: "📷 Immagini & Video (IMINT)",
-                    next: {
-                        title: "Image Intelligence",
-                        sourceRepo: "ANALISI DELLE IMMAGINI",
-                        options: [
-                            {
-                                label: "Ricerca Inversa (Reverse Search)",
-                                tools: [
-                                    { name: "Google Lens", desc: "Riconoscimento oggetti e luoghi", url: "https://lens.google.com/", tags: "reverse object place luogo object" },
-                                    { name: "Yandex Images", desc: "Migliore per volti e contesti (Russia/Est)", url: "https://yandex.com/images/", tags: "russia reverse face volto best" },
-                                    { name: "Bing Visual Search", desc: "Ricerca visiva Microsoft", url: "https://www.bing.com/visualsearch", tags: "microsoft reverse crop" },
-                                    { name: "TinEye", desc: "Trova la data/fonte originale", url: "https://tineye.com/", tags: "date original source fonte" }
-                                ]
-                            },
-                            {
-                                label: "Riconoscimento Facciale (Biometric)",
-                                tools: [
-                                    { name: "PimEyes", desc: "Motore ricerca volti (Potente/A pagamento)", url: "https://pimeyes.com/", tags: "face recognition volto biometric paid" },
-                                    { name: "FaceCheck.ID", desc: "Cerca persone su social e news", url: "https://facecheck.id/", tags: "face volto social check criminal" },
-                                    { name: "Search4Faces", desc: "Database volti VKontakte/TikTok", url: "https://search4faces.com/", tags: "vk tiktok face russia" }
-                                ]
-                            },
-                            {
-                                label: "Analisi Forense & Metadati",
-                                tools: [
-                                    { name: "FotoForensics", desc: "Analisi ELA (Error Level Analysis)", url: "http://fotoforensics.com/", tags: "ela fake photoshop edit forensic" },
-                                    { name: "ExifTool", desc: "Estrazione completa Metadati", url: "https://exiftool.org/", tags: "metadata exif gps date camera model" },
-                                    { name: "InVid WeVerify", desc: "Plugin per verifica Video/News", url: "https://www.invid-project.eu/tools-and-services/invid-verification-plugin/", tags: "video fake news factchecking keyframes" },
-                                    { name: "Forensically", desc: "Suite strumenti forensi online (Lente, Clone detection)", url: "https://29a.ch/photo-forensics/", tags: "suite clone noise analysis" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+            /* EMAIL & BREACH */
+            {
+                category: "Email & Leaks",
+                name: "Have I Been Pwned",
+                desc: "Verifica se mail/telefono sono stati violati.",
+                url: "https://haveibeenpwned.com/",
+                tags: "email leak breach password security"
+            },
+            {
+                category: "Email & Leaks",
+                name: "DeHashed",
+                desc: "Ricerca password e hash in database leakati.",
+                url: "https://dehashed.com/",
+                tags: "email password leak database search"
+            },
+            {
+                category: "Email & Leaks",
+                name: "Hunter.io",
+                desc: "Trova e verifica indirizzi email aziendali.",
+                url: "https://hunter.io/",
+                tags: "email business corporate verify"
+            },
 
-                /* --- 5. SOCIAL MEDIA (SOCMINT) --- */
-                {
-                    label: "👤 Username & Social Media (SOCMINT)",
-                    next: {
-                        title: "Social Media Intelligence",
-                        sourceRepo: "SOCMIntelligence",
-                        options: [
-                            {
-                                label: "Ricerca Username (Cross-Platform)",
-                                tools: [
-                                    { name: "Sherlock", desc: "Tool Python: Cerca username su 300+ siti", url: "https://github.com/sherlock-project/sherlock", tags: "username python script enumerate" },
-                                    { name: "WhatsMyName", desc: "Web App rapida per trovare profili", url: "https://whatsmyname.app/", tags: "username web fast profile" },
-                                    { name: "Maigret", desc: "Analisi username + Report PDF (GitHub)", url: "https://github.com/soxoj/maigret", tags: "username report pdf python advanced" },
-                                    { name: "Namechk", desc: "Verifica disponibilità domini e user", url: "https://namechk.com/", tags: "availability domain user" }
-                                ]
-                            },
-                            {
-                                label: "Telegram Intelligence",
-                                tools: [
-                                    { name: "Telegago", desc: "Google CSE specifico per Telegram", url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg", tags: "telegram search google chat group" },
-                                    { name: "TGStat", desc: "Analisi canali e statistiche", url: "https://tgstat.com/", tags: "telegram analytics channels metrics" },
-                                    { name: "Lyzem", desc: "Motore di ricerca messaggi e canali", url: "https://lyzem.com/", tags: "search message post telegram" },
-                                    { name: "Telemetrio", desc: "Statistiche e catalogo canali", url: "https://telemetr.io/", tags: "catalog stats telegram" }
-                                ]
-                            },
-                            {
-                                label: "Twitter / X & Facebook",
-                                tools: [
-                                    { name: "Nitter", desc: "Interfaccia alternativa per leggere Twitter (Privacy)", url: "https://github.com/zedeus/nitter", tags: "twitter x privacy read viewer" },
-                                    { name: "TweetBeaver", desc: "Analisi follower e timeline (CSV)", url: "https://tweetbeaver.com/", tags: "twitter download csv followers" },
-                                    { name: "Sowdust FB Tools", desc: "Tool per ID Facebook e ricerca", url: "https://sowdust.github.io/fb-linked-search/", tags: "facebook id uid search graph" }
-                                ]
-                            },
-                            {
-                                label: "TikTok & Instagram",
-                                tools: [
-                                    { name: "Osintgram", desc: "Tool Python per analisi Instagram (GitHub)", url: "https://github.com/Datalux/Osintgram", tags: "instagram python script email followers" },
-                                    { name: "TikTok Downloader", desc: "Scarica video senza watermark", url: "https://ssstik.io/", tags: "tiktok download video" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+            /* IP & NETWORK */
+            {
+                category: "IP & Network",
+                name: "Shodan",
+                desc: "Search engine per dispositivi IoT e server.",
+                url: "https://www.shodan.io/",
+                tags: "ip network iot scan camera server"
+            },
+            {
+                category: "IP & Network",
+                name: "IP Location",
+                desc: "Geolocalizzazione IP e ISP info.",
+                url: "https://www.iplocation.net/",
+                tags: "ip geo location map whereis"
+            },
+            {
+                category: "IP & Network",
+                name: "DNSDumpster",
+                desc: "Mappatura DNS e sottodomini.",
+                url: "https://dnsdumpster.com/",
+                tags: "ip dns domain network map"
+            },
+            
+            /* OPSEC */
+            {
+                category: "OPSEC",
+                name: "Tor Browser",
+                desc: "Navigazione anonima.",
+                url: "https://www.torproject.org/",
+                tags: "opsec anonimato privacy onion"
+            },
+            {
+                category: "OPSEC",
+                name: "Fake Name Generator",
+                desc: "Creazione identità fittizie.",
+                url: "https://www.fakenamegenerator.com/",
+                tags: "opsec identity fake alias"
+            }
+        ];
 
-                /* --- 6. MOBILE & TELEFONO --- */
-                {
-                    label: "📱 Numero di Telefono (Mobile)",
-                    next: {
-                        title: "Mobile Forensics & Lookup",
-                        sourceRepo: "OSINT-FORENSICS-MOBILE",
-                        options: [
-                            {
-                                label: "Identificazione (Caller ID)",
-                                tools: [
-                                    { name: "TrueCaller", desc: "Database mondiale identificazione chiamante", url: "https://www.truecaller.com/", tags: "phone numero spam callerid name" },
-                                    { name: "Sync.me", desc: "Sincronizza rubrica con profili social", url: "https://sync.me/", tags: "phone social photo sync" },
-                                    { name: "EmobileTracker", desc: "Tracciamento operatore e zona (Mondiale)", url: "https://www.emobiletracker.com/", tags: "carrier location track operator" }
-                                ]
-                            },
-                            {
-                                label: "WhatsApp & Messenger",
-                                tools: [
-                                    { name: "WA Check", desc: "Verifica se un numero ha WhatsApp attivo", url: "https://wacheck.online/", tags: "whatsapp status online check photo" },
-                                    { name: "Opengraph WA", desc: "Genera link diretto WhatsApp", url: "https://wa.me/", tags: "link chat direct" }
-                                ]
-                            }
-                        ]
-                    }
-                },
+        /* CATEGORIE DI NAVIGAZIONE (Per la Home Page) */
+        const categories = [
+            { id: "General OSINT", icon: "🚀", label: "General & Broad Tools", desc: "Motori multi-scopo come OSINT Industries." },
+            { id: "Social Media", icon: "👤", label: "Social Media (SOCMINT)", desc: "Instagram, Telegram, Twitter, TikTok." },
+            { id: "Images (IMINT)", icon: "📷", label: "Images & Video", desc: "Reverse search, Face recognition." },
+            { id: "Email & Leaks", icon: "📧", label: "Email & Data Breach", desc: "Password leak, verifica email." },
+            { id: "IP & Network", icon: "🌐", label: "IP & Network Info", desc: "Geolocalizzazione, DNS, IoT." },
+            { id: "OPSEC", icon: "🛡️", label: "OPSEC & Anonimato", desc: "VPN, Identità fake, VM." }
+        ];
 
-                /* --- 7. BUSINESS & AZIENDE --- */
-                {
-                    label: "🏢 Aziende & Business (CORPINT)",
-                    next: {
-                        title: "Corporate Intelligence",
-                        sourceRepo: "CORPINT-Corporate-Intelligence",
-                        options: [
-                            {
-                                label: "Registri Aziendali",
-                                tools: [
-                                    { name: "OpenCorporates", desc: "Il più grande database aperto di aziende", url: "https://opencorporates.com/", tags: "company business owner director search" },
-                                    { name: "VIES VAT", desc: "Verifica Partita IVA Europea", url: "https://ec.europa.eu/taxation_customs/vies/", tags: "vat iva tax europe company" },
-                                    { name: "North Data", desc: "Visualizza relazioni aziendali (Grafici)", url: "https://www.northdata.com/", tags: "visual graph relations money map" }
-                                ]
-                            },
-                            {
-                                label: "Reputazione & Brand",
-                                tools: [
-                                    { name: "Glassdoor", desc: "Recensioni dipendenti e stipendi", url: "https://www.glassdoor.com/", tags: "reviews salary employee inside" },
-                                    { name: "Wayback Machine", desc: "Archivio storico siti web", url: "https://archive.org/web/", tags: "history archive cache past deleted" }
-                                ]
-                            }
-                        ]
-                    }
-                },
-
-                /* --- 8. AI & TRASCRIZIONE --- */
-                {
-                    label: "🤖 Intelligenza Artificiale (AI Tools)",
-                    next: {
-                        title: "AI Support Tools",
-                        sourceRepo: "OSINT-IA",
-                        options: [
-                            {
-                                label: "Analisi Testo & Chat",
-                                tools: [
-                                    { name: "ChatGPT", desc: "Generazione dorks, analisi testi e traduzioni", url: "https://chat.openai.com/", tags: "ai text dork analysis summary" },
-                                    { name: "Perplexity AI", desc: "Motore di ricerca AI con fonti", url: "https://www.perplexity.ai/", tags: "search ai source real-time" }
-                                ]
-                            },
-                            {
-                                label: "Audio & Video",
-                                tools: [
-                                    { name: "Whisper (OpenAI)", desc: "Trascrizione Audio-to-Text precisa", url: "https://github.com/openai/whisper", tags: "transcribe audio text speech" },
-                                    { name: "ElevenLabs", desc: "Sintesi vocale e voice cloning", url: "https://elevenlabs.io/", tags: "voice speech audio synthesis" }
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        };
-
-        /* --- LOGICA APPLICATIVA --- */
-        const container = document.getElementById('framework-content');
-        const searchInput = document.getElementById('osint-search-input');
+        const contentArea = document.getElementById('content-area');
+        const searchInput = document.getElementById('search-input');
         const searchBtn = document.getElementById('search-btn');
 
-        // 1. Funzione Principale di Ricerca
-        function triggerSearch() {
-            const query = searchInput.value.toLowerCase().trim();
-            if (query.length > 0) {
-                performSearch(query);
-            } else {
-                renderStart();
-            }
-        }
-
-        // Listener: Click
-        searchBtn.addEventListener('click', triggerSearch);
-
-        // Listener: Tasto Invio
-        searchInput.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                triggerSearch();
-            }
-        });
-
-        // Listener: Digitazione (Live Search dopo 2 caratteri)
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase().trim();
-            if (query.length > 1) { 
-                performSearch(query);
-            } else if (query.length === 0) {
-                renderStart();
-            }
-        });
-
-        // 2. Motore di Ricerca (Cerca in: Nome, Descrizione, Tag nascosti, Categorie)
-        function performSearch(query) {
-            let resultsHTML = `<div class="step-title">🔎 Risultati ricerca / Search Results: "${query}"</div>`;
-            resultsHTML += `<div class="tool-grid">`;
-            
-            let count = 0;
-            osintData.options.forEach(category => {
-                const catMatch = category.label.toLowerCase().includes(query);
-
-                if (category.next && category.next.options) {
-                    category.next.options.forEach(subCat => {
-                        const subCatMatch = subCat.label.toLowerCase().includes(query);
-
-                        subCat.tools.forEach(tool => {
-                            // MATCH LOGIC: Cerca ovunque
-                            if (
-                                tool.name.toLowerCase().includes(query) || 
-                                tool.desc.toLowerCase().includes(query) ||
-                                (tool.tags && tool.tags.toLowerCase().includes(query)) || // Cerca nei TAGS nascosti
-                                subCatMatch || 
-                                catMatch
-                            ) {
-                                resultsHTML += `
-                                    <div class="tool-card">
-                                        <span class="category-tag">${category.next.sourceRepo} > ${subCat.label}</span>
-                                        <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
-                                        <div class="tool-desc">${tool.desc}</div>
-                                    </div>
-                                `;
-                                count++;
-                            }
-                        });
-                    });
-                }
-            });
-
-            resultsHTML += `</div>`;
-            
-            // Bottone torna indietro
-            resultsHTML += `<div style="text-align:center; margin-top:30px;">
-                                <button class="nav-btn" onclick="renderStart()">← Home Framework</button>
-                            </div>`;
-
-            if (count === 0) {
-                container.innerHTML = `
-                    <div class="no-results">
-                        <h3>❌ Nessun risultato / No results found for "${query}"</h3>
-                        <p>Prova termini generici (es. IP, Foto, Email) / Try generic terms.</p>
-                    </div>
-                    <div style="text-align:center; margin-top:20px;">
-                        <button class="nav-btn" onclick="renderStart()">Torna alla Home</button>
-                    </div>
-                `;
-            } else {
-                container.innerHTML = resultsHTML;
-            }
-        }
-
-        // 3. Render Home Page (Categorie)
-        function renderStart() {
-            let html = `<div class="step-title">${osintData.title}</div>`;
-            osintData.options.forEach((opt, index) => {
-                html += `<button class="osint-btn" onclick="renderStep(${index})">➤ ${opt.label}</button>`;
-            });
-            container.innerHTML = html;
-        }
-
-        // 4. Render Sottocategorie
-        function renderStep(index) {
-            searchInput.value = ''; // Pulisce la ricerca
-            const step = osintData.options[index].next;
-            
-            let html = `<button class="nav-btn" onclick="renderStart()">← MENU PRINCIPALE</button>`;
-            html += `<div class="step-title">${step.title}</div>`;
-            
-            // Link al repository GitHub reale
-            html += `<a href="https://github.com/CScorza/${step.sourceRepo.split(' ')[0]}" target="_blank" class="repo-link">📂 Open GitHub Repo: ${step.sourceRepo}</a>`;
-            
-            step.options.forEach((subOpt, subIndex) => {
-                html += `<button class="osint-btn" onclick="renderTools(${index}, ${subIndex})">➤ ${subOpt.label}</button>`;
-            });
-            container.innerHTML = html;
-        }
-
-        // 5. Render Griglia Strumenti Finale
-        function renderTools(parentIndex, subIndex) {
-            const data = osintData.options[parentIndex].next.options[subIndex];
-            
-            let html = `<button class="nav-btn" onclick="renderStep(${parentIndex})">← INDIETRO / BACK</button>`;
-            html += `<div class="step-title">${data.label}</div>`;
-            
-            html += `<div class="tool-grid">`;
-            data.tools.forEach(tool => {
+        /* 1. RENDER HOME PAGE (CATEGORIE) */
+        function renderHome() {
+            let html = `<div class="category-grid">`;
+            categories.forEach(cat => {
                 html += `
-                    <div class="tool-card">
-                        <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
-                        <div class="tool-desc">${tool.desc}</div>
+                    <div class="category-card" onclick="filterByCategory('${cat.id}')">
+                        <div class="cat-icon">${cat.icon}</div>
+                        <div class="cat-info">
+                            <h3>${cat.label}</h3>
+                            <p>${cat.desc}</p>
+                        </div>
                     </div>
                 `;
             });
             html += `</div>`;
-            
-            container.innerHTML = html;
+            contentArea.innerHTML = html;
         }
 
-        // Avvio Iniziale
-        renderStart();
+        /* 2. FILTRO PER CATEGORIA (Click sulle card) */
+        function filterByCategory(categoryName) {
+            const results = osintData.filter(tool => tool.category === categoryName);
+            renderResults(results, categoryName);
+        }
+
+        /* 3. LOGICA DI RICERCA (Search Bar) */
+        function performSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            
+            if (query === "") {
+                renderHome();
+                return;
+            }
+
+            // Logica: Se cerco "osint", do priorità ai tools taggati "general osint"
+            // Altrimenti cerco per match su nome, descrizione o tag (social network names)
+            
+            const results = osintData.filter(tool => {
+                const q = query;
+                const matchName = tool.name.toLowerCase().includes(q);
+                const matchDesc = tool.desc.toLowerCase().includes(q);
+                const matchTags = tool.tags.toLowerCase().includes(q);
+                
+                return matchName || matchDesc || matchTags;
+            });
+
+            // Ordinamento speciale: se la query è "osint", metti prima quelli con tag "general osint"
+            if (query === "osint") {
+                results.sort((a, b) => {
+                    const aGen = a.tags.includes("general osint");
+                    const bGen = b.tags.includes("general osint");
+                    return bGen - aGen; // Mette true prima di false
+                });
+            }
+
+            renderResults(results, `Risultati per: "${query}"`);
+        }
+
+        /* 4. RENDER DEI RISULTATI (Tools Grid) */
+        function renderResults(tools, title) {
+            let html = `
+                <div class="section-header">
+                    <h2 style="margin:0;">${title}</h2>
+                    <button class="back-btn" onclick="clearSearch()">← Torna alle Categorie</button>
+                </div>
+            `;
+
+            if (tools.length === 0) {
+                html += `<div style="text-align:center; padding:40px; color:#94a3b8;">
+                            <h3>Nessun tool trovato ❌</h3>
+                            <p>Prova a cercare "Instagram", "Email" o "IP".</p>
+                         </div>`;
+            } else {
+                html += `<div class="tools-grid">`;
+                tools.forEach(tool => {
+                    html += `
+                        <div class="tool-card">
+                            <h4><a href="${tool.url}" target="_blank">${tool.name} ↗</a></h4>
+                            <div class="tool-desc">${tool.desc}</div>
+                            <span class="tag-badge">${tool.category}</span>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            
+            contentArea.innerHTML = html;
+        }
+
+        /* UTILITY */
+        function clearSearch() {
+            searchInput.value = "";
+            renderHome();
+        }
+
+        // Event Listeners
+        searchBtn.addEventListener('click', performSearch);
+        
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch();
+        });
+
+        // Avvio
+        renderHome();
 
     </script>
 </body>
