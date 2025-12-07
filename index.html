@@ -1,570 +1,478 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="it">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-  <meta name="description" content="description" />
-  <meta name="keywords" content="keywords" />
-  <meta name="author" content="author" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-  <title>CScorza</title>
-  
-  <html lang="en">
-	<head>
-	  <title>Particle System</title>
-	</head>
-	<body>
-	
-	  <div id="particles"></div>
-	
-	  <script>
-		var particles = new ParticleSystem({
-		  container: document.querySelector('#particles'),
-		  particles: {
-			number: 1000,
-			size: {
-			  min: 10,
-			  max: 20
-			},
-			color: {
-			  start: '#000',
-			  end: '#fff'
-			},
-			shape: 'circle',
-			speed: {
-			  min: 1,
-			  max: 3
-			},
-			direction: {
-			  min: 0,
-			  max: 2 * Math.PI
-			},
-			life: {
-			  min: 2,
-			  max: 5
-			}
-		  },
-		  interactivity: {
-			events: {
-			  onHover: function (particle) {
-				particle.color = '#fff';
-			  },
-			  onLeave: function (particle) {
-				particle.color = '#000';
-			  }
-			}
-		  }
-		});
-	  </script>
-  
-  <style>
-    body {
-      background-color: rgb(1, 14, 19);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CScorza OSINT Framework</title>
+    <style>
+        /* --- STILE CSS --- */
+        :root {
+            --main-green: #00ff00;
+            --dark-green: #003300;
+            --bg-black: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-dim: #b3b3b3;
+            --border-color: #33ff33;
+        }
 
-    .zoom-image {
-      width: 500px;
-      height: 300px;
-      overflow: hidden;
-    }
+        body {
+            background-color: var(--bg-black);
+            color: var(--main-green);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
 
-    a {
-      text-decoration: none;
-    }
+        /* Container Principale */
+        #cscorza-framework {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.15);
+            background-color: #111;
+        }
 
-    a:hover {
-      color: #;
-    }
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px dashed var(--dark-green);
+            padding-bottom: 20px;
+        }
 
-    #top-right {
-      position: absolute;
-      top: 20px;
-      right: 10px;
-      padding: 10px;
-      font-size: 30px;
-      font-family: sans-serif;
-      color: white;
-      background-color:;
-    }
+        h1 { margin: 0; font-size: 1.8em; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: var(--text-dim); font-size: 0.9em; margin-top: 5px; }
 
-    #center {
-      position: absolute;
-      top: 34px;
-      left: 35%;
-      transform: translateX(-50%);
-      padding: 30px;
-      font-size: 50px;
-      font-family: Impact, 'Arial Narrow Bold', sans-serif;
-      color: white;
-      background-color: ;
-      text-align: center;
-    }
+        /* Barra di Ricerca */
+        .search-container {
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-    #button-container {
-      position: absolute;
-      top: 160px;
-      left: 23%;
-      transform: translateX(-50%);
-      text-align: center;
-    }
+        .search-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--main-green);
+        }
 
-    #button-container ul {
-      padding: 0;
-      margin: 0;
-      display: inline-block;
-    }
+        #osint-search-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #000;
+            color: var(--main-green);
+            border: 1px solid var(--main-green);
+            font-family: inherit;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
 
-    #button-container li {
-      display: inline-block;
-      margin-right: 10px;
-    }
+        #osint-search-input:focus {
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            border-color: #fff;
+        }
 
-    #logo-container {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
+        /* Navigazione e Pulsanti */
+        .step-title {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid var(--main-green);
+            color: #fff;
+        }
 
-    #quote {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      font-family: sans-serif;
-      color: white;
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/zoomooz/dist/zoomooz.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('.zoom-image').zoomTo({ duration: 2000 });
-    });
-  </script>
-</head>
+        .repo-tag {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.85em;
+            color: var(--text-dim);
+            background: var(--dark-green);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
 
-<body class="home page-template-default page page-id-4 translatepress-en_US skin-default sidebar-none default_width tb_animation_on ready-view header-top-bar fixed-header-enabled footer-block theme-color-black theme-font-sans-serif tagline-off social-widget-off footer-widgets-off footer-menu-navigation-off filter-hover-sepia filter-featured-only sidemenu-active fixed-header-on cookies-set cookies-accepted mobile_menu_active" cz-shortcut-listen="true">
+        .repo-tag a { color: #fff; text-decoration: none; }
+        .repo-tag a:hover { text-decoration: underline; }
 
-  <div id="logo-container">
-    <a href="https://github.com/CScorza/">
-      <img src="./Logo.gif" alt="Image" style="width:300px;">
-    </a>
-  </div>
+        .osint-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: transparent;
+            color: var(--main-green);
+            border: 1px solid #333;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1.1em;
+            transition: all 0.2s;
+        }
 
-  <div id="center">
-    CScorza - Indagini Telematiche
-  </div>
+        .osint-btn:hover {
+            background-color: var(--main-green);
+            color: #000;
+            padding-left: 25px; /* Effetto slide */
+            font-weight: bold;
+        }
 
-  <div id="button-container">
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/cscorza/">
-          <img src="./Linkedin.png" alt="LinkedIn Profile" title="LinkedIn Profile" style="width:45px;">
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/CScorza/">
-          <img src="./GITHUB.png" alt="Github Profile" title="Github Profile" style="width:45px;">
-        </a>
-      </li>
-      <li>
-        <a href="https://t.me/CScorzaOSINT">
-          <img src="./Telegram.png" alt="Telegram Profile" title="Telegram Profile" style="width:45px;">
-        </a>
-      </li>
-    </ul>
-  </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div id="quote">
-	"L'intelligenza è la capacità di adattarsi al cambiamento" <br> Stephen Hawking
-  </div>
-  <head>
-	<style>
-	  #ip-address-container {
-		position: absolute;
-		top: 200px;
-		right: 40px;
-		text-align: right;
-	  }
-	  #ip-address {
-		color: #3366cc;
-		font-family: Arial, sans-serif;
-		font-size: 20px;
-		font-weight: bold;
-	  }
-	  #visitor-counts {
-		color: #ffffff;
-		font-family: Arial, sans-serif;
-		font-size: 14px;
-		margin-top: 10px;
-	  }
-	</style>
-	<script>
-	  // Funzione per ottenere l'indirizzo IP del client
-	  function getIPAddress() {
-		fetch('https://api.ipify.org?format=json')
-		  .then(response => response.json())
-		  .then(data => {
-			document.getElementById('ip-address').textContent = data.ip;
-			updateVisitorCounts(data.ip);
-		  })
-		  .catch(error => {
-			console.log('Si è verificato un errore:', error);
-		  });
-	  }
-	  
-	  // Funzione per aggiornare i conteggi dei visitatori
-	  function updateVisitorCounts(ip) {
-		// Verifica se esiste il conteggio giornaliero nel localStorage
-		const today = new Date().toISOString().split('T')[0];
-		let dailyCount = localStorage.getItem(today);
-		if (dailyCount) {
-		  // Se esiste, incrementa il conteggio giornaliero
-		  dailyCount = parseInt(dailyCount) + 1;
-		} else {
-		  // Se non esiste, inizializza il conteggio giornaliero a 1
-		  dailyCount = 1;
-		}
-	  
-		// Aggiorna il conteggio giornaliero nel localStorage
-		localStorage.setItem(today, dailyCount);
-	  
-		// Ottieni il conteggio totale
-		const totalCount = Object.keys(localStorage).length;
-	  
-		// Aggiorna i conteggi visualizzati sulla pagina
-		document.getElementById('daily-count').textContent = dailyCount;
-		document.getElementById('total-count').textContent = totalCount;
-	  }
-	</script>
-  </head>
-  <body onload="getIPAddress()">
-	<div id="ip-address-container">
-		<h1 style="color: #ffffff; font-family: Arial, sans-serif;">Il tuo indirizzo IP:</h1>
-		<p id="ip-address"></p>
-		<div id="visitor-counts">
-			<p>Visitatori giornalieri: <span id="daily-count"></span></p>
-			<p>Visitatori totali: <span id="total-count"></span></p>
-		</div>
-	</div>
-  </body>
+        .reset-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-family: inherit;
+            font-size: 0.9em;
+            text-transform: uppercase;
+        }
+        .reset-btn:hover { background: #555; }
 
+        /* Griglia Strumenti (Risultati finali) */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            animation: fadeIn 0.5s ease-in;
+        }
 
-  
-  
-</html>
-<br>
-<br>
-<br>
-</body>
+        .tool-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-left: 4px solid var(--main-green);
+            padding: 20px;
+            transition: transform 0.2s, background-color 0.2s;
+            position: relative;
+        }
 
-	<div style="background-color: #0c1a1f; padding: 20px;">
-		<div style="font-size: 40px; font-family: Helvetica; color: white; text-align: left; margin-bottom: 40px;">Strumenti di Analisi e di Verifica</div>
-		<div style="display: flex; justify-content: left;">
-				</div>
-<head>
-	<style>
-		/* Stile per centrare l'elemento */
-		.container {
-			display: flex;
-			justify-content: left;
-			align-items: left;
-			gap: 2px;
-		}
-		
-		/* Stile per l'immagine a sinistra */
-		.image {
-			margin: 0px;
-		}
-	</style>
-</head>
-<body>
-	<style>
-		.gray-frame {
-			width: 25%;
-			border: 2px solid #565656; /* Aggiunto bordo di colore verde scuro */
-			border-radius: 1px;
-			padding: 5px;
-		}
-		
-		.iframe-text {
-			font-size: 18px; /* Ridotto la dimensione del testo */
-			color: white;
-			text-align: center;
-			margin-top: 4px;
-		}
-	</style>
-	<div class="container">
-			<figure class="gray-frame">
-			<iframe src="https://canarytokens.org/generate" width="100%" height="500"></iframe>
-			<div class="iframe-text">Canary Tokens</div>
-		</figure>
-		<figure class="gray-frame">
-			<iframe src="https://who.is/" width="100%" height="500"></iframe>
-			<div class="iframe-text">Analisi IP</div>
-		</figure>
-			<figure class="gray-frame">
-			<iframe src="https://mxtoolbox.com/EmailHeaders.aspx" width="100%" height="500"></iframe>
-			<div class="iframe-text">ANALISI E-MAIL</div>
-		</figure>
-		<figure class="gray-frame">
-			<iframe src="https://29a.ch/photo-forensics/#forensic-magnifier" width="100%" height="500"></iframe>
-			<div class="iframe-text">ANALISI DELLE IMMAGINI</div>
-		</figure>
-	</div>
-</body>
-</html>
-	<br>
-	<br>
-	<br>
-	<head>
-	  </head>
-	  <head>
-		<style>
-		  /* Stile per centrare il contenitore */
-		  .center-container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 1vh; /* Imposta l'altezza del contenitore come altezza della viewport */
-		  }
-	  
-		  .container {
-			padding: 10px;
-			margin-left: 10px; /* Aggiunto margine sinistro di 4px */
+        .tool-card:hover {
+            transform: translateY(-5px);
+            background-color: #222;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
 
-		  }
-		</style>
-	  </head>
-	  <body>
-		<div class="center-container">
-		  <div class="container">
-			<!--### Verifica Instagram-->
-			<form onsubmit="doSearch01(this.Search01.value); return false;">
-			  <input type="text" id="Search01" name="Search01" size="60" placeholder="Username" value="">
-			  <input type="submit" style="width:160px" value="Istagram Profile">
-			</form>
-	  		<!--### Verifica Email -->
-			<form onsubmit="doSearch16(this.Search16.value); return false;">
-			  <input type="text" id="Search16" name="Search16" size="60" placeholder="Verifica Email" value="">
-			  <input type="submit" style="width:160px" value="Hunter Verify">
-			</form>
-			<!--### Verifica Attendibilità Sito Internet -->
-			<form onsubmit="doSearch48(this.Search48.value); return false;">
-			  <input type="text" id="Search48" name="Search48" size="60" placeholder="Verifica Sito" value="">
-			  <input type="submit" style="width:160px" value="VirusTotal">
-			</form>
-		  </div>
-		</div>
-	  </body>
-	  
-<br>  
-<br>
-<br>
-<br>
-</tr>
-</table>
+        .breadcrumb {
+            font-size: 0.7em;
+            color: var(--main-green);
+            opacity: 0.7;
+            margin-bottom: 5px;
+            display: block;
+            text-transform: uppercase;
+        }
 
-<div style="background-color: #0c1a1f; padding: 20px;">
-	<div style="font-size: 40px; font-family: Helvetica; color: white; text-align:left; margin-bottom: 40px;">Manuali CScorza</div>
-	<div style="display: flex; justify-content: center;">
-			</div>
-	
-<br>
+        .tool-link {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .tool-link:hover { color: var(--main-green); text-decoration: underline; }
 
-<div style="display: flex; justify-content: center; align-items: center;">
-	<div style="border: 1px solid #565656; border-radius: 8px; padding: 10px; text-align: center; margin-right: 50px;width:90%;height:90%;">
-	  <object data="CScorza - Best Pratics di Digital Forensics.pdf" type="application/pdf" width="100%" height="1000"> </object>
-	</div>
-	<div style="border: 1px solid #565656; border-radius: 8px; padding: 10px; text-align: center; margin-right: 50px;width:90%;height:90%;">
-	  <object data="CScorza - Digital Image Forensics nell OSINT.pdf" type="application/pdf" width="100%" height="1000"> </object>
-	</div>
-	<div style="border: 1px solid #565656; border-radius: 8px; padding: 10px; text-align: center;margin-right: 50px;width:90%;height:90%;">
-	  <object data="Manuale Basico di OSINT - CScorza.pdf" type="application/pdf" width="100%" height="1000"> </object>
-	</div>
-  </div>
-</div>
-<br>
-<div style="background-color: #0c1a1f; padding: 20px;">
-	<div style="font-size: 40px; font-family: Helvetica; color: white; text-align: left; margin-bottom: 40px;">Strumenti GitHub - CScorza Investigation</div>
-	<div style="display: flex; justify-content: center;">
-			</div>
-<br>
-<!DOCTYPE html>
-<html>
-<head>
-	
-			<style>
-		/* Stile per centrare l'elemento */
-		.container {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: center;
-		}
-		
-		/* Stile per l'immagine a sinistra */
-		.image {
-			float: left;
-			margin-right: 20px;
-		}
-		
-		/* Stile per i numeri a destra */
-		.counter {
-			font-size: 40px;
-			font-weight: bold;
-			text-align: right;
-			font-family: 'Comic Sans MS', cursive, sans-serif;
-			margin-top: 20px;
-		}
-		
-		/* Stile per il footer */
-		.footer {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			text-align: center;
-			background-color: #f2f2f2;
-			padding: 10px;
-		}
-	</style>
+        .tool-desc {
+            font-size: 0.9em;
+            color: var(--text-dim);
+        }
+
+        .no-results {
+            color: #ff4444;
+            text-align: center;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+            border-top: 1px solid #222;
+            padding-top: 10px;
+        }
+    </style>
 </head>
 <body>
 
-	<div>
-		<ul>
-				<table style="width:100%">
-					<tr>
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/DistroForensics/"><img
-										src=".\Distro Forensics.gif" alt="Image" style="width:280px;"></a></a>
-						</th>
+    <div id="cscorza-framework">
+        <header>
+            <h1>CScorza OSINT Framework</h1>
+            <div class="subtitle">Interactive Intelligence Gathering Cycle</div>
+        </header>
 
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/EstensioniChromeOSINT"><img
-										src=".\EstensioniChromeOSINT.gif" alt="Image" style="width:280px;"></a></a>
+        <div class="search-container">
+            <label for="osint-search-input" class="search-label">>_ SEARCH MODULE:</label>
+            <input type="text" id="osint-search-input" placeholder="Type query (e.g. IP, Email, Camera, Username)..." autocomplete="off">
+        </div>
 
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/Tool-VATINT"><img
-										src=".\Tool-VATINT.gif" alt="Image" style="width:280px;"></a></a>
-						</th>
+        <div id="framework-content">
+            </div>
 
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/OSINT-FORENSICS-MOBILE"><img
-										src=".\OSINT-FORENSICS-MOBILE.gif" alt="Image" style="width:280px;">
-						</th>
+        <footer>
+            &copy; CScorza Investigation - Powered by Open Source Intelligence
+        </footer>
+    </div>
 
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/Image-OSINT-Forensics"><img
-										src=".\Image-OSINT-Forensics.gif" alt="Image" style="width:280px;">
+    <script>
+        /* DATABASE JSON 
+           Modifica qui sotto per aggiungere nuove categorie o strumenti.
+        */
+        const osintData = {
+            title: "🚀 START INVESTIGATION: Select Data Point",
+            options: [
+                /* 1. OPSEC */
+                {
+                    label: "🛡️ OPSEC & Workstation",
+                    next: {
+                        title: "Sicurezza Operativa & Ambiente",
+                        sourceRepo: "OSINTWorkstation",
+                        options: [
+                            {
+                                label: "Anonimato & VPN",
+                                tools: [
+                                    { name: "Tor Browser", desc: "Navigazione anonima onion routing", url: "https://www.torproject.org/" },
+                                    { name: "ProtonVPN", desc: "VPN sicura (Free tier disponibile)", url: "https://protonvpn.com/" },
+                                    { name: "Fake Name Generator", desc: "Generazione identità fittizia completa", url: "https://www.fakenamegenerator.com/" }
+                                ]
+                            },
+                            {
+                                label: "Sistemi Operativi (VM)",
+                                tools: [
+                                    { name: "CSI Linux", desc: "Distro specializzata per Cyber Investigation", url: "https://csilinux.com/" },
+                                    { name: "Tsurugi Linux", desc: "Distro DFIR & OSINT forense", url: "https://tsurugi-linux.org/" },
+                                    { name: "Kali Linux", desc: "Standard per PenTesting e Security", url: "https://www.kali.org/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 2. IP & NETWORK */
+                {
+                    label: "🌐 Indirizzo IP / Dominio",
+                    next: {
+                        title: "Analisi Infrastruttura",
+                        sourceRepo: "Analisi IP",
+                        options: [
+                            {
+                                label: "Geolocalizzazione IP",
+                                tools: [
+                                    { name: "IP Location", desc: "Visualizza posizione geografica dell'IP", url: "https://www.iplocation.net/" },
+                                    { name: "MaxMind Demo", desc: "Database GeoIP ad alta precisione", url: "https://www.maxmind.com/en/geoip-demo" },
+                                    { name: "Spur.us", desc: "Verifica se è una VPN o Proxy residenziale", url: "https://spur.us/" }
+                                ]
+                            },
+                            {
+                                label: "Network Scanning & IoT",
+                                tools: [
+                                    { name: "Shodan", desc: "Motore di ricerca per dispositivi connessi", url: "https://www.shodan.io/" },
+                                    { name: "Censys", desc: "Analisi superficie d'attacco e certificati", url: "https://search.censys.io/" },
+                                    { name: "DNSDumpster", desc: "Mappatura visiva dei record DNS", url: "https://dnsdumpster.com/" }
+                                ]
+                            },
+                            {
+                                label: "Active Defense",
+                                tools: [
+                                    { name: "Canary Tokens", desc: "Link traccianti per scoprire chi ti spia", url: "https://canarytokens.org/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 3. EMAIL */
+                {
+                    label: "📧 Indirizzo E-mail",
+                    next: {
+                        title: "Email Intelligence",
+                        sourceRepo: "ANALISI E-MAIL",
+                        options: [
+                            {
+                                label: "Breach & Leak Check",
+                                tools: [
+                                    { name: "Have I Been Pwned", desc: "Verifica se la mail è in database violati", url: "https://haveibeenpwned.com/" },
+                                    { name: "DeHashed", desc: "Ricerca password e credenziali (Login req)", url: "https://dehashed.com/" },
+                                    { name: "BreachDirectory", desc: "Search engine gratuito per leaks", url: "https://breachdirectory.org/" }
+                                ]
+                            },
+                            {
+                                label: "Verifica & Social",
+                                tools: [
+                                    { name: "Epios", desc: "Collega Email a Google/Maps/Skype", url: "https://epios.com/" },
+                                    { name: "Hunter.io", desc: "Verifica formato email aziendali", url: "https://hunter.io/verify" },
+                                    { name: "Email Hippo", desc: "Verifica esistenza tecnica indirizzo", url: "https://tools.verifyemailaddress.io/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 4. IMMAGINI */
+                {
+                    label: "📷 Immagine / Video",
+                    next: {
+                        title: "Image Intelligence (IMINT)",
+                        sourceRepo: "ANALISI DELLE IMMAGINI",
+                        options: [
+                            {
+                                label: "Reverse Image Search",
+                                tools: [
+                                    { name: "Google Lens", desc: "Identificazione oggetti e contesti", url: "https://lens.google.com/" },
+                                    { name: "Yandex Images", desc: "Miglior motore per volti e deep web russo", url: "https://yandex.com/images/" },
+                                    { name: "TinEye", desc: "Trova la data originale di pubblicazione", url: "https://tineye.com/" }
+                                ]
+                            },
+                            {
+                                label: "Analisi Forense",
+                                tools: [
+                                    { name: "FotoForensics", desc: "Analisi ELA per manipolazioni", url: "http://fotoforensics.com/" },
+                                    { name: "ExifTool", desc: "Tool command line per metadati", url: "https://exiftool.org/" },
+                                    { name: "FaceCheck.ID", desc: "Riconoscimento facciale su open web", url: "https://facecheck.id/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 5. SOCIAL & USERNAME */
+                {
+                    label: "👤 Username / Social Profile",
+                    next: {
+                        title: "Social Media Intelligence (SOCMINT)",
+                        sourceRepo: "SOCMIntelligence",
+                        options: [
+                            {
+                                label: "Username Enumeration",
+                                tools: [
+                                    { name: "Sherlock", desc: "Script Python per check username su 300+ siti", url: "https://github.com/sherlock-project/sherlock" },
+                                    { name: "WhatsMyName", desc: "Web App rapida per trovare profili", url: "https://whatsmyname.app/" },
+                                    { name: "Maigret", desc: "Analisi profonda username + report PDF", url: "https://github.com/soxoj/maigret" }
+                                ]
+                            },
+                            {
+                                label: "Telegram & Chat",
+                                tools: [
+                                    { name: "Telegago", desc: "Google Custom Search per Telegram", url: "https://cse.google.com/cse?q=+&cx=006368593537057042503:efxu7xprihg" },
+                                    { name: "TGStat", desc: "Metriche e ricerca canali Telegram", url: "https://tgstat.com/" },
+                                    { name: "Lyzem", desc: "Motore ricerca messaggi Telegram", url: "https://lyzem.com/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 6. MOBILE */
+                {
+                    label: "📱 Numero Telefono",
+                    next: {
+                        title: "Mobile Forensics",
+                        sourceRepo: "OSINT-FORENSICS-MOBILE",
+                        options: [
+                            {
+                                label: "Caller ID & Lookup",
+                                tools: [
+                                    { name: "Sync.me", desc: "Sincronizzazione contatti e Social ID", url: "https://sync.me/" },
+                                    { name: "TrueCaller", desc: "Il più grande database numeri spam/ID", url: "https://www.truecaller.com/" },
+                                    { name: "EmobileTracker", desc: "Tracciamento operatore e zona", url: "https://www.emobiletracker.com/" }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                /* 7. AI TOOLS */
+                {
+                    label: "🤖 Supporto AI",
+                    next: {
+                        title: "Artificial Intelligence Tools",
+                        sourceRepo: "OSINT-IA",
+                        options: [
+                            {
+                                label: "Analisi & Trascrizione",
+                                tools: [
+                                    { name: "ChatGPT", desc: "Assistente per query, dorks e riassunti", url: "https://chat.openai.com/" },
+                                    { name: "Whisper (OpenAI)", desc: "Trascrizione forense Audio-to-Text", url: "https://github.com/openai/whisper" }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        };
 
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/Data-Protection"><img
-										src=".\Data-Protection.gif" alt="Image" style="width:280px;">
-						</th>
-					<tr>
-						<td>
-							<h2 align="left"><a href="https://github.com/CScorza/CORPINT-Corporate-Intelligence">
-									<img src=".\CORPINT-Corporate-Intelligence.gif" alt="Image" style="width:280px;">
+        /* --- LOGICA DI NAVIGAZIONE E RICERCA --- */
+        const container = document.getElementById('framework-content');
+        const searchInput = document.getElementById('osint-search-input');
 
-						<td>
-							<h2 align="left"><a href="https://github.com/CScorza/OSINTInvestigation"><img
-										src=".\OSINTInvestigation.gif" alt="Image" style="width:280px;">
+        // Ascoltatore Input Ricerca
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (query.length > 1) {
+                performSearch(query);
+            } else if (query.length === 0) {
+                renderStart();
+            }
+        });
 
+        // Funzione di Ricerca Profonda
+        function performSearch(query) {
+            let resultsHTML = `<div class="step-title">🔎 Search Results for: "${query}"</div>`;
+            resultsHTML += `<div class="tool-grid">`;
+            
+            let count = 0;
+            osintData.options.forEach(category => {
+                if (category.next && category.next.options) {
+                    category.next.options.forEach(subCat => {
+                        subCat.tools.forEach(tool => {
+                            if (
+                                tool.name.toLowerCase().includes(query) || 
+                                tool.desc.toLowerCase().includes(query) ||
+                                subCat.label.toLowerCase().includes(query) ||
+                                category.label.toLowerCase().includes(query)
+                            ) {
+                                resultsHTML += `
+                                    <div class="tool-card">
+                                        <span class="breadcrumb">${category.label} > ${subCat.label}</span>
+                                        <a href="${tool.url}" target="_blank" class="tool-link">${tool.name} ↗</a>
+                                        <div class="tool-desc">${tool.desc}</div>
+                                    </div>
+                                `;
+                                count++;
+                            }
+                        });
+                    });
+                }
+            });
 
-						<td>
-							<h2 align="left"><a href="https://github.com/CScorza/GEOINTInvestigation"><img
-										src=".\GEOINTInvestigation.gif" alt="Image" style="width:280px;">
+            resultsHTML += `</div>`;
 
+            if (count === 0) {
+                container.innerHTML = `<div class="no-results">❌ Nessun tool trovato per "${query}".<br>Prova termini generici come "IP", "Foto", "Email".</div>`;
+            } else {
+                container.innerHTML = resultsHTML;
+            }
+        }
 
-						<td>
-							<h2 align="left"><a href="https://github.com/CScorza/Analisi-Digital-Forense"><img
-										src=".\Analisi-Digital-Forense.gif" alt="Image" style="width:280px;">
+        // Render Pagina Iniziale (Categorie)
+        function renderStart() {
+            let html = `<div class="step-title">${osintData.title}</div>`;
+            osintData.options.forEach((opt, index) => {
+                html += `<button class="osint-btn" onclick="renderStep(${index})">➤ ${opt.label}</button>`;
+            });
+            container.innerHTML = html;
+        }
 
-
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/OSINTAnonimus/"><img
-										src=".\OSINTAnonymous.gif" alt="Image" style="width:280px;">
-
-
-						<th>
-							<h2 align="left"><a href="https://github.com/CScorza/SOCMIntelligence"><img
-										src=".\SOCMIntelligence.gif" alt="Image" style="width:280px;">
-					</tr>
-					<th>
-						<h2 align="left"><a href="https://github.com/CScorza/WEBIntelligence"><img
-									src=".\WEBIntelligence.gif" alt="Image" style="width:280px;">
-					<th>
-						<h2 align="left"><a href="https://github.com/CScorza/OSINTWorkstation"><img
-									src=".\OSINTWorkstaion.gif" alt="Image" style="width:280px;">
-									<th>
-										<h2 align="left"><a href="https://github.com/CScorza/Generatore-di-Password"><img
-									src=".\Generatore di Password.gif" alt="Image" style="width:280px;">
-									<th>
-										<h2 align="left"><a href="https://github.com/CScorza/BruteForceDecryptPDF"><img
-											src=".\BFDecryptPDF.gif" alt="Image" style="width:280px;">
-					<th>
-						<h2 align="left"><a href="https://github.com/CScorza/StegoIntelligence"><img
-									src=".\StegoIntelligence.gif" alt="Image" style="width:280px;">
-					<th>
-						<h2 align="left"><a href="https://github.com/CScorza/WatermarkIntelligence"><img
-									src=".\WatermarkIntelligence.gif" alt="Image" style="width:280px;">
-									<tr>
-										<td>
-										  <h2 align="left"><a href="https://github.com/CScorza/OSINTSurveillance">
-											<img src=".\OSINTSurveillance.gif" alt="Image" style="width:280px;">
-											<td>
-												<h2 align="left"><a href="https://github.com/CScorza/OSINT-IA">
-												  <img src=".\OSINT-AI.gif" alt="Image" style="width:280px;">
-													<td>
-												<h2 align="left"><a href="https://github.com/CScorza/CStools">
-												  <img src=".\CStools.gif" alt="Image" style="width:280px;">
-													<td>
-												<h2 align="left"><a href="https://github.com/CScorza/CScorzaAnalysis">
-												  <img src=".\Analysis.gif" alt="Image" style="width:280px;">
-										  </a></h2>
-										</td>									
-																		</table>
-		</ul>
-	</div>
-	<br>
-<br>
-<style>
-	.legal_and_copy {
-		text-align: center;
-		color: white;
-	}
-</style>
-
-<div class="legal_and_copy text">
-	<div class="copyright">
-		© CScorza - Tutti i diritti riservati
-	</div>
-	<div class="privacy_cookie legal text">
-	<div text=>Aggionamento Dicembre 2024
-
-	</div>
-	</div>
-</div>
-
-
+        // Render Sottocategorie (Livello 2)
+        function renderStep(index) {
+            searchInput.value = ''; // Pulisce la ricerca
+            const step = osintData.options[index].next;
+            
+            let html = `<button class="reset-btn" onclick="renderStart()">← MENU PRINCIPALE</button>`;
+            html += `<div class="step-title">${step.title}</div>`;
+            html += `<div class="repo-tag">📂 Repository: <a href="https://github.com
