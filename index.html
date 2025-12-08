@@ -313,12 +313,12 @@
             transition: transform 0.2s;
         }
         
-        /* L'immagine X dentro il cerchio deve essere NERA e leggermente più piccola */
+        /* L'immagine X dentro il cerchio deve essere NERA e leggermente più piccola (la X vera e propria) */
         .x-logo-img {
             width: 12px;
             height: 12px;
             object-fit: contain;
-            /* Filtro per rendere l'icona nera (se l'originale non lo è già) */
+            /* Forza l'immagine ad essere nera */
             filter: brightness(0); 
         }
 
@@ -442,7 +442,7 @@
                 
                 <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
                     <div class="x-icon-wrapper">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="x-logo-img" alt="X Icon">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_logo_2023.svg" class="x-logo-img" alt="X">
                     </div>
                     <span>X <span class="twitter-blue">(Twitter)</span></span>
                 </a>
