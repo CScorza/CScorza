@@ -41,10 +41,11 @@
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center; /* Centrato ora che non c'è il pulsante a destra */
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border);
+            position: relative;
         }
 
         .brand {
@@ -264,7 +265,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
             flex-wrap: wrap;
             margin-bottom: 20px;
         }
@@ -276,6 +277,11 @@
         }
         .stat-label { font-size: 0.8rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         .stat-value { font-family: monospace; font-size: 1.1rem; color: #fff; background: #000; padding: 5px 10px; border-radius: 4px; border: 1px solid #333; }
+        
+        .counter-img {
+            height: 28px;
+            border-radius: 4px;
+        }
 
         .footer-row {
             display: flex;
@@ -297,21 +303,21 @@
             transition: all 0.2s;
             font-size: 0.9rem;
         }
-        .social-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
+        .social-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
         
-        /* Icone Social nel Footer */
+        /* Icone Social */
         .social-icon-img {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             object-fit: contain;
-            /* Filtro per rendere le icone nere -> Bianche */
-            filter: brightness(0) invert(1);
-            transition: filter 0.2s;
+            transition: transform 0.2s;
         }
-        .social-btn:hover .social-icon-img {
-            /* Filtro per rendere le icone bianche -> Nere al passaggio del mouse */
-            filter: brightness(0);
-        }
+        
+        /* Classi specifiche per gestire i colori su sfondo scuro */
+        .icon-white { filter: brightness(0) invert(1); } /* Rende bianco (per GitHub e X) */
+        .icon-color { filter: none; } /* Lascia il colore originale (per gli altri) */
+
+        .social-btn:hover .social-icon-img { transform: scale(1.1); }
 
         .email-btn {
             border-color: var(--secondary);
@@ -354,11 +360,10 @@
                 <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="logo-img">
                 <div class="brand-text">
                     <h1>CScorza</h1>
-                    <p>Framework di Intelligence Open Source</p> </div>
+                    <p>Framework di Intelligence Open Source</p>
+                </div>
             </div>
-            <a href="https://github.com/CScorza" target="_blank" class="open-repo-btn" style="padding: 8px 20px; width: auto;">
-                Profilo GitHub </a>
-        </header>
+            </header>
 
         <div class="search-container">
             <input type="text" id="repo-search" placeholder="Cerca repository, parola chiave o tecnologia... / Search..." autocomplete="off">
@@ -435,26 +440,26 @@
                     <span id="user-ip" class="stat-value">Caricamento...</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-label">👁️ Visitatori (Visitors)</span>
-                    <img src="https://visitcount.itsvg.in/api?id=cscorza&label=Viewers&color=0&icon=5&pretty=true" alt="Visitor Count">
+                    <span class="stat-label">👁️ Visitatori Unici</span>
+                    <img src="https://komarev.com/ghpvc/?username=CScorza&label=VISITE&color=00f3ff&style=for-the-badge" class="counter-img" alt="Counter">
                 </div>
             </div>
 
             <div class="footer-row socials-row">
                 <a href="https://github.com/CScorza" target="_blank" class="social-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon-img" alt="GitHub"> GitHub
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon-img icon-white" alt="GitHub"> GitHub
                 </a>
                 <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="social-icon-img" alt="X"> X (Twitter)
+                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="social-icon-img icon-white" alt="X"> X (Twitter)
                 </a>
                 <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/651/651756.png" class="social-icon-img" alt="BlueSky"> BlueSky
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" class="social-icon-img icon-color" alt="BlueSky"> BlueSky
                 </a>
                 <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="social-icon-img" alt="Telegram"> Telegram
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" class="social-icon-img icon-color" alt="Telegram"> Telegram
                 </a>
                 <a href="https://www.linkedin.com/in/cscorza" target="_blank" class="social-btn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" class="social-icon-img" alt="LinkedIn"> LinkedIn
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="social-icon-img icon-color" alt="LinkedIn"> LinkedIn
                 </a>
             </div>
 
