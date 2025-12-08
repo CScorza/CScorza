@@ -278,9 +278,20 @@
         }
         .stat-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
         .stat-label { font-size: 0.8rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .stat-value { font-family: monospace; font-size: 1.1rem; color: #fff; background: #000; padding: 5px 10px; border-radius: 4px; border: 1px solid #333; }
         
-        .counter-img { height: 28px; border-radius: 4px; }
+        .connection-info-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #000;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: 1px solid #333;
+        }
+
+        .stat-value { font-family: monospace; font-size: 1.1rem; color: #fff; }
+        .flag-img { width: 24px; border-radius: 3px; box-shadow: 0 0 5px rgba(0,0,0,0.5); display: none; } /* Nascosta finché non caricata */
+        .flag-img.visible { display: inline-block; }
 
         .footer-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 
@@ -423,12 +434,11 @@
         <footer>
             <div class="stats-bar">
                 <div class="stat-item">
-                    <span class="stat-label">🕵️‍♂️ Il Tuo IP (Your IP)</span>
-                    <span id="user-ip" class="stat-value">Caricamento...</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">👁️ Visitatori</span>
-                    <img class="counter-img" alt="Counter" src="https://visitor-badge.laobi.io/badge?page_id=CScorza.IntelligenceHub&left_text=VISITE&right_color=%2300f3ff&left_color=%23555555">
+                    <span class="stat-label">📡 Connection Info (Whois)</span>
+                    <div class="connection-info-box">
+                        <img id="user-flag" class="flag-img" src="" alt="Flag">
+                        <span id="user-ip" class="stat-value">Detecting location...</span>
+                    </div>
                 </div>
             </div>
 
@@ -494,19 +504,33 @@
                 }
             };
 
-            /* IP FETCH */
-            fetch('https://api.ipify.org?format=json')
+            /* WHOIS & GEOIP SYSTEM (Updated) */
+            // Uses ipapi.co to get IP, Country Code, and Name
+            fetch('https://ipapi.co/json/')
                 .then(response => response.json())
                 .then(data => {
                     const ipElement = document.getElementById('user-ip');
-                    if(ipElement) ipElement.textContent = data.ip;
+                    const flagElement = document.getElementById('user-flag');
+                    
+                    if(data.ip) {
+                        // Mostra IP e Nome Paese
+                        ipElement.textContent = `${data.ip} - ${data.country_name}`;
+                        
+                        // Genera URL della bandiera usando il codice paese
+                        if(data.country_code) {
+                            const countryCode = data.country_code.toLowerCase();
+                            flagElement.src = `https://flagcdn.com/w40/${countryCode}.png`;
+                            flagElement.classList.add('visible');
+                        }
+                    } else {
+                        ipElement.textContent = "IP Hidden / VPN";
+                    }
                 })
                 .catch(error => {
+                    console.error("GeoIP Error:", error);
                     const ipElement = document.getElementById('user-ip');
-                    if(ipElement) ipElement.textContent = "N/A (Hidden)";
+                    if(ipElement) ipElement.textContent = "Data Unavailable (AdBlock/VPN?)";
                 });
-
-            /* NOTA: Il contatore visite ora è gestito direttamente nell'HTML per evitare blocchi */
 
             /* FULL REPOSITORY DATABASE */
             const repositories = [
@@ -715,8 +739,8 @@
                     const repoContent = document.getElementById('repos-content');
                     const repoHeader = document.querySelector('.accordion-header[onclick*="repos-content"]');
                     if (repoContent && !repoContent.classList.contains('open') && e.target.value.length > 0) {
-                         repoContent.classList.add('open');
-                         if(repoHeader) repoHeader.classList.add('active');
+                          repoContent.classList.add('open');
+                          if(repoHeader) repoHeader.classList.add('active');
                     }
 
                     const searchTerm = e.target.value.toLowerCase();
