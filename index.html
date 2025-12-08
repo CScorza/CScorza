@@ -428,7 +428,7 @@
                 </div>
                 <div class="stat-item">
                     <span class="stat-label">👁️ Visitatori Unici</span>
-                    <img src="https://komarev.com/ghpvc/?username=CScorza&label=VISITE&color=00f3ff&style=for-the-badge" class="counter-img" alt="Counter">
+                    <img id="visit-counter" class="counter-img" alt="Counter" src="">
                 </div>
             </div>
 
@@ -505,6 +505,18 @@
                     const ipElement = document.getElementById('user-ip');
                     if(ipElement) ipElement.textContent = "N/A (Hidden)";
                 });
+
+            /* --- FIX CONTATORE VISITATORI (Uso HITS invece di Komarev) --- */
+            const counterImg = document.getElementById('visit-counter');
+            if (counterImg) {
+                // Genera un timestamp per forzare il browser a ricaricare l'immagine ogni volta
+                const timestamp = new Date().getTime();
+                
+                // Servizio: HITS (seeyoufarm) - Più affidabile per pagine web generiche
+                // Colore Ciano impostato su #00f3ff per matchare il tuo sito
+                // Target URL: https://github.com/CScorza/IntelligenceHub (per tracciare questa specifica "app")
+                counterImg.src = `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCScorza%2FIntelligenceHub&count_bg=%2300f3ff&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=VISITE&edge_flat=false&timestamp=${timestamp}`;
+            }
 
             /* FULL REPOSITORY DATABASE */
             const repositories = [
