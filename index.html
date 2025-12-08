@@ -255,6 +255,28 @@
             gap: 25px;
         }
 
+        /* Stats Bar (IP & Counter) */
+        .stats-bar {
+            background: rgba(0, 243, 255, 0.05);
+            border: 1px dashed var(--primary);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .stat-label { font-size: 0.8rem; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        .stat-value { font-family: monospace; font-size: 1.1rem; color: #fff; background: #000; padding: 5px 10px; border-radius: 4px; border: 1px solid #333; }
+
         .footer-row {
             display: flex;
             justify-content: center;
@@ -265,7 +287,7 @@
         .social-btn {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             padding: 8px 20px;
             background: rgba(255,255,255,0.05);
             border: 1px solid var(--border);
@@ -277,6 +299,20 @@
         }
         .social-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); }
         
+        /* Icone Social nel Footer */
+        .social-icon-img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+            /* Filtro per rendere le icone nere -> Bianche */
+            filter: brightness(0) invert(1);
+            transition: filter 0.2s;
+        }
+        .social-btn:hover .social-icon-img {
+            /* Filtro per rendere le icone bianche -> Nere al passaggio del mouse */
+            filter: brightness(0);
+        }
+
         .email-btn {
             border-color: var(--secondary);
             color: #fff;
@@ -318,12 +354,10 @@
                 <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="logo-img">
                 <div class="brand-text">
                     <h1>CScorza</h1>
-                    <p>Framework di Intelligence Open Source <br> <i>Open Source Intelligence Framework</i></p>
-                </div>
+                    <p>Framework di Intelligence Open Source</p> </div>
             </div>
             <a href="https://github.com/CScorza" target="_blank" class="open-repo-btn" style="padding: 8px 20px; width: auto;">
-                Profilo GitHub <br> <i>GitHub Profile</i>
-            </a>
+                Profilo GitHub </a>
         </header>
 
         <div class="search-container">
@@ -395,12 +429,33 @@
         </div>
 
         <footer>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">🕵️‍♂️ Il Tuo IP (Your IP)</span>
+                    <span id="user-ip" class="stat-value">Caricamento...</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">👁️ Visitatori (Visitors)</span>
+                    <img src="https://visitcount.itsvg.in/api?id=cscorza&label=Viewers&color=0&icon=5&pretty=true" alt="Visitor Count">
+                </div>
+            </div>
+
             <div class="footer-row socials-row">
-                <a href="https://github.com/CScorza" target="_blank" class="social-btn">GitHub</a>
-                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">X (Twitter)</a>
-                <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">BlueSky</a>
-                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">Telegram</a>
-                <a href="https://www.linkedin.com/in/cscorza" target="_blank" class="social-btn">LinkedIn</a>
+                <a href="https://github.com/CScorza" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon-img" alt="GitHub"> GitHub
+                </a>
+                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="social-icon-img" alt="X"> X (Twitter)
+                </a>
+                <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/651/651756.png" class="social-icon-img" alt="BlueSky"> BlueSky
+                </a>
+                <a href="https://t.me/CScorzaOSINT" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" class="social-icon-img" alt="Telegram"> Telegram
+                </a>
+                <a href="https://www.linkedin.com/in/cscorza" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" class="social-icon-img" alt="LinkedIn"> LinkedIn
+                </a>
             </div>
 
             <div class="footer-row email-row">
@@ -438,8 +493,18 @@
             }
         }
 
+        /* FUNZIONE PER RECUPERARE L'IP DEL VISITATORE */
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-ip').textContent = data.ip;
+            })
+            .catch(error => {
+                document.getElementById('user-ip').textContent = "N/A (Hidden)";
+                console.error('Error fetching IP:', error);
+            });
+
         /* DATABASE REPOSITORY CON DIZIONARI DI RICERCA ESTESI */
-        /* Ogni array 'tags' ora contiene parole chiave semantiche per migliorare la ricerca */
         const repositories = [
             {
                 name: "BruteForceDecryptPDF",
