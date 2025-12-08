@@ -16,7 +16,6 @@
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.1);
-            --twitter-blue: #1d9bf0;
         }
 
         body {
@@ -285,7 +284,7 @@
 
         .footer-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 
-        /* STILI BOTTONI SOCIAL BASE */
+        /* STILI BOTTONI SOCIAL STANDARD */
         .social-btn {
             display: flex; align-items: center; gap: 10px; padding: 8px 20px;
             background: rgba(255,255,255,0.05); border: 1px solid var(--border);
@@ -293,29 +292,13 @@
             transition: all 0.2s; font-size: 0.9rem;
         }
         .social-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
-
-        /* STILE SPECIFICO PER BOTTONE X (Twitter) */
-        .social-btn-x {
-            background-color: #000 !important; /* Sfondo scuro */
-            border: 1px solid #333 !important;
-            padding-left: 8px; /* Meno padding a sinistra per il pallino */
-        }
-        .social-btn-x:hover { background-color: #111 !important; border-color: #555 !important; }
-        
-        .x-icon-wrapper {
-            background-color: #fff;
-            width: 24px; height: 24px;
-            border-radius: 50%;
-            display: flex; justify-content: center; align-items: center;
-        }
-        .x-icon-svg { width: 14px; height: 14px; fill: #000; }
-        
-        .twitter-blue-text { color: var(--twitter-blue); margin-left: 2px; }
-
         
         .social-icon-img { width: 20px; height: 20px; object-fit: contain; transition: transform 0.2s; }
-        .icon-white { filter: brightness(0) invert(1); }
-        .icon-color { filter: none; }
+        
+        /* Classi per il colore delle icone */
+        .icon-white { filter: brightness(0) invert(1); } /* Rende bianco (per GitHub e X) */
+        .icon-color { filter: none; } /* Colore originale */
+        
         .social-btn:hover .social-icon-img { transform: scale(1.1); }
 
         .email-btn { border-color: var(--secondary); color: #fff; padding: 10px 25px; font-weight: 600; }
@@ -429,13 +412,8 @@
                     <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon-img icon-white" alt="GitHub"> GitHub
                 </a>
                 
-                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn social-btn-x">
-                    <div class="x-icon-wrapper">
-                        <svg class="x-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </div>
-                    <span>X <span class="twitter-blue-text">(Twitter)</span></span>
+                <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="social-icon-img icon-white" alt="X"> X (Twitter)
                 </a>
 
                 <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
