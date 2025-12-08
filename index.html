@@ -104,9 +104,11 @@
         }
         .accordion-header:hover { background: rgba(255, 255, 255, 0.05); }
         .arrow-icon { transition: transform 0.3s ease; font-size: 1.2rem; color: var(--text-muted); }
+        
+        /* Classe 'active' rimossa di default per chiudere all'avvio */
         .accordion-header.active .arrow-icon { transform: rotate(180deg); }
         
-        /* Default closed state */
+        /* Contenuto chiuso di default (nessuna classe 'open') */
         .accordion-content { 
             max-height: 0; 
             overflow: hidden; 
@@ -435,21 +437,15 @@
             }
         }
 
-        /* DATABASE REPOSITORY AGGIORNATO E INTEGRATO */
+        /* DATABASE REPOSITORY FILTRATO */
+        /* Esclusi: CScorza e SOCMIntelligence in poi (ordine alfabetico) */
         const repositories = [
             {
-                name: "InstaOSINT",
-                icon: "📸",
-                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati e analisi.<br><i>Specific OSINT for Instagram. Python tool for data extraction.</i>",
-                url: "https://github.com/CScorza/InstaOSINT",
-                tags: ["instagram", "social", "python", "api", "foto", "follower"]
-            },
-            {
-                name: "OSINTSurveillance",
-                icon: "📹",
-                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e reti Wi-Fi.<br><i>Search for public WebCams (CCTV), vulnerable IP cameras, and Wi-Fi.</i>",
-                url: "https://github.com/CScorza/OSINTSurveillance",
-                tags: ["cam", "webcam", "cctv", "wifi", "network", "sorveglianza"]
+                name: "BruteForceDecryptPDF",
+                icon: "🔓",
+                desc: "Script per tentare il decrypt di PDF protetti (Bruteforce).<br><i>Script to attempt decryption of protected PDFs (Bruteforce).</i>",
+                url: "https://github.com/CScorza/BruteForceDecryptPDF",
+                tags: ["pdf", "password", "crack", "bruteforce", "decrypt"]
             },
             {
                 name: "CStools",
@@ -459,32 +455,11 @@
                 tags: ["python", "telegram", "telefono", "username", "script", "cscorza"]
             },
             {
-                name: "SOCMIntelligence",
-                icon: "🕸️",
-                desc: "Identificazione profili, relazioni, organizzazioni e tracciamento reti sociali.<br><i>Identification of profiles, relationships, organizations, and social network tracking.</i>",
-                url: "https://github.com/CScorza/SOCMIntelligence",
-                tags: ["socmint", "social", "network", "analysis", "intelligence"]
-            },
-            {
-                name: "OSINTAnonymous",
-                icon: "🎭",
-                desc: "Creazione di identità fake, impostazione privacy e ambiente di lavoro sicuro.<br><i>Creation of fake identities, privacy settings, and secure working environment.</i>",
-                url: "https://github.com/CScorza/OSINTAnonymous",
-                tags: ["privacy", "fake", "identity", "security", "anonymous"]
-            },
-            {
-                name: "StegoIntelligence",
-                icon: "🕵️",
-                desc: "Strumenti per rilevare ed estrarre informazioni nascoste nei file (Steganografia).<br><i>Tools to detect and extract hidden information in files (Steganography).</i>",
-                url: "https://github.com/CScorza/StegoIntelligence",
-                tags: ["steganography", "hidden", "data", "files", "analysis"]
-            },
-            {
-                name: "OSINT-IA",
-                icon: "🤖",
-                desc: "Risorse e strumenti sull'Intelligenza Artificiale a supporto dell'OSINT.<br><i>Resources and tools on Artificial Intelligence supporting OSINT.</i>",
-                url: "https://github.com/CScorza/OSINT-IA",
-                tags: ["ai", "artificial intelligence", "support", "tools"]
+                name: "EstensioniChromeOSINT",
+                icon: "🧩",
+                desc: "Elenco curato di estensioni Chrome utili per le attività di OSINT.<br><i>Curated list of Chrome extensions useful for OSINT activities.</i>",
+                url: "https://github.com/CScorza/EstensioniChromeOSINT",
+                tags: ["chrome", "extensions", "browser", "tools"]
             },
             {
                 name: "Image-OSINT-Forensics",
@@ -494,6 +469,13 @@
                 tags: ["images", "forensics", "metadata", "analysis", "photo"]
             },
             {
+                name: "InstaOSINT",
+                icon: "📸",
+                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati e analisi.<br><i>Specific OSINT for Instagram. Python tool for data extraction.</i>",
+                url: "https://github.com/CScorza/InstaOSINT",
+                tags: ["instagram", "social", "python", "api", "foto", "follower"]
+            },
+            {
                 name: "OSINT-FORENSICS-MOBILE",
                 icon: "📱",
                 desc: "Tool e risorse per l'OSINT e la Forensics su dispositivi mobili.<br><i>Tools and resources for OSINT and Forensics on mobile devices.</i>",
@@ -501,11 +483,18 @@
                 tags: ["mobile", "android", "ios", "forensics", "phone"]
             },
             {
-                name: "EstensioniChromeOSINT",
-                icon: "🧩",
-                desc: "Elenco curato di estensioni Chrome utili per le attività di OSINT.<br><i>Curated list of Chrome extensions useful for OSINT activities.</i>",
-                url: "https://github.com/CScorza/EstensioniChromeOSINT",
-                tags: ["chrome", "extensions", "browser", "tools"]
+                name: "OSINT-IA",
+                icon: "🤖",
+                desc: "Risorse e strumenti sull'Intelligenza Artificiale a supporto dell'OSINT.<br><i>Resources and tools on Artificial Intelligence supporting OSINT.</i>",
+                url: "https://github.com/CScorza/OSINT-IA",
+                tags: ["ai", "artificial intelligence", "support", "tools"]
+            },
+            {
+                name: "OSINTAnonymous",
+                icon: "🎭",
+                desc: "Creazione di identità fake, impostazione privacy e ambiente di lavoro sicuro.<br><i>Creation of fake identities, privacy settings, and secure working environment.</i>",
+                url: "https://github.com/CScorza/OSINTAnonymous",
+                tags: ["privacy", "fake", "identity", "security", "anonymous"]
             },
             {
                 name: "OSINTInvestigation",
@@ -515,11 +504,18 @@
                 tags: ["investigation", "manual", "techniques", "guide"]
             },
             {
-                name: "BruteForceDecryptPDF",
-                icon: "🔓",
-                desc: "Script per tentare il decrypt di PDF protetti (Bruteforce).<br><i>Script to attempt decryption of protected PDFs (Bruteforce).</i>",
-                url: "https://github.com/CScorza/BruteForceDecryptPDF",
-                tags: ["pdf", "password", "crack", "bruteforce", "decrypt"]
+                name: "OSINTSurveillance",
+                icon: "📹",
+                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e reti Wi-Fi.<br><i>Search for public WebCams (CCTV), vulnerable IP cameras, and Wi-Fi.</i>",
+                url: "https://github.com/CScorza/OSINTSurveillance",
+                tags: ["cam", "webcam", "cctv", "wifi", "network", "sorveglianza"]
+            },
+            {
+                name: "OSINTWorkstation",
+                icon: "🖥️",
+                desc: "Configurazione di una postazione di lavoro ottimizzata per investigazioni OSINT.<br><i>Configuration of an optimized workstation for OSINT investigations.</i>",
+                url: "https://github.com/CScorza/OSINTWorkstation",
+                tags: ["workstation", "vm", "linux", "tools", "environment"]
             }
         ];
 
