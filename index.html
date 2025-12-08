@@ -186,6 +186,7 @@
         .manual-title { font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
         .manual-desc { font-size: 0.9rem; color: #ccc; margin-bottom: 20px; line-height: 1.5; }
 
+        /* Button Stili Standard */
         .download-btn {
             background: var(--gold);
             color: #000;
@@ -201,6 +202,30 @@
             transition: all 0.2s;
         }
         .download-btn:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
+
+        /* Gruppo Bottoni Split (ITA/ENG) */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+        .btn-split {
+            flex: 1;
+            background: var(--gold);
+            color: #000;
+            padding: 12px 5px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-split:hover { background: #fff; box-shadow: 0 0 15px var(--gold); }
+
 
         /* --- GRIGLIA REPOSITORY --- */
         .section-title-cyan {
@@ -410,7 +435,14 @@
                             <h3 class="manual-title">Manuale Basico di OSINT <br> <i>Basic OSINT Manual</i></h3>
                             <p class="manual-desc">Il punto di partenza fondamentale. Concetti base, ciclo dell'intelligence e primi passi.<br><i>The fundamental starting point. Basic concepts, intelligence cycle, and first steps.</i></p>
                         </div>
-                        <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="download-btn">📄 APRI PDF / <i>OPEN PDF</i></a>
+                        <div class="btn-group">
+                            <a href="https://github.com/CScorza/CScorza/blob/main/Manuale%20Basico%20di%20OSINT%20-%20CScorza.pdf" target="_blank" class="btn-split">
+                                🇮🇹 ITA
+                            </a>
+                            <a href="https://github.com/CScorza/CScorza/blob/main/%5BEnglish%20Ver.%5D%20BASIC%20MANUAL%20OF%20OSINT%20%20-%20CScorza.pdf" target="_blank" class="btn-split">
+                                🇬🇧 ENG
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
