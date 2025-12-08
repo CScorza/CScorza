@@ -54,11 +54,12 @@
             gap: 20px;
         }
 
-        /* LOGO MIGLIORATO (Effetto Reattore) */
+        /* LOGO MIGLIORATO (Effetto Reattore TONDO) */
         .logo-img {
             width: 65px;
             height: 65px;
-            border-radius: 12px;
+            /* MODIFICA: 50% lo rende perfettamente tondo */
+            border-radius: 50%;
             background: #000;
             /* Bordo sottile e luminoso */
             border: 1px solid rgba(0, 243, 255, 0.8);
@@ -78,8 +79,9 @@
              transform: scale(1.02);
         }
 
-        .brand-text h1 { margin: 0; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
-        .brand-text p { margin: 0; color: var(--primary); font-size: 0.9rem; letter-spacing: 2px; }
+        /* MODIFICA: Dimensioni font leggermente ridotte per il titolo più lungo */
+        .brand-text h1 { margin: 0; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 1px; }
+        .brand-text p { margin: 0; color: var(--primary); font-size: 0.9rem; letter-spacing: 1px; }
 
         /* SEARCH BAR */
         .search-container {
@@ -374,11 +376,11 @@
             <div class="brand">
                 <img src="https://github.com/CScorza.png" alt="CScorza Logo" class="logo-img">
                 <div class="brand-text">
-                    <h1>CScorza</h1>
-                    <p>Framework di Intelligence Open Source</p>
+                    <h1>CScorza - Indagini Telematiche</h1>
+                    <p>Framework di Open Source Intelligence</p>
                 </div>
             </div>
-            </header>
+        </header>
 
         <div class="search-container">
             <input type="text" id="repo-search" placeholder="Cerca repository, parola chiave o tecnologia... / Search..." autocomplete="off">
