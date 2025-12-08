@@ -16,6 +16,7 @@
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.1);
+            --twitter-blue: #1d9bf0;
         }
 
         body {
@@ -284,7 +285,7 @@
 
         .footer-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
 
-        /* STILI BOTTONI SOCIAL UNIFICATI */
+        /* STILI BOTTONI SOCIAL STANDARD */
         .social-btn {
             display: flex; align-items: center; gap: 10px; padding: 8px 20px;
             background: rgba(255,255,255,0.05); border: 1px solid var(--border);
@@ -293,32 +294,41 @@
         }
         .social-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
         
-        /* Immagine generica icona */
+        /* Icona Social Generale */
         .social-icon-img { width: 20px; height: 20px; object-fit: contain; transition: transform 0.2s; }
         .social-btn:hover .social-icon-img { transform: scale(1.1); }
 
-        /* CLASSI SPECIALI PER X (TWITTER) */
-        /* Contenitore bianco tondo per la X */
-        .x-circle-wrapper {
-            background-color: #fff;
+        /* Filtri colore per icone */
+        .icon-white { filter: brightness(0) invert(1); } /* Rende bianco */
+        .icon-color { filter: none; } /* Mantiene colore originale */
+
+        /* STILI SPECIFICI PER L'ICONA DI X (Cerchio Bianco + X Nera) */
+        .x-icon-wrapper {
+            background-color: #ffffff; /* Sfondo bianco del cerchio */
             width: 20px;
             height: 20px;
-            border-radius: 50%;
+            border-radius: 50%; /* Cerchio perfetto */
             display: flex;
             justify-content: center;
             align-items: center;
             transition: transform 0.2s;
         }
-        /* La X dentro deve essere nera (senza filtri) e più piccola */
-        .x-icon-black {
-            width: 12px; 
-            height: 12px;
-            filter: none !important; /* Forza il colore originale (nero) */
-        }
         
-        /* Classi filtri per le altre icone */
-        .icon-white { filter: brightness(0) invert(1); }
-        .icon-color { filter: none; }
+        /* L'immagine X dentro il cerchio deve essere NERA e leggermente più piccola */
+        .x-logo-img {
+            width: 12px;
+            height: 12px;
+            object-fit: contain;
+            /* Filtro per rendere l'icona nera (se l'originale non lo è già) */
+            filter: brightness(0); 
+        }
+
+        /* Effetto hover anche per il cerchietto */
+        .social-btn:hover .x-icon-wrapper { transform: scale(1.1); }
+        
+        /* Colore blu per la scritta (Twitter) */
+        .twitter-blue { color: var(--twitter-blue); margin-left: 4px; }
+
 
         .email-btn { border-color: var(--secondary); color: #fff; padding: 10px 25px; font-weight: 600; }
         .email-btn:hover { background: var(--secondary); color: #fff; box-shadow: 0 0 15px var(--secondary); }
@@ -432,10 +442,10 @@
                 </a>
                 
                 <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
-                    <div class="x-circle-wrapper">
-                        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="social-icon-img x-icon-black" alt="X">
+                    <div class="x-icon-wrapper">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" class="x-logo-img" alt="X Icon">
                     </div>
-                    X (Twitter)
+                    <span>X <span class="twitter-blue">(Twitter)</span></span>
                 </a>
 
                 <a href="https://bsky.app/profile/cscorza.bsky.social" target="_blank" class="social-btn">
