@@ -16,6 +16,7 @@
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.1);
+            --twitter-blue: #1d9bf0;
         }
 
         body {
@@ -301,9 +302,9 @@
         .icon-white { filter: brightness(0) invert(1); } /* Rende bianco */
         .icon-color { filter: none; } /* Mantiene colore originale */
 
-        /* STILI SPECIFICI PER L'ICONA DI X (Cerchio Bianco + X Nera) */
+        /* STILI SPECIFICI PER L'ICONA DI X (SVG INTERNO) */
         .x-icon-wrapper {
-            background-color: #ffffff; /* Sfondo bianco del cerchio */
+            background-color: #ffffff; /* Sfondo BIANCO del cerchio */
             width: 20px;
             height: 20px;
             border-radius: 50%; /* Cerchio perfetto */
@@ -313,13 +314,10 @@
             transition: transform 0.2s;
         }
         
-        /* L'immagine X dentro il cerchio deve essere NERA e leggermente più piccola (la X vera e propria) */
-        .x-logo-img {
+        .x-icon-svg {
             width: 12px;
             height: 12px;
-            object-fit: contain;
-            /* Forza l'immagine ad essere nera */
-            filter: brightness(0); 
+            fill: #000000; /* La X è colorata di NERO */
         }
 
         /* Effetto hover anche per il cerchietto */
@@ -442,7 +440,9 @@
                 
                 <a href="https://twitter.com/CScorzaOSINT" target="_blank" class="social-btn">
                     <div class="x-icon-wrapper">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/X_logo_2023.svg" class="x-logo-img" alt="X">
+                        <svg class="x-icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
                     </div>
                     <span>X <span class="twitter-blue">(Twitter)</span></span>
                 </a>
