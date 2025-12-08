@@ -427,8 +427,8 @@
                     <span id="user-ip" class="stat-value">Caricamento...</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-label">👁️ Visitatori Unici</span>
-                    <img id="visit-counter" class="counter-img" alt="Counter" src="">
+                    <span class="stat-label">👁️ Visitatori</span>
+                    <img class="counter-img" alt="Counter" src="https://visitor-badge.laobi.io/badge?page_id=CScorza.IntelligenceHub&left_text=VISITE&right_color=%2300f3ff&left_color=%23555555">
                 </div>
             </div>
 
@@ -506,17 +506,7 @@
                     if(ipElement) ipElement.textContent = "N/A (Hidden)";
                 });
 
-            /* --- FIX CONTATORE VISITATORI (Uso HITS invece di Komarev) --- */
-            const counterImg = document.getElementById('visit-counter');
-            if (counterImg) {
-                // Genera un timestamp per forzare il browser a ricaricare l'immagine ogni volta
-                const timestamp = new Date().getTime();
-                
-                // Servizio: HITS (seeyoufarm) - Più affidabile per pagine web generiche
-                // Colore Ciano impostato su #00f3ff per matchare il tuo sito
-                // Target URL: https://github.com/CScorza/IntelligenceHub (per tracciare questa specifica "app")
-                counterImg.src = `https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCScorza%2FIntelligenceHub&count_bg=%2300f3ff&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=VISITE&edge_flat=false&timestamp=${timestamp}`;
-            }
+            /* NOTA: Il contatore visite ora è gestito direttamente nell'HTML per evitare blocchi */
 
             /* FULL REPOSITORY DATABASE */
             const repositories = [
