@@ -105,7 +105,14 @@
         .accordion-header:hover { background: rgba(255, 255, 255, 0.05); }
         .arrow-icon { transition: transform 0.3s ease; font-size: 1.2rem; color: var(--text-muted); }
         .accordion-header.active .arrow-icon { transform: rotate(180deg); }
-        .accordion-content { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease-out, opacity 0.4s ease-out; }
+        
+        /* Default closed state */
+        .accordion-content { 
+            max-height: 0; 
+            overflow: hidden; 
+            opacity: 0; 
+            transition: max-height 0.5s ease-out, opacity 0.4s ease-out; 
+        }
         .accordion-content.open { max-height: 5000px; opacity: 1; overflow: visible; }
 
         /* --- SEZIONE MANUALI --- */
@@ -330,7 +337,7 @@
                 <div class="arrow-icon">▼</div>
             </div>
 
-            <div id="manuals-content" class="accordion-content open">
+            <div id="manuals-content" class="accordion-content">
                 <div class="manuals-grid">
                     
                     <div class="manual-card">
@@ -371,7 +378,7 @@
         </div>
 
         <div class="repos-wrapper">
-            <div class="accordion-header active" onclick="toggleSection('repos-content', this)">
+            <div class="accordion-header" onclick="toggleSection('repos-content', this)">
                 <div class="section-title-cyan">
                     🗂️ Archivio Repository GitHub <br>
                     <span style="font-size:0.9rem; font-style:italic; opacity:0.8;">GitHub Repository Archive</span>
@@ -379,7 +386,7 @@
                 <div class="arrow-icon">▼</div>
             </div>
 
-            <div id="repos-content" class="accordion-content open">
+            <div id="repos-content" class="accordion-content">
                 <div id="repo-grid" class="repo-grid">
                     </div>
             </div>
@@ -428,77 +435,91 @@
             }
         }
 
-        /* DATABASE REPOSITORY COMPLETATO */
+        /* DATABASE REPOSITORY AGGIORNATO E INTEGRATO */
         const repositories = [
             {
                 name: "InstaOSINT",
                 icon: "📸",
-                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati.<br><i>Specific OSINT for Instagram. Python tool for data extraction.</i>",
+                desc: "OSINT specifico per Instagram. Tool Python per estrazione dati e analisi.<br><i>Specific OSINT for Instagram. Python tool for data extraction.</i>",
                 url: "https://github.com/CScorza/InstaOSINT",
                 tags: ["instagram", "social", "python", "api", "foto", "follower"]
             },
             {
                 name: "OSINTSurveillance",
                 icon: "📹",
-                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e Wi-Fi.<br><i>Search for public WebCams (CCTV), vulnerable IP cameras, and Wi-Fi.</i>",
+                desc: "Ricerca di WebCam pubbliche (CCTV), telecamere IP vulnerabili e reti Wi-Fi.<br><i>Search for public WebCams (CCTV), vulnerable IP cameras, and Wi-Fi.</i>",
                 url: "https://github.com/CScorza/OSINTSurveillance",
                 tags: ["cam", "webcam", "cctv", "wifi", "network", "sorveglianza"]
             },
             {
                 name: "CStools",
                 icon: "🐍",
-                desc: "Tool Python proprietario per ricerche incrociate su Telegram e Telefono.<br><i>Proprietary Python tool for cross-searches on Telegram and Phone numbers.</i>",
+                desc: "Tool multifunzione per ricerche su Telegram, numeri di telefono e username.<br><i>Multipurpose tool for searching via Telegram, phone numbers, and usernames.</i>",
                 url: "https://github.com/CScorza/CStools",
                 tags: ["python", "telegram", "telefono", "username", "script", "cscorza"]
             },
             {
-                name: "CScorzaAnalysis",
-                icon: "🔗",
-                desc: "Metodologia per collegare dati da fonti diverse (Link Analysis).<br><i>Methodology to link data from different sources (Link Analysis).</i>",
-                url: "https://github.com/CScorza/CScorzaAnalysis",
-                tags: ["analisi", "link", "collegamenti", "dati", "framework", "intelligence"]
+                name: "SOCMIntelligence",
+                icon: "🕸️",
+                desc: "Identificazione profili, relazioni, organizzazioni e tracciamento reti sociali.<br><i>Identification of profiles, relationships, organizations, and social network tracking.</i>",
+                url: "https://github.com/CScorza/SOCMIntelligence",
+                tags: ["socmint", "social", "network", "analysis", "intelligence"]
+            },
+            {
+                name: "OSINTAnonymous",
+                icon: "🎭",
+                desc: "Creazione di identità fake, impostazione privacy e ambiente di lavoro sicuro.<br><i>Creation of fake identities, privacy settings, and secure working environment.</i>",
+                url: "https://github.com/CScorza/OSINTAnonymous",
+                tags: ["privacy", "fake", "identity", "security", "anonymous"]
+            },
+            {
+                name: "StegoIntelligence",
+                icon: "🕵️",
+                desc: "Strumenti per rilevare ed estrarre informazioni nascoste nei file (Steganografia).<br><i>Tools to detect and extract hidden information in files (Steganography).</i>",
+                url: "https://github.com/CScorza/StegoIntelligence",
+                tags: ["steganography", "hidden", "data", "files", "analysis"]
+            },
+            {
+                name: "OSINT-IA",
+                icon: "🤖",
+                desc: "Risorse e strumenti sull'Intelligenza Artificiale a supporto dell'OSINT.<br><i>Resources and tools on Artificial Intelligence supporting OSINT.</i>",
+                url: "https://github.com/CScorza/OSINT-IA",
+                tags: ["ai", "artificial intelligence", "support", "tools"]
+            },
+            {
+                name: "Image-OSINT-Forensics",
+                icon: "🖼️",
+                desc: "Raccolta di strumenti e tecniche per la ricerca e l'analisi forense delle immagini.<br><i>Collection of tools and techniques for image search and forensic analysis.</i>",
+                url: "https://github.com/CScorza/Image-OSINT-Forensics",
+                tags: ["images", "forensics", "metadata", "analysis", "photo"]
+            },
+            {
+                name: "OSINT-FORENSICS-MOBILE",
+                icon: "📱",
+                desc: "Tool e risorse per l'OSINT e la Forensics su dispositivi mobili.<br><i>Tools and resources for OSINT and Forensics on mobile devices.</i>",
+                url: "https://github.com/CScorza/OSINT-FORENSICS-MOBILE",
+                tags: ["mobile", "android", "ios", "forensics", "phone"]
+            },
+            {
+                name: "EstensioniChromeOSINT",
+                icon: "🧩",
+                desc: "Elenco curato di estensioni Chrome utili per le attività di OSINT.<br><i>Curated list of Chrome extensions useful for OSINT activities.</i>",
+                url: "https://github.com/CScorza/EstensioniChromeOSINT",
+                tags: ["chrome", "extensions", "browser", "tools"]
+            },
+            {
+                name: "OSINTInvestigation",
+                icon: "🔎",
+                desc: "Tecniche, strumenti e definizioni per l'investigazione OSINT completa.<br><i>Techniques, tools, and definitions for complete OSINT investigation.</i>",
+                url: "https://github.com/CScorza/OSINTInvestigation",
+                tags: ["investigation", "manual", "techniques", "guide"]
             },
             {
                 name: "BruteForceDecryptPDF",
                 icon: "🔓",
-                desc: "Script per decriptare PDF protetti (calcolo tempo, hash).<br><i>Script to decrypt protected PDFs (time calculation, hash).</i>",
+                desc: "Script per tentare il decrypt di PDF protetti (Bruteforce).<br><i>Script to attempt decryption of protected PDFs (Bruteforce).</i>",
                 url: "https://github.com/CScorza/BruteForceDecryptPDF",
-                tags: ["pdf", "password", "crack", "bruteforce", "decrypt", "python"]
-            },
-            {
-                name: "Generatore-di-Password",
-                icon: "🔑",
-                desc: "Generatore di password sicure e robuste tramite terminale.<br><i>Secure and robust password generator via terminal.</i>",
-                url: "https://github.com/CScorza/Generatore-di-Password",
-                tags: ["password", "sicurezza", "generator", "python", "terminal"]
-            },
-            {
-                name: "Telegram-Tracker-Bot",
-                icon: "🤖",
-                desc: "Bot per monitoraggio gruppi e canali Telegram in tempo reale.<br><i>Bot for real-time monitoring of Telegram groups and channels.</i>",
-                url: "https://github.com/CScorza/TelegramTracker",
-                tags: ["telegram", "bot", "monitoring", "api", "chat"]
-            },
-            {
-                name: "GeoIP-Visualizer",
-                icon: "🌍",
-                desc: "Mappa visiva per tracciamento IP e nodi di rete.<br><i>Visual map for IP tracking and network nodes.</i>",
-                url: "https://github.com/CScorza/GeoIP-Vis",
-                tags: ["geo", "ip", "map", "tracking", "network"]
-            },
-            {
-                name: "Metadata-X-Ray",
-                icon: "💾",
-                desc: "Estrazione massiva di metadati (EXIF) da immagini e documenti.<br><i>Massive metadata (EXIF) extraction from images and documents.</i>",
-                url: "https://github.com/CScorza/MetadataX",
-                tags: ["metadata", "exif", "images", "forensics", "data"]
-            },
-            {
-                name: "Username-Recon-V2",
-                icon: "🕵️",
-                desc: "Verifica esistenza username su oltre 500 piattaforme social.<br><i>Check username existence across 500+ social platforms.</i>",
-                url: "https://github.com/CScorza/UsernameRecon",
-                tags: ["username", "social", "recon", "people", "search"]
+                tags: ["pdf", "password", "crack", "bruteforce", "decrypt"]
             }
         ];
 
